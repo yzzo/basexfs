@@ -1,0 +1,21 @@
+BaseXFS
+
+A FUSE database client to mount FSML database instances.
+
+·-----------·
+| basexfs.c |<--> jnibridge.c <--> BaseXFS.java ======== BaseXServer
+|-----------|       (JNI)          (db client)
+|   FUSE    |
+·-----------·
+
+[---- libbasexfs -----------]      [----- BaseX Java par (loads libbasexfs) -----]
+
+basexfs.c  .........  native FUSE implementation
+jnibridge.c  .......  connects native FUSE part with platform independent Java part 
+BaseXFS.java  ......  Filesystem database client
+
+
+build dependencies:
+	libfuse-dev
+	openjdk-6-jdk
+	maven2
