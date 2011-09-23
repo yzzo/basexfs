@@ -1,4 +1,4 @@
-package org.basex.fs;
+package org.basex.fs.fuse;
 
 /**
  * Platform independent FUSE part (native part is provided by basexfs library).
@@ -16,7 +16,7 @@ public class BaseXFS
     private native boolean j2cMount(int argc, byte[][] argv); 
 
     /** Prints some info about native library. */ 
-	void info() {
+	public void info() {
 		j2cInfo();
 	}
 	
@@ -43,7 +43,7 @@ public class BaseXFS
 	}
 	
 	/** Mounts FUSE with user arguments and loads FSML database into Server. */
-    boolean mount(String database, String mountpoint) {
+    public boolean mount(String database, String mountpoint) {
     	// XXX: open database
     	String[] args = { "basexfs", "-f", mountpoint}; // passed to FUSE
     	Runnable r = new MountThread(args);

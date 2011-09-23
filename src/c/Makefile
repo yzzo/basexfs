@@ -7,7 +7,7 @@ INC_JNI_MAC=/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/JavaVM.fram
 libbasexfs.jnilib: jnibridge_mac.o basexfs.o
 	gcc -dynamiclib -o libbasexfs.jnilib `pkg-config fuse --libs` -framework JavaVM $^
 
-jnibridge_mac.o: jnibridge.c jnibridge.h org_basex_fs_BaseXFS.h
+jnibridge_mac.o: jnibridge.c jnibridge.h org_basex_fs_fuse_BaseXFS.h
 	gcc -Wall -I$(INC_JNI_MAC) -fPIC -o $@ -c $<
 
 # Linux
@@ -15,11 +15,14 @@ libbasexfs.so: jnibridge.o basexfs.o
 	gcc -Wall -shared -fPIC `pkg-config fuse --libs` -o libbasexfs.so $^
 
 
-jnibridge.o: jnibridge.c jnibridge.h org_basex_fs_BaseXFS.h
+jnibridge.o: jnibridge.c jnibridge.h org_basex_fs_fuse_BaseXFS.h
 	gcc -Wall -I$(INC_JNI_LIN) -fPIC -c $<
 
 basexfs.o: basexfs.c
 	gcc -Wall `pkg-config fuse --cflags` -fPIC -c $<
+
+org_basex_fs_fuse_BaseXFS.h:
+	(cd ../ && make header)
 
 # phony
 mac: libbasexfs.jnilib

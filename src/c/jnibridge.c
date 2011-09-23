@@ -4,16 +4,16 @@
 #include <stdlib.h>
 #include "jnibridge.h"
 #include "basexfs.h"
-#include "org_basex_fs_BaseXFS.h" 
+#include "org_basex_fs_fuse_BaseXFS.h" 
 
 /* Reference Java Virtual Machine (on System.loadLibrary('basexfs')). */
 JavaVM *cached_jvm;
-/* Reference org.basex.fs.BaseXFS class on System.loadLibrary('basexfs')). */
+/* Reference org.basex.fs.fuse.BaseXFS class on System.loadLibrary('basexfs')). */
 jclass Class_BaseXFS;
 
 /* Reference to BaseXFS object (for c2j callbacks) on j2cMount(). */
 jobject OBJ_C2J_BaseXFS;
-/* Reference to callback in org.basex.fs.BaseXFS. c2j<XXX>(). */
+/* Reference to callback in org.basex.fs.fuse.BaseXFS. c2j<XXX>(). */
 jmethodID MID_c2jMkdir;
 
 /* -------------------------------------------------------------------------- */
@@ -41,7 +41,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* jvm, void *reserved)
 	fprintf(stderr, "[jnibridge] JavaVM stored at %p\n", cached_jvm);
 
 	/* Create reference to BaseXFS class. */
-	cls = (*env)->FindClass(env, "org/basex/fs/BaseXFS");
+	cls = (*env)->FindClass(env, "org/basex/fs/fuse/BaseXFS");
 	if (cls == NULL) {
 		fprintf(stderr, "[jnibridge] Can not find class BaseXFS.\n");
 		return JNI_ERR;
@@ -129,7 +129,7 @@ static char *JNU_CStringFromJByteArray(JNIEnv *env, jbyteArray bytes)
 /* ---- From platform independent code to native part (j2c) ----------------- */
 /* -------------------------------------------------------------------------- */
 
-JNIEXPORT jboolean JNICALL Java_org_basex_fs_BaseXFS_j2cMount
+JNIEXPORT jboolean JNICALL Java_org_basex_fs_fuse_BaseXFS_j2cMount
   (JNIEnv *env, jobject o, jint jargc, jobjectArray jargv)
 {
 	/* Create global reference to BaseXFS object for subsequent callbacks
@@ -169,7 +169,7 @@ JNIEXPORT jboolean JNICALL Java_org_basex_fs_BaseXFS_j2cMount
 }
 
 /* -------------------------------------------------------------------------- */
-JNIEXPORT void JNICALL Java_org_basex_fs_BaseXFS_j2cInfo
+JNIEXPORT void JNICALL Java_org_basex_fs_fuse_BaseXFS_j2cInfo
   (JNIEnv *e, jobject o)
 {
 	printf("[j2c_info] Huhu. A shy hello from native basexfs library.\n");

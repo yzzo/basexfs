@@ -15,6 +15,7 @@ import org.basex.core.Context;
 import org.basex.core.Prop;
 import org.basex.core.cmd.CreateDB;
 import org.basex.fs.fsml.build.FileHierarchyParser;
+import org.basex.fs.fuse.BaseXFS;
 
 /**
  * Rudimentary shell to interact with a file hierarchy stored in XML.

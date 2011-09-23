@@ -2,18 +2,18 @@
 
 all:	java header lib
 
-# build platform independant part
+# 1. build platform independant part
 java:
 	(cd ./java/ && mvn package)
 	@echo '==== Built java/target/basexfs-1.0-SNAPSHOT.jar'
 
-# generate native header from platform independant part 
+# 2. generate native header from platform independant part 
 header:
-	javah -jni -d ./c -classpath ./java/target/classes/ org.basex.fs.BaseXFS 
-	rm -f ./c/org_basex_fs_BaseXFS_MountThread.h 
+	javah -jni -d ./c -classpath ./java/target/classes/ org.basex.fs.fuse.BaseXFS 
+	rm -f ./c/org_basex_fs_fuse_BaseXFS_MountThread.h 
 	@echo '==== Built c/org_basex_fs_BaseXFS.h'
 
-# compile libbasexfs
+# 3. compile libbasexfs
 lib:
 	(cd ./c/ && make)
 	@echo '==== Built c/libbasexfs.so'
