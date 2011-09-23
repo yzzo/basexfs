@@ -43,31 +43,31 @@ public class PDFParser extends Parser {
 	 * @param path pathname to PDF file
 	 */
 	public PDFParser(String path) {
-		this(IO.get(path));
+		super(path);
 	}
 	
 	public PDFParser(IO path) {
-		super(path, "");
+		super(path);
 	}
 
 	@Override
 	public void parse(Builder b) throws IOException {
 		try {
-			document = PDDocument.load(file.path());
+			document = PDDocument.load(src.path());
 		} catch (IOException e) {
 			System.out.println("Detected empty or corrupt PDF file'" 
-					+ file.path() + "': " + e.getMessage());
+					+ src.path() + "': " + e.getMessage());
 			return;
 		}
 		try {
 			builder = b;
-			atts.add(NAME, token("." + file.name() + ".deepfs"));
+			atts.add(NAME, token("." + src.name() + ".deepfs"));
 			atts.add(TYPE, META);
 			builder.startElem(FOLDER, atts);
 			insertPDFMetadata();
 			insertPages();
 			document.close();
-			builder.endElem(FOLDER);
+			builder.endElem();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -75,7 +75,7 @@ public class PDFParser extends Parser {
 	
 	private void insertPDFMetadata() throws IOException {
 		atts.reset();
-		System.out.format("Extracting pdf metadata from %s.\n", file.path());
+		System.out.format("Extracting pdf metadata from %s.\n", src.path());
 		PDDocumentInformation info = document.getDocumentInformation();
 		insert(PAGECOUNT, document.getNumberOfPages());
 		insert(TITLE, info.getTitle());
@@ -96,7 +96,7 @@ public class PDFParser extends Parser {
 		atts.add(TYPE, CONTENT);
 		builder.startElem(FOLDER, atts);
 		atts.reset();
-		System.out.format("Extracting pdf text (%d pages) from: %s ", numberOfPages, file.name());
+		System.out.format("Extracting pdf text (%d pages) from: %s ", numberOfPages, src.name());
 		for (int i = 1; i <= numberOfPages; i++) {
 			System.out.print(".");
 			stripper.setStartPage(i);
@@ -106,11 +106,11 @@ public class PDFParser extends Parser {
 			atts.add(TYPE, PAGE);
 			builder.startElem(FACT, atts);
 			builder.text(toToken(text));
-			builder.endElem(FACT);
+			builder.endElem();
 			atts.reset();
 		}
 		System.out.println(" DONE.");
-		builder.endElem(FOLDER);
+		builder.endElem();
 	}
 
 	private void insert(final byte[] tag, final Calendar date) throws IOException {
@@ -136,7 +136,7 @@ public class PDFParser extends Parser {
 		atts.add(TYPE, tag);
 		builder.startElem(FACT, atts);
 		builder.text(text);
-		builder.endElem(FACT);
+		builder.endElem();
 		atts.reset();
 	}
 	

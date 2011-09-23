@@ -59,7 +59,10 @@
 		<dependency>
 			<groupId>org.basex</groupId>
 			<artifactId>basex</artifactId>
+<!--
 			<version>6.7</version>
+-->
+			<version>6.8-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>

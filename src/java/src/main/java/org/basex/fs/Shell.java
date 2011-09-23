@@ -10,12 +10,12 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 import org.basex.build.Parser;
-import org.basex.core.BaseXException;
 import org.basex.core.Context;
-import org.basex.core.Prop;
 import org.basex.core.cmd.CreateDB;
+import org.basex.data.Data;
 import org.basex.fs.fsml.build.FileHierarchyParser;
 import org.basex.fs.fuse.BaseXFS;
+import org.basex.server.LocalSession;
 
 /**
  * Rudimentary shell to interact with a file hierarchy stored in XML.
@@ -39,6 +39,8 @@ public class Shell {
 	  
 	/** Reference FUSE request handlers. */
 	private BaseXFS fs;
+	/** Reference (mounted/opened) FSML database on BaseXServer. */
+	private LocalSession dbsession;
 	
 	/** Shell prompt. */
 	private static final String PS1 = "[basexfs] $ ";
@@ -116,6 +118,23 @@ public class Shell {
 		} while (true);
 	}
 	
+	/**
+	 * Connect to opened and mounted FSML database on BaseX Server.
+	 * 
+	 * @param args argument vector
+	 */
+	@Command(shortcut = 'q', args = "[query|command]", help = "query mounted FSML database")
+	public void query(final String[] args) {
+		if (dbsession == null) {
+			System.err.println("No FSML database filesystem is mounted.");
+			return;
+		}
+		if (args.length != 2) {
+			help(new String[] { "help", "query" });
+			return;
+		}
+	}
+	
 
 	/**
 	 * Mount database as filesystem in userspace.
@@ -128,12 +147,17 @@ public class Shell {
 			help(new String[] { "help", "mount" });
 			return;
 		}
-		fs.mount(args[1], args[2]);
+		String dbname = args[1];
+		String mountpoint = args[2];
+		
+//		dbsession = new LocalSession();
+		
+		fs.mount(dbname, mountpoint);
 		System.err.println("Mount command submitted.");
 	}
 	
 	/**
-	 * Create Filesystem Markup Language (FSML) document from existing file hierarchy.
+	 * Create Filesystem Markup Language (FSML) database from existing file hierarchy.
 	 * 
 	 * @param args argument vector
 	 */
@@ -147,24 +171,20 @@ public class Shell {
 		final String dbname = args[1];
 		String path = args[2];
 		// System.out.println("Usage: mkfs.deepfs [-h] [-d dbname] [-b db|fs|git|svn] <path>");
-		// System.out.println("Create a DeepFS database filesystem from data stored beneath <path>");
+		// System.out.println("Create a FSML database filesystem from data stored beneath <path>");
 		// System.out.println("-d    database name for FSML data (default: 'fsml')");
 		// System.out.println("-b    backing store               (default: 'db')");
 		if (path.equals("test"))
 			path = "./java/harness";
 		
-    	System.out.println("DeepFS database filesystem using Filesystem Markup Language 1.0");
-    	System.out.println("---------------------------------------------------------------");
+    	System.out.println("Create '" + dbname + "' database filesystem using Filesystem Markup Language 1.0");
 
 		try {
 			Context ctx = new Context();
-			Prop prop = new Prop(true);
-			Parser parser = new FileHierarchyParser(dbname, path, prop);
-			String info = CreateDB.create(dbname, parser, ctx);
-			System.out.println("Info: " + info);
+			Parser parser = new FileHierarchyParser(dbname, path);
+			Data data = CreateDB.create(dbname, parser, ctx);
+			data.close();
 		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (BaseXException e) {
 			e.printStackTrace();
 		}
 	}

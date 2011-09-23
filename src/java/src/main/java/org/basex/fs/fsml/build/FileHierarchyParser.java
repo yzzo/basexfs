@@ -8,7 +8,7 @@ import java.util.UUID;
 
 import org.basex.build.Builder;
 import org.basex.build.Parser;
-import org.basex.core.Prop;
+import org.basex.core.MainProp;
 import org.basex.fs.util.Utils;
 import org.basex.io.IO;
 import org.basex.io.IOFile;
@@ -36,13 +36,11 @@ public class FileHierarchyParser extends Parser {
 	private static final byte[] PDF = token("pdf");
 	
 	private Builder builder;
-	private Prop prop;
 	private IOFile backingStore;
 	private String dbname;
 	
-	public FileHierarchyParser(final String db, final String path, final Prop p) throws IOException {
+	public FileHierarchyParser(final String db, final String path) throws IOException {
 		super(path);
-		prop = p;
 		dbname = db;
 	}
 
@@ -57,18 +55,18 @@ public class FileHierarchyParser extends Parser {
 		builder.startDoc(DEEPFS);
 		atts.add(BACKING, token(backingStore.path()));
 		atts.add(ST_MODE, token("040755"));
-		attsStat(file);
+		attsStat(src);
 		builder.startElem(FSML, atts);
 		
-		if (file.isDir()) parseDirectory(file);
-		else parseFile(file);
+		if (src.isDir()) parseDirectory(src);
+		else parseFile(src);
 			
-		builder.endElem(FSML);
+		builder.endElem();
 		builder.endDoc();
 	}
 	
 	private boolean createBackingStore() {
-		IOFile dbpath = prop.dbpath();
+		IOFile dbpath = new MainProp().dbpath();
 		backingStore = dbpath.merge(dbname).merge("bin");
 		return backingStore.md();
 	}
@@ -79,7 +77,7 @@ public class FileHierarchyParser extends Parser {
 		for(final IO f : ((IOFile) io).children())
 			if (f.isDir()) parseDirectory(f);
 			else parseFile(f);
-		builder.endElem(DIR);
+		builder.endElem();
 	}
 	
 	private void parseFile(IO f) throws IOException {
@@ -91,7 +89,7 @@ public class FileHierarchyParser extends Parser {
 		Parser parser = getFileParser(sfx, f);
 		if (parser != null) 
 			parser.parse(builder);
-		builder.endElem(FILE);
+		builder.endElem();
 		// copy to backing store	
 		copyIntoBackingStore(f, bsid);
 	}

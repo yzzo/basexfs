@@ -5,7 +5,7 @@ all:	java header lib
 # 1. build platform independant part
 java:
 	(cd ./java/ && mvn package)
-	@echo '==== Built java/target/basexfs-1.0-SNAPSHOT.jar'
+	@echo '==== Built java/target/basexfs-1.0-SNAPSHOT-jar-with-dependencies.jar'
 
 # 2. generate native header from platform independant part 
 header:
