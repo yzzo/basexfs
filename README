@@ -19,3 +19,6 @@ build dependencies:
 	libfuse-dev
 	openjdk-6-jdk
 	maven2
+
+mac os x:
+	fuse4x (pkg-config, os x dev tools)

@@ -1,26 +1,30 @@
 MNT_DIR=/var/tmp/mnt
-INC_JNI=/usr/lib/jvm/java-6-openjdk/include/
-LIBBASEXFS=libbasexfs.so.1.0.1
+INC_JNI_LIN=/usr/lib/jvm/java-6-openjdk/include/
+INC_JNI_MAC=/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/JavaVM.framework/Headers/
 
-# $(LIBBASEXFS): basexfs.o jnibridge.o
-# 	gcc -Wall -fPIC -shared -Wl,-e,info,-soname,libbasexfs.so.1 -o $(LIBBASEXFS) $^ `pkg-config fuse --libs` -lc
-# 
-# basexfs: basexfs.o jnibridge.o
-# 	gcc -Wall `pkg-config fuse --libs` $^ -o $@
-# 
+# Mac (fuse4x)
+# PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
+libbasexfs.jnilib: jnibridge_mac.o basexfs.o
+	gcc -dynamiclib -o libbasexfs.jnilib `pkg-config fuse --libs` -framework JavaVM $^
+
+jnibridge_mac.o: jnibridge.c jnibridge.h org_basex_fs_BaseXFS.h
+	gcc -Wall -I$(INC_JNI_MAC) -fPIC -o $@ -c $<
+
+# Linux
 libbasexfs.so: jnibridge.o basexfs.o
 	gcc -Wall -shared -fPIC `pkg-config fuse --libs` -o libbasexfs.so $^
 
+
 jnibridge.o: jnibridge.c jnibridge.h org_basex_fs_BaseXFS.h
-	gcc -Wall -I$(INC_JNI) -fPIC -c $<
+	gcc -Wall -I$(INC_JNI_LIN) -fPIC -c $<
 
 basexfs.o: basexfs.c
 	gcc -Wall `pkg-config fuse --cflags` -fPIC -c $<
 
-test: test.c libbasexfs
-	gcc -Wall -o test -I$(INC_JNI) -L. -lbasexfs $<
-
 # phony
+mac: libbasexfs.jnilib
+
+linux: libbasexfs.so
 
 clean:
 	rm -f *.o
