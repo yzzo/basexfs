@@ -10,6 +10,7 @@ java:
 # generate native header from platform independant part 
 header:
 	javah -jni -d ./c -classpath ./java/target/classes/ org.basex.fs.BaseXFS 
+	rm -f ./c/org_basex_fs_BaseXFS_MountThread.h 
 	@echo '==== Built c/org_basex_fs_BaseXFS.h'
 
 # compile libbasexfs
@@ -19,7 +20,7 @@ lib:
 
 # start BaseXFS database client, which loads libbasexfs.
 start:
-	java -Djava.library.path=./c/ -cp java/target/basexfs-1.0-SNAPSHOT.jar org.basex.fs.Shell
+	java -Djava.library.path=./c/ -cp java/target/basexfs-1.0-SNAPSHOT-jar-with-dependencies.jar org.basex.fs.Shell
 
 clean:
 	(cd java && mvn clean)

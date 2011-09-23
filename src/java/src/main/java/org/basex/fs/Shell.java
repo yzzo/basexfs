@@ -1,5 +1,6 @@
 package org.basex.fs;
 
+import java.io.IOException;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -7,6 +8,13 @@ import java.lang.annotation.Target;
 import java.lang.reflect.Method;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+
+import org.basex.build.Parser;
+import org.basex.core.BaseXException;
+import org.basex.core.Context;
+import org.basex.core.Prop;
+import org.basex.core.cmd.CreateDB;
+import org.basex.fs.fsml.build.FileHierarchyParser;
 
 /**
  * Rudimentary shell to interact with a file hierarchy stored in XML.
@@ -123,6 +131,42 @@ public class Shell {
 		System.err.println("Mount command submitted.");
 	}
 	
+	/**
+	 * Create Filesystem Markup Language (FSML) document from existing file hierarchy.
+	 * 
+	 * @param args argument vector
+	 */
+	@Command(shortcut = 'c', args = "<dbname> <path>"
+			, help = "Create a new FSML database from data stored beneath <path>")
+	public void mkfs(final String[] args) {
+		if (args.length != 3) {
+			help(new String[] { "help", "mkfs" });
+			return;
+		}
+		final String dbname = args[1];
+		String path = args[2];
+		// System.out.println("Usage: mkfs.deepfs [-h] [-d dbname] [-b db|fs|git|svn] <path>");
+		// System.out.println("Create a DeepFS database filesystem from data stored beneath <path>");
+		// System.out.println("-d    database name for FSML data (default: 'fsml')");
+		// System.out.println("-b    backing store               (default: 'db')");
+		if (path.equals("test"))
+			path = "./java/harness";
+		
+    	System.out.println("DeepFS database filesystem using Filesystem Markup Language 1.0");
+    	System.out.println("---------------------------------------------------------------");
+
+		try {
+			Context ctx = new Context();
+			Prop prop = new Prop(true);
+			Parser parser = new FileHierarchyParser(dbname, path, prop);
+			String info = CreateDB.create(dbname, parser, ctx);
+			System.out.println("Info: " + info);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (BaseXException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	/**
 	 * Prints short help message for available commands.
