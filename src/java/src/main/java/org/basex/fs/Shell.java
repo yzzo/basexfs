@@ -119,7 +119,7 @@ public class Shell {
 			help(new String[] { "help", "mount" });
 			return;
 		}
-		final boolean success = fs.mount(new String[]{ args[1], args[2] });
+		fs.mount(args[1], args[2]);
 		System.err.println("Mount command submitted.");
 	}
 	

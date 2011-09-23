@@ -18,10 +18,10 @@ JNIEXPORT void JNICALL Java_org_basex_fs_BaseXFS_j2cInfo
 /*
  * Class:     org_basex_fs_BaseXFS
  * Method:    j2cMount
- * Signature: ([Ljava/lang/String;)Z
+ * Signature: (I[[B)Z
  */
 JNIEXPORT jboolean JNICALL Java_org_basex_fs_BaseXFS_j2cMount
-  (JNIEnv *, jobject, jobjectArray);
+  (JNIEnv *, jobject, jint, jobjectArray);
 
 #ifdef __cplusplus
 }

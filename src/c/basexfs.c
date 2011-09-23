@@ -20,10 +20,12 @@
 
 #include <fuse.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <dirent.h>
+#include <err.h>
 #include <errno.h>
 #include <sys/time.h>
 #ifdef HAVE_SETXATTR
@@ -113,9 +115,16 @@ static int xmp_mknod(const char *path, mode_t mode, dev_t rdev)
 	return 0;
 }
 
-static int xmp_mkdir(const char *path, mode_t mode)
+static int bxfs_mkdir(const char *path, mode_t mode)
 {
 	int res;
+	char *str;
+
+	res = asprintf(&str, "%o", mode);
+	if (res == -1)
+		err(1, "no memory");
+	res = c2j_mkdir(path, str);
+	free(str);
 
 	res = mkdir(path, mode);
 	if (res == -1)
@@ -357,7 +366,7 @@ static struct fuse_operations xmp_oper = {
 	.readlink	= xmp_readlink,
 	.readdir	= xmp_readdir,
 	.mknod		= xmp_mknod,
-	.mkdir		= xmp_mkdir,
+	.mkdir		= bxfs_mkdir,
 	.symlink	= bxfs_symlink,
 	.unlink		= xmp_unlink,
 	.rmdir		= xmp_rmdir,
