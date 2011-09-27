@@ -8,7 +8,7 @@ A FUSE database client to mount FSML database instances.
 |   FUSE    |
 ·-----------·
 
-[---- libbasexfs -----------]      [----- BaseX Java par (loads libbasexfs) -----]
+[---- libbasexfs -----------]      [----- BaseX Java part (loads libbasexfs) -----]
 
 basexfs.c  .........  native FUSE implementation
 jnibridge.c  .......  connects native FUSE part with platform independent Java part 

@@ -39,8 +39,6 @@ public class Shell {
 	  
 	/** Reference FUSE request handlers. */
 	private BaseXFS fs;
-	/** Reference (mounted/opened) FSML database on BaseXServer. */
-	private LocalSession dbsession;
 	
 	/** Shell prompt. */
 	private static final String PS1 = "[basexfs] $ ";
@@ -119,23 +117,44 @@ public class Shell {
 	}
 	
 	/**
-	 * Connect to opened and mounted FSML database on BaseX Server.
+	 * XQuery mounted FSML database on BaseX Server.
 	 * 
 	 * @param args argument vector
 	 */
-	@Command(shortcut = 'q', args = "[query|command]", help = "query mounted FSML database")
+	@Command(shortcut = 'x', args = "[xquery]", help = "send xquery to mounted FSML database")
 	public void query(final String[] args) {
+		String nargs[] = new String[args.length + 1];
+		nargs[0] = "query";  // shell command
+		nargs[1] = "xquery"; // db command
+		for (int i = 1; i < args.length; i++) {
+			nargs[i + 1] = args[i];
+		}
+		command(nargs);
+	}
+	
+	/**
+	 * Send command to mounted FSML database on BaseX Server.
+	 * 
+	 * @param args argument vector
+	 */
+	@Command(shortcut = 'c', args = "[command]", help = "send command to mounted FSML database")
+	public void command(final String[] args) {
+		LocalSession dbsession = fs.getSession();
 		if (dbsession == null) {
 			System.err.println("No FSML database filesystem is mounted.");
 			return;
 		}
-		if (args.length != 2) {
-			help(new String[] { "help", "query" });
-			return;
+		StringBuilder sb = new StringBuilder();
+		for (int i = 1; i < args.length; i++)
+			sb.append(args[i] + " ");
+		try {
+			System.out.println(dbsession.execute(sb.toString()));
+			System.out.println(dbsession.info());
+		} catch(IOException e) {
+			e.printStackTrace();
 		}
 	}
 	
-
 	/**
 	 * Mount database as filesystem in userspace.
 	 * 
@@ -150,10 +169,11 @@ public class Shell {
 		String dbname = args[1];
 		String mountpoint = args[2];
 		
-//		dbsession = new LocalSession();
-		
-		fs.mount(dbname, mountpoint);
-		System.err.println("Mount command submitted.");
+		/* Open session. */
+		if (fs.openSession(dbname)) {	
+			fs.mount(dbname, mountpoint);
+			System.out.println("Trying to mount '" + dbname + "' on '" + mountpoint + "'.");
+		}
 	}
 	
 	/**
@@ -161,8 +181,8 @@ public class Shell {
 	 * 
 	 * @param args argument vector
 	 */
-	@Command(shortcut = 'c', args = "<dbname> <path>"
-			, help = "Create a new FSML database from data stored beneath <path>")
+	@Command(shortcut = 'n', args = "<dbname> <path>"
+			, help = "create a new FSML database from data stored beneath <path>")
 	public void mkfs(final String[] args) {
 		if (args.length != 3) {
 			help(new String[] { "help", "mkfs" });
@@ -177,7 +197,7 @@ public class Shell {
 		if (path.equals("test"))
 			path = "./java/harness";
 		
-    	System.out.println("Create '" + dbname + "' database filesystem using Filesystem Markup Language 1.0");
+    	System.out.println("create '" + dbname + "' database filesystem using Filesystem Markup Language 1.0");
 
 		try {
 			Context ctx = new Context();
