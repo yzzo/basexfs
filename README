@@ -19,6 +19,22 @@ build dependencies:
 	libfuse-dev
 	openjdk-6-jdk
 	maven2
+	basex-6.8-SNAPSHOT
+		$ git clone git@github.com:BaseXdb/basex.git
+		$ cd basex
+		$ mvn -DskipTests=true install
+		[INFO] Scanning for projects...
+		[INFO]                                                                         
+		[INFO] ------------------------------------------------------------------------
+		[INFO] Building BaseX 6.8-SNAPSHOT
+		[INFO] ------------------------------------------------------------------------
+		...
+		[INFO] Installing /Users/holu/Code/basex/target/basex-6.8-SNAPSHOT.jar to /Users/holu/.m2/repository/org/basex/basex/6.8-SNAPSHOT/basex-6.8-SNAPSHOT.jar
+		[INFO] Installing /Users/holu/Code/basex/pom.xml to /Users/holu/.m2/repository/org/basex/basex/6.8-SNAPSHOT/basex-6.8-SNAPSHOT.pom
+		[INFO] Installing /Users/holu/Code/basex/target/basex-6.8-SNAPSHOT-sources.jar to /Users/holu/.m2/repository/org/basex/basex/6.8-SNAPSHOT/basex-6.8-SNAPSHOT-sources.jar
+		[INFO] ------------------------------------------------------------------------
+		[INFO] BUILD SUCCESS
+		[INFO] ------------------------------------------------------------------------
 
 mac os x:
 	fuse4x (pkg-config, os x dev tools)
