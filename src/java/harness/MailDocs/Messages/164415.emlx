@@ -1,0 +1,125 @@
+5359
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Mon, 25 Jul 2011 12:09:50 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id ED03C12C26
+	for <alexander.holupirek@uni-konstanz.de>; Mon, 25 Jul 2011 12:09:50 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 25 Jul 2011 10:09:50 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id D65DD4DA11; Mon, 25 Jul 2011 12:09:50 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id BB6D94DA0A
+	for <holupire@inf.uni-konstanz.de>; Mon, 25 Jul 2011 12:09:50 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap0AAJhALU7YIrVYkGdsb2JhbAA2AQEEAQERAioODA4SDgMBAgcYNwQECAMBEBMBBAENAQUBQgkemB+PCQgUAQEBAQkJDQcUBSCJAKQmCowqhlc7iHGGPwSQZIIMjEg8g10
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 25 Jul 2011 10:09:48 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QlI4g-0004iR-Bv; Mon, 25 Jul 2011 10:07:46 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <douglas.hanley@gmail.com>) id 1QlI4e-0004hr-ER
+	for fuse-devel@lists.sourceforge.net; Mon, 25 Jul 2011 10:07:44 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.220.175 as permitted sender)
+	client-ip=209.85.220.175; envelope-from=douglas.hanley@gmail.com;
+	helo=mail-vx0-f175.google.com; 
+Received: from mail-vx0-f175.google.com ([209.85.220.175])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QlI4c-0008By-5S
+	for fuse-devel@lists.sourceforge.net; Mon, 25 Jul 2011 10:07:44 +0000
+Received: by vxh2 with SMTP id 2so4089380vxh.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Mon, 25 Jul 2011 03:07:36 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.52.94.165 with SMTP id dd5mr4114911vdb.465.1311588456677; Mon,
+	25 Jul 2011 03:07:36 -0700 (PDT)
+Received: by 10.52.187.9 with HTTP; Mon, 25 Jul 2011 03:07:36 -0700 (PDT)
+Date: Mon, 25 Jul 2011 11:07:36 +0100
+Message-ID: <CAKZSWcRUOhTbZ5WLe+K4MLDzryouY+0qN=OJpOm9EDkBikvo2A@mail.gmail.com>
+From: "Douglas G. Hanley" <douglas.hanley@gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -0.6 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(douglas.hanley[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	1.0 HTML_MESSAGE           BODY: HTML included in message
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1QlI4c-0008By-5S
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Subject: [fuse-devel] Splice howto / examples
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi,
+
+Could somebody point me at an example of how to use splice to minimise
+copying of buffers between user and kernel space in a FUSE implementation
+for read operations with a backing filesystem such as ext3?  I see the
+approach being discussed but can't find any concrete details about how it
+works and how it ought to be implemented.
+
+Thanks,
+
+-- 
+
+Douglas.
+------------------------------------------------------------------------------
+Storage Efficiency Calculator
+This modeling tool is based on patent-pending intellectual property that
+has been used successfully in hundreds of IBM storage optimization engage-
+ments, worldwide.  Store less, Store more with what you own, Move data to 
+the right place. Try It Now! http://www.accelacomm.com/jaw/sfnl/114/51427378/
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311588456</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>"Douglas G. Hanley" &lt;douglas.hanley@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Splice howto / examples</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

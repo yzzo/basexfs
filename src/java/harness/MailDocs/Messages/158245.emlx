@@ -1,0 +1,149 @@
+6090
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Wed, 13 Jul 2011 08:46:00 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 1413212E3E
+	for <alexander.holupirek@uni-konstanz.de>; Wed, 13 Jul 2011 08:46:00 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 13 Jul 2011 06:46:00 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id E773C4D9E8; Wed, 13 Jul 2011 08:45:59 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id D2BA04D9AB
+	for <holupire@inf.uni-konstanz.de>; Wed, 13 Jul 2011 08:45:59 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AuUAAFk+HU7YIrVYkWdsb2JhbABFDpgKjycIFAEBAQEJCwsHFAUgrxqMLocXO4htgyKDGASQVoILiVqCXDyDXA
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 13 Jul 2011 06:45:59 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QgtAw-0007W8-5h; Wed, 13 Jul 2011 06:44:02 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <stefbon@gmail.com>) id 1QgtAv-0007Vx-Bh
+	for fuse-devel@lists.sourceforge.net; Wed, 13 Jul 2011 06:44:01 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.210.175 as permitted sender)
+	client-ip=209.85.210.175; envelope-from=stefbon@gmail.com;
+	helo=mail-iy0-f175.google.com; 
+Received: from mail-iy0-f175.google.com ([209.85.210.175])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QgtAq-000638-Rf
+	for fuse-devel@lists.sourceforge.net; Wed, 13 Jul 2011 06:44:01 +0000
+Received: by iym10 with SMTP id 10so7238202iym.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Tue, 12 Jul 2011 23:43:51 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.42.154.198 with SMTP id r6mr743437icw.276.1310539431223; Tue,
+	12 Jul 2011 23:43:51 -0700 (PDT)
+Received: by 10.42.226.133 with HTTP; Tue, 12 Jul 2011 23:43:51 -0700 (PDT)
+In-Reply-To: <1310488523.47911.YahooMailClassic@web39409.mail.mud.yahoo.com>
+References: <20110712171417.682d973f@pluto.pipapo.org>
+	<1310488523.47911.YahooMailClassic@web39409.mail.mud.yahoo.com>
+Date: Wed, 13 Jul 2011 08:43:51 +0200
+Message-ID: <CANXojcyrNP7-V-XeM0t1vGeh5eOWqWd1k6p2=2xPYUBf7J5MGg@mail.gmail.com>
+From: Stef Bon <stefbon@gmail.com>
+To: Wesley PA4WDH <pa4wdh@yahoo.com>
+X-Spam-Score: -1.3 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(stefbon[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.3 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QgtAq-000638-Rf
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] Understanding debug output
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi Wesley,
+
+next week, at 22 juli, there is a meeting at the revspace about
+reverse engeneering:
+
+
+https://revspace.nl/RevelationSpace/Agenda
+
+might be interesting for you, as you are reverse engeeering the sim card.
+
+S.
+
+
+2011/7/12 Wesley PA4WDH <pa4wdh@yahoo.com>:
+> --- On Tue, 7/12/11, Christian Thaeter <ct@pipapo.org> wrote:
+>> hint: run your tests under valgrind supervision, that would
+>> have catched that easily.
+>
+> Thanks for the tip, I'm installing valgrind right now :-)
+>
+> Best regards,
+> Wesley
+>
+> ------------------------------------------------------------------------------
+> AppSumo Presents a FREE Video for the SourceForge Community by Eric
+> Ries, the creator of the Lean Startup Methodology on "Lean Startup
+> Secrets Revealed." This video shows you how to validate your ideas,
+> optimize your ideas and identify your business strategy.
+> http://p.sf.net/sfu/appsumosfdev2dev
+> _______________________________________________
+> fuse-devel mailing list
+> fuse-devel@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/fuse-devel
+>
+
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310539431</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Stef Bon &lt;stefbon@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Understanding debug output</string>
+	<key>to</key>
+	<string>Wesley PA4WDH &lt;pa4wdh@yahoo.com&gt;</string>
+</dict>
+</plist>

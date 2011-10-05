@@ -1,0 +1,149 @@
+6339
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 22 Jul 2011 17:46:47 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 3B41812435
+	for <alexander.holupirek@uni-konstanz.de>; Fri, 22 Jul 2011 17:46:47 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 22 Jul 2011 15:46:47 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 1D06A4D9F1; Fri, 22 Jul 2011 17:46:47 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 041E44D9D5
+	for <holupire@inf.uni-konstanz.de>; Fri, 22 Jul 2011 17:46:46 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AhEBAHmaKU7YIrVYkGdsb2JhbABTG5d0LI8ECBQBAQEBCQkNBxQFIIkAnggKjCqHKDuIcYY/BItDhSCCC4lqgl08g3Y
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 22 Jul 2011 15:46:46 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QkHun-0002a7-L9; Fri, 22 Jul 2011 15:45:25 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <hanwenn@gmail.com>) id 1QkHum-0002a0-47
+	for fuse-devel@lists.sourceforge.net; Fri, 22 Jul 2011 15:45:24 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.160.175 as permitted sender)
+	client-ip=209.85.160.175; envelope-from=hanwenn@gmail.com;
+	helo=mail-gy0-f175.google.com; 
+Received: from mail-gy0-f175.google.com ([209.85.160.175])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-MD5:128)
+	(Exim 4.76) id 1QkHuj-0006Ft-TY
+	for fuse-devel@lists.sourceforge.net; Fri, 22 Jul 2011 15:45:24 +0000
+Received: by mail-gy0-f175.google.com with SMTP id 12so1602796gyd.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Fri, 22 Jul 2011 08:45:21 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.231.205.197 with SMTP id fr5mr1391706ibb.198.1311349521537;
+	Fri, 22 Jul 2011 08:45:21 -0700 (PDT)
+Received: by 10.231.58.194 with HTTP; Fri, 22 Jul 2011 08:45:21 -0700 (PDT)
+Date: Fri, 22 Jul 2011 12:45:21 -0300
+Message-ID: <CAOw_e7bXEXAtNdmjLBnPJcnti3e18Zkaqj+o_z501A8un-guvA@mail.gmail.com>
+From: Han-Wen Nienhuys <hanwenn@gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -1.9 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(hanwenn[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+	-0.3 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QkHuj-0006Ft-TY
+Subject: [fuse-devel] Fstat64 succeeding, but libc returning EOVERFLOW
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+Reply-To: hanwen@xs4all.nl
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi there,
+
+I'm debugging an odd problem with my FUSE library.
+
+When I set timeout = 0.0 on lookup/getattr results, some programs
+start failing with EOVERFLOW.
+
+>From inspection of the source code of the userspace program, this
+happens because it is using fstat() rather than fstat64().
+
+However, strace  -v has the following to say
+
+fstat64(3, {st_dev=makedev(0, 82), st_ino=178635819520,
+st_mode=S_IFREG|0666, st_nlink=1, st_uid=500, st_gid=500,
+st_blksize=4096, st_blocks=24, st_size=11133,
+st_atime=2011/07/21-01:54:46, st_mtime=2010/12/13-02:23:53,
+st_ctime=2011/07/13-10:35:51}) = 0
+close(3)                                = 0
+lseek(2, 0, SEEK_CUR)                   = -1 ESPIPE (Illegal seek)
+write(2, "Could not open input file '", 27) = 27
+write(2, "X86.td", 6)                   = 6
+write(2, "': ", 3)                      = 3
+write(2, "Value too large for defined data type", 37) = 37
+write(2, "\n", 1)                       = 1
+exit_group(1)                           = ?
+
+It looks as if st_ino is overflowing.  According to the manpage, it
+EOVERFLOW only happens for the size field, but the inode number is a
+candidate too (its sizeof is 4 on 32-bit).
+
+How do the daemon's inode numbers translate to the VFS' inodes anyway?
+ AFAICS they are not passed on verbatim.
+
+On a related note, what is the purpose of the generation field
+-- 
+Han-Wen Nienhuys - hanwen@xs4all.nl - http://www.xs4all.nl/~hanwen
+
+------------------------------------------------------------------------------
+10 Tips for Better Web Security
+Learn 10 ways to better secure your business today. Topics covered include:
+Web security, SSL, hacker attacks & Denial of Service (DoS), private keys,
+security Microsoft Exchange, secure Instant Messaging, and much more.
+http://www.accelacomm.com/jaw/sfnl/114/51426210/
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311349521</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Han-Wen Nienhuys &lt;hanwenn@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Fstat64 succeeding, but libc returning EOVERFLOW</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

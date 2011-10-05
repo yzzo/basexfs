@@ -1,0 +1,125 @@
+5164
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Mon, 11 Jul 2011 09:00:15 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id B618112670
+	for <alexander.holupirek@uni-konstanz.de>; Mon, 11 Jul 2011 09:00:15 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 11 Jul 2011 07:00:16 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 9B5EC4D9DD; Mon, 11 Jul 2011 09:00:15 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 8E7394D9D8
+	for <holupire@inf.uni-konstanz.de>; Mon, 11 Jul 2011 09:00:15 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ArwAAM+eGk7YIrVYkWdsb2JhbABTmEyOawgUAQEBAQkLCwcUBSCrDowshkg7iG2GOgSHTIh9hwmHMzyDZw
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 11 Jul 2011 07:00:15 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QgARS-0001oO-59; Mon, 11 Jul 2011 06:58:06 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <wangjinxin.java@gmail.com>) id 1QgARR-0001oJ-Ez
+	for fuse-devel@lists.sourceforge.net; Mon, 11 Jul 2011 06:58:05 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.210.175 as permitted sender)
+	client-ip=209.85.210.175;
+	envelope-from=wangjinxin.java@gmail.com;
+	helo=mail-iy0-f175.google.com; 
+Received: from mail-iy0-f175.google.com ([209.85.210.175])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QgARQ-0006iF-Sx
+	for fuse-devel@lists.sourceforge.net; Mon, 11 Jul 2011 06:58:05 +0000
+Received: by iym10 with SMTP id 10so4605637iym.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Sun, 10 Jul 2011 23:57:59 -0700 (PDT)
+Received: by 10.231.119.207 with SMTP id a15mr4212020ibr.164.1310367479565;
+	Sun, 10 Jul 2011 23:57:59 -0700 (PDT)
+Received: from [10.10.106.23] ([114.250.152.165])
+	by mx.google.com with ESMTPS id s2sm7572739ibe.1.2011.07.10.23.57.56
+	(version=SSLv3 cipher=OTHER); Sun, 10 Jul 2011 23:57:59 -0700 (PDT)
+From: Daniel <wangjinxin.java@gmail.com>
+To: fuse-devel@lists.sourceforge.net
+Date: Mon, 11 Jul 2011 14:58:08 +0800
+Message-ID: <1310367488.3437.11.camel@Daniel>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.28.3 
+X-Spam-Score: -1.6 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(wangjinxin.java[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1QgARQ-0006iF-Sx
+Subject: [fuse-devel] Where can I find the manual of fuse protocol
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hello hackers: 
+
+Well, I am looking for the detailed manual of fuse protocol. But what I
+found was only kind of overview. Could you share any source about that,
+so that I could learn more about fuse, please?
+
+Thx a lot
+
+Dan
+
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310367488</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Daniel &lt;wangjinxin.java@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Where can I find the manual of fuse protocol</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

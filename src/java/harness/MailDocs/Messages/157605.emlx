@@ -1,0 +1,147 @@
+6148
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 08 Jul 2011 20:41:33 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 29DF55E41
+	for <alexander.holupirek@uni-konstanz.de>; Fri,  8 Jul 2011 20:41:33 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 08 Jul 2011 18:41:33 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id D45AC4D7F8; Fri,  8 Jul 2011 20:41:32 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id C4A7B42677
+	for <holupire@inf.uni-konstanz.de>; Fri,  8 Jul 2011 20:41:32 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Aq8AABlOF07YIrVYkWdsb2JhbABIDJhcjnUUAQEBAQkLCwcUBSDKEIMlgxMEh0yIdoIKkGQ
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 08 Jul 2011 18:41:32 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QfFy7-0006Ev-4M; Fri, 08 Jul 2011 18:40:03 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <bounces@nabble.com>) id 1QfFSl-0004gJ-T9
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 18:07:39 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of nabble.com
+	designates 216.139.236.26 as permitted sender)
+	client-ip=216.139.236.26; envelope-from=bounces@nabble.com;
+	helo=sam.nabble.com; 
+Received: from sam.nabble.com ([216.139.236.26])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtps (TLSv1:AES256-SHA:256)
+	(Exim 4.76) id 1QfFSh-0002mT-Uj
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 18:07:39 +0000
+Received: from isper.nabble.com ([192.168.236.156])
+	by sam.nabble.com with esmtp (Exim 4.72)
+	(envelope-from <bounces@nabble.com>) id 1QfFSc-0003JV-D6
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 11:07:30 -0700
+Message-ID: <32023490.post@talk.nabble.com>
+Date: Fri, 8 Jul 2011 11:07:30 -0700 (PDT)
+From: dbanerjee <dbanerjee@avid.com>
+To: fuse-devel@lists.sourceforge.net
+In-Reply-To: <4D67CC19.5010203@wanadoo.fr>
+MIME-Version: 1.0
+X-Nabble-From: dbanerjee@avid.com
+References: <4D67CC19.5010203@wanadoo.fr>
+X-Spam-Score: -1.5 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(bounces[at]nabble.com)
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1QfFSh-0002mT-Uj
+X-Mailman-Approved-At: Fri, 08 Jul 2011 18:40:01 +0000
+Subject: Re: [fuse-devel] File system with case insensitive names
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+
+
+Jean-Pierre wrote:
+> 
+> Hi,
+> 
+> I am getting an unexpected behavior when implementing case insensitive
+> file names in a file system. After setting the current directory in a
+> terminal window, other processes have to use the same case sensitive
+> directory name, otherwise they get an EBUSY error. This error is
+> apparently not thrown by the fuse library.
+> 
+> ...
+> 
+> Has somebody a clue about what I am missing ? Is there something locked
+> related to the name of the current directory of a process ?
+> 
+> 
+
+EBUSY is returned explicitly by fuse in the kernel, it is not actually
+locked. This is because multiple dentries are not allowed for a single
+directory entry (nor are hardlinks) in linux, so when a faced with the
+choice of allocating another dentry with another case for the same directory
+inode, it just quits with EBUSY. Regular files work because another dentry
+with the exact case is allocated and points to the same inode, which is
+allowed.
+
+You can work around this by commenting out these two lines of code in dir.c,
+but I'm afraid this will result some race conditions and/or other nastiness
+in the kernel eventually.
+
+Bottom line is the fuse kmod needs to be patched to support case insensitive
+directory names, and I am not quite sure how to do it the right way. Anyone?
+-- 
+View this message in context: http://old.nabble.com/File-system-with-case-insensitive-names-tp31013978p32023490.html
+Sent from the Fuse - Dev mailing list archive at Nabble.com.
+
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310148450</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>dbanerjee &lt;dbanerjee@avid.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] File system with case insensitive names</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

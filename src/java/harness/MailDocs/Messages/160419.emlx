@@ -1,0 +1,259 @@
+10363
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 22 Jul 2011 13:15:39 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 83DCD12F0C
+	for <alexander.holupirek@uni-konstanz.de>; Fri, 22 Jul 2011 13:15:39 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 22 Jul 2011 11:15:39 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 66ED34DA0A; Fri, 22 Jul 2011 13:15:39 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 5ADD94D9EF
+	for <holupire@inf.uni-konstanz.de>; Fri, 22 Jul 2011 13:15:39 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AsYAAFhbKU7YIrVYkGdsb2JhbABTp0AIFAEBAQEJCQ0HFAUgiQCeUAqMKocnO4hxhj8EkGOCC4lpgl48g10
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 22 Jul 2011 11:15:38 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QkDgA-0006MS-VB; Fri, 22 Jul 2011 11:14:02 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <douglas.hanley@gmail.com>) id 1QkDgA-0006MM-43
+	for fuse-devel@lists.sourceforge.net; Fri, 22 Jul 2011 11:14:02 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.220.175 as permitted sender)
+	client-ip=209.85.220.175; envelope-from=douglas.hanley@gmail.com;
+	helo=mail-vx0-f175.google.com; 
+Received: from mail-vx0-f175.google.com ([209.85.220.175])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QkDg9-0005EJ-2B
+	for fuse-devel@lists.sourceforge.net; Fri, 22 Jul 2011 11:14:02 +0000
+Received: by vxh2 with SMTP id 2so2294194vxh.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Fri, 22 Jul 2011 04:13:55 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.52.69.39 with SMTP id b7mr1288842vdu.264.1311333235600; Fri,
+	22 Jul 2011 04:13:55 -0700 (PDT)
+Received: by 10.52.187.9 with HTTP; Fri, 22 Jul 2011 04:13:55 -0700 (PDT)
+Date: Fri, 22 Jul 2011 12:13:55 +0100
+Message-ID: <CAKZSWcQoz3uDQmzQXTRkuQpvv_yjQthnEoY-Nu=CQwV-U7CCfA@mail.gmail.com>
+From: "Douglas G. Hanley" <douglas.hanley@gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -0.6 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(douglas.hanley[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	1.0 HTML_MESSAGE           BODY: HTML included in message
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1QkDg9-0005EJ-2B
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Subject: [fuse-devel] FUSE and POSIX Compliance
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hello again FUSE experts,
+
+A while ago I enquired about the use of FUSE as a file system replication
+engine (over ext3/4).  I thought I had satisfied myself that this was a
+sensible thing to do.  However, based on some recent threads I fear that
+there might be a fly in the ointment.  I note that O_DIRECT is not available
+in fcntl() and is only available in open() via a recent patch.  I also note
+some queries about POSIX ACL support.  So my question is this.  If I am
+using FUSE as a pass through layer over an Ext file system what is the risk
+that I introduce some non-POSIX IO behaviour?  My query is focused on any
+inherent POSIX compliance limitations within FUSE rather than my ability to
+code it correctly.  I don't want to break any applications that are working
+fine on Ext3 but will break if they run on top of my FUSE based replication
+engine.
+
+Thanks in advance for your assistance.
+
+Regards,
+
+Douglas.
+
+
+On 10 June 2011 11:58, Goswin von Brederlow <goswin-v-b@web.de> wrote:
+
+> "Douglas G. Hanley" <douglas.hanley@gmail.com> writes:
+>
+> > Hi FUSE Experts,
+> >
+> > I am thinking about developing a Linux file system replication engine
+> using
+> > FUSE.  The general idea is this:
+> >
+> >
+> >    - Assume a starting point of two Linux filesystems (let's say ext3)
+> which
+> >    have been magically synchronised between two servers (source and
+> target).
+>
+> Which you pretty much have to take at face value or check every single
+> file (which would take way too long). This part is the tricky part,
+> esspecially after a crash. Unless you use journaling or something you
+> will get differences after a crash.
+>
+> >    - Based on a specification of the directories and files one wishes
+> >    replicate (let's say a regular expression) use FUSE to mount the
+> required
+> >    parent directories on the source file system and start to intercept
+> file
+> >    updates and modifications
+> >    - Ship these intercepted file updates and modifications to the target
+> >    server to apply the same updates and modifications to that filesystem
+> to
+> >    keep them perfectly in sync
+>
+> Keep it simple and flexible. Mount the remote via NFS (or smb or
+> whatever) so it is just another local directory. Then run your fuse
+> filesystem with directories (can be more than 2) and let it replicate
+> between all directories given. E.g. something like this:
+>
+> replicate --pattern "*.c" --pattern "*.h" /mnt/replicated /mnt/local
+> /mnt/server1 /mnt/server2
+>
+> >    - Of course, the intercepted updates are passed though to the source
+> file
+> >    system as well (either before sending to the target server
+> (asynchronous
+> >    replication) or after sending to the target server (synchronous
+> replication)
+> >    - This needs to work for all possible IO update operations that might
+> be
+> >    exercised on the source server
+> >
+> > I done some research and FUSE seems like an excellent platform to achieve
+> > this but I have a few newbie questions that I would appreciate some help
+> > with:
+> >
+> >
+> >    - Will FUSE support interception of memory mapped IO?  I suspect this
+> is
+> >    handled but I don't see any hooks for this in the API.  Is support
+> hidden
+> >    behind the API somehow?
+>
+> mmap() is handled inside the kernel and fuse will just read/write
+> requests for the relevant pages.
+>
+> >    - Will FUSE support interception of direct IO?  I suspect the answer
+> is
+> >    yes but was wondering if there are any caveats I need to be aware of?
+>
+> Yes. There are some issues with implementing it right though. Never
+> cared about this myself.
+>
+> >    - Programmatically, can I mount more than one point in the source
+> >    filesystem from a single executable.  I believe I can, but do I
+> definately
+> >    need to have a thread for each mount?
+>
+> Keep it simple. Do the mounting before starting your filesystem and
+> start it with simple directories as arguments.
+>
+> >    - I am pretty sure that all of my code in the FUSE callbacks needs to
+> be
+> >    reentrant, can you confirm that this is the case i.e. is there any
+> >    serialisation built into the API somewhere, on some callbacks?
+>
+> That totaly depends on what you code. The single threaded loop is totaly
+> serialized. The multithreaded loop is serialized within one thread. So
+> you need to be thread safe for that but not reentrant. Or if you write
+> your own low level loop you can make it reentrant.
+>
+> But I don't really see where that question even arises. Your filesystem
+> is just a extention of the example fuse filesystem and will be just
+> naturally reentrant anyway.
+>
+> >    - I plan to be able to replicate updates synchronously and
+> >    asynchronously, I don't foresee any issues with this, do you?
+>
+> Carefull with race conditions and with asynchronous updates be extra
+> carefull of crashes.
+>
+> >    - Are there any other IO update operations (I have not mentioned) that
+> >    FUSE definitely can't see
+> >    - Are there any implementation restrictions within FUSE which would
+> >    compromise my ability to intercept absolutely all updates of any
+> nature
+> >    and/or size.
+>
+> No. The kernel can not access your filesystem other than going through
+> fuse.
+>
+> Which doesn't mean something can't access the underlying source
+> filesystems directly. You have to protect them yourself.
+>
+> > Thanks very much for any help you can provide on these questions.
+> >
+> > Regards,
+>
+> MfG
+>         Goswin
+>
+
+
+
+-- 
+
+Douglas.
+------------------------------------------------------------------------------
+10 Tips for Better Web Security
+Learn 10 ways to better secure your business today. Topics covered include:
+Web security, SSL, hacker attacks & Denial of Service (DoS), private keys,
+security Microsoft Exchange, secure Instant Messaging, and much more.
+http://www.accelacomm.com/jaw/sfnl/114/51426210/
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311333235</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>"Douglas G. Hanley" &lt;douglas.hanley@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] FUSE and POSIX Compliance</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

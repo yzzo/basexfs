@@ -1,0 +1,153 @@
+5854
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Sat, 23 Jul 2011 08:37:06 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 167195FB7
+	for <alexander.holupirek@uni-konstanz.de>; Sat, 23 Jul 2011 08:37:06 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 23 Jul 2011 06:37:06 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id EDCF94DA1A; Sat, 23 Jul 2011 08:37:05 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id C4AC44D9D5
+	for <holupire@inf.uni-konstanz.de>; Sat, 23 Jul 2011 08:37:05 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqkAAFJrKk7YIrVYkGdsb2JhbAA1AQEBAQMBAQEqEw4MIAoBAwMBAgcBDA4KCSEBAwQIAwEFAwIBAgECGAE4Bw4JBgIBp04UAQEBAQkJDQcUBSCIfgK9e4Y/BJBkhxOLWw
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 23 Jul 2011 06:37:05 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QkVnb-0002Me-HB; Sat, 23 Jul 2011 06:34:55 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <jean-pierre.andre@wanadoo.fr>) id 1QkVna-0002MZ-Mx
+	for fuse-devel@lists.sourceforge.net; Sat, 23 Jul 2011 06:34:54 +0000
+X-ACL-Warn: 
+Received: from smtp10.smtpout.orange.fr ([80.12.242.132]
+	helo=smtp.smtpout.orange.fr)
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QkVnY-00042I-Ea
+	for fuse-devel@lists.sourceforge.net; Sat, 23 Jul 2011 06:34:54 +0000
+Received: from [10.0.0.10] ([83.204.216.230]) by mwinf5d33 with ME
+	id BJak1h00K4yqQNj03Jakhf; Sat, 23 Jul 2011 08:34:46 +0200
+X-ME-engine: default
+Message-ID: <4E2A6B84.5080409@wanadoo.fr>
+Date: Sat, 23 Jul 2011 08:34:44 +0200
+From: =?UTF-8?B?SmVhbi1QaWVycmUgQW5kcsOp?= <jean-pierre.andre@wanadoo.fr>
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US;
+	rv:1.9.1.19) Gecko/20110429 Fedora/2.0.14-1.fc14 SeaMonkey/2.0.14
+MIME-Version: 1.0
+To: Debabrata Banerjee <dbanerjee@avid.com>
+References: <4D67CC19.5010203@wanadoo.fr>
+	<32023490.post@talk.nabble.com>	<32024185.post@talk.nabble.com>
+	<4E176861.5050207@wanadoo.fr>	<32024540.post@talk.nabble.com>
+	<32041716.post@talk.nabble.com>	<CAAvzgtZrUOabUCW_2j5quycbKvJiUTorAnNeZ=AjaOCdvj0gQg@mail.gmail.com>
+	<32048545.post@talk.nabble.com>
+In-Reply-To: <32048545.post@talk.nabble.com>
+X-Spam-Score: -0.4 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [80.12.242.132 listed in list.dnswl.org]
+	-0.4 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QkVnY-00042I-Ea
+Cc: fuse-devel@lists.sourceforge.net, Miklos Szeredi <miklos@szeredi.hu>
+Subject: Re: [fuse-devel] File system with case insensitive names [PATCH]
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi All,
+
+[My previous post apparently did not go through, sorry for possible 
+duplicate]
+
+Debabrata Banerjee wrote:
+>
+> 6th time's the charm. See any problems with this?
+>
+> --- fuse-2.6.32.o/dir.c	2009-12-02 22:51:21.000000000 -0500
+> +++ fuse-2.6.32/dir.c	2011-07-12 15:19:52.061492619 -0400
+> @@ -243,11 +243,16 @@
+>   {
+>   	struct dentry *alias = d_find_alias(inode);
+>   	if (alias&&  !(alias->d_flags&  DCACHE_DISCONNECTED)) {
+> +	  	/* there can only be one dentry for a directory, so return the old one
+> if it is different */
+> +		if(alias != entry) {
+> +		 	d_invalidate(entry);
+> +		 	iput(inode);
+> +		 	return alias;
+> +		}
+> +
+>   		/* This tries to shrink the subtree below alias */
+>   		fuse_invalidate_entry(alias);
+>   		dput(alias);
+> -		if (!list_empty(&inode->i_dentry))
+> -			return ERR_PTR(-EBUSY);
+>   	} else {
+>   		dput(alias);
+>   	}
+>
+>    
+
+My tests of this patch were successful, thank you
+Debabrata for your contribution.
+
+Does anybody have any remarks ?
+
+And, Miklos, is this acceptable for inclusion in
+future versions, maybe under some condition to be
+defined in an option or init callback ?
+
+Jean-Pierre
+
+
+
+------------------------------------------------------------------------------
+Storage Efficiency Calculator
+This modeling tool is based on patent-pending intellectual property that
+has been used successfully in hundreds of IBM storage optimization engage-
+ments, worldwide.  Store less, Store more with what you own, Move data to 
+the right place. Try It Now! http://www.accelacomm.com/jaw/sfnl/114/51427378/
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311402884</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Jean-Pierre André &lt;jean-pierre.andre@wanadoo.fr&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] File system with case insensitive names [PATCH]</string>
+	<key>to</key>
+	<string>Debabrata Banerjee &lt;dbanerjee@avid.com&gt;</string>
+</dict>
+</plist>

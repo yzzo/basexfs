@@ -1,0 +1,126 @@
+5157
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 08 Jul 2011 17:24:53 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 5640812FE3
+	for <alexander.holupirek@uni-konstanz.de>; Fri,  8 Jul 2011 17:24:53 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 08 Jul 2011 15:24:53 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 3A2574D6C4; Fri,  8 Jul 2011 17:24:53 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 28AD835253
+	for <holupire@inf.uni-konstanz.de>; Fri,  8 Jul 2011 17:24:53 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ArIAALIgF07YIrVYkWdsb2JhbAAoK5hRjm0IFAEBAQEJCwsHFAUgiSClQowshno7iG2GOASHSoh4ggqMLjyDaQ
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 08 Jul 2011 15:24:52 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QfCtc-0008Kv-EO; Fri, 08 Jul 2011 15:23:12 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <bique.alexandre@gmail.com>) id 1QezZ0-0003C6-CS
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 01:09:02 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.161.47 as permitted sender)
+	client-ip=209.85.161.47; envelope-from=bique.alexandre@gmail.com;
+	helo=mail-fx0-f47.google.com; 
+Received: from mail-fx0-f47.google.com ([209.85.161.47])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QezYz-0003y5-Dq
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 01:09:02 +0000
+Received: by fxg11 with SMTP id 11so1736660fxg.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Thu, 07 Jul 2011 18:08:55 -0700 (PDT)
+Received: by 10.223.144.129 with SMTP id z1mr2238565fau.57.1310087335135; Thu,
+	07 Jul 2011 18:08:55 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.223.96.3 with HTTP; Thu, 7 Jul 2011 18:08:35 -0700 (PDT)
+From: Alexandre Bique <bique.alexandre@gmail.com>
+Date: Fri, 8 Jul 2011 10:08:35 +0900
+Message-ID: <CAP737oLjY7xzCEkcGAMnpGnkY5t8X6WLQdyEPUhZypG24QdwtA@mail.gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -1.6 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(bique.alexandre[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1QezYz-0003y5-Dq
+X-Mailman-Approved-At: Fri, 08 Jul 2011 15:23:10 +0000
+Subject: [fuse-devel] New fs: tmfs (Time Machine FS)
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi,
+
+I wrote a small fuse fs to be able to use Apple's Time Machine backups.
+
+You can get the software at : http://github.com/babali/tmfs
+You can also use the AUR package :
+http://aur.archlinux.org/packages.php?ID=50544
+
+It's licensed under the GPLv3.
+
+Cheers,
+
+-- 
+Alexandre Bique
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310087315</real>
+	<key>flags</key>
+	<integer>261249</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Alexandre Bique &lt;bique.alexandre@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] New fs: tmfs (Time Machine FS)</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

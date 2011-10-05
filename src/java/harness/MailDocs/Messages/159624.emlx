@@ -1,0 +1,251 @@
+15809
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 19 Jul 2011 15:38:20 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 3C22C129CF
+	for <alexander.holupirek@uni-konstanz.de>; Tue, 19 Jul 2011 15:38:20 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 19 Jul 2011 13:38:20 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 1B9874D9FA; Tue, 19 Jul 2011 15:38:20 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 0BA154D98E
+	for <holupire@inf.uni-konstanz.de>; Tue, 19 Jul 2011 15:38:20 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AmEAAKWHJU7YIrVYkWdsb2JhbABGDoRKkz2OTGwFCBQBAQEBCQsLBxQFIK5mCotjQIdFO4hwgSuBeIIKgQ8EkFyCC4llgl48g10
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 19 Jul 2011 13:38:19 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QjASV-0002r1-5L; Tue, 19 Jul 2011 13:35:35 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <stefbon@gmail.com>) id 1QjAST-0002qw-0y
+	for fuse-devel@lists.sourceforge.net; Tue, 19 Jul 2011 13:35:33 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.214.175 as permitted sender)
+	client-ip=209.85.214.175; envelope-from=stefbon@gmail.com;
+	helo=mail-iw0-f175.google.com; 
+Received: from mail-iw0-f175.google.com ([209.85.214.175])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QjASO-00011z-Vk
+	for fuse-devel@lists.sourceforge.net; Tue, 19 Jul 2011 13:35:33 +0000
+Received: by iwn4 with SMTP id 4so5218050iwn.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Tue, 19 Jul 2011 06:35:23 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.42.96.133 with SMTP id j5mr7625302icn.477.1311082523735; Tue,
+	19 Jul 2011 06:35:23 -0700 (PDT)
+Received: by 10.42.171.201 with HTTP; Tue, 19 Jul 2011 06:35:23 -0700 (PDT)
+In-Reply-To: <CANXojcwO1xmk=ahODjpsJ+Wn2s+dXSi9kJUMU27usd2yiguN+w@mail.gmail.com>
+References: <CANXojcw=-WEuvkC_jVuvaAp1ry3LBQw1QfKWebzNZ1dZU1GU3g@mail.gmail.com>
+	<B7C4AE6690D8644FB819AFB98EDEFAC20B8411B2@CRDS-DAG02.COMMSTOR.Crossroads.com>
+	<CANXojcwO1xmk=ahODjpsJ+Wn2s+dXSi9kJUMU27usd2yiguN+w@mail.gmail.com>
+Date: Tue, 19 Jul 2011 15:35:23 +0200
+Message-ID: <CANXojcxXBVS22mOcYz_vmQ36PHfQ_OHrth_tCbmNO=5+AsEEgA@mail.gmail.com>
+From: Stef Bon <stefbon@gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -1.1 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(stefbon[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.3 PLING_QUERY Subject has exclamation mark and question mark
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+	0.2 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QjASO-00011z-Vk
+Subject: [fuse-devel] Fwd:  Read: zero size??!!
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+LS0tLS0tLS0tLSBGb3J3YXJkZWQgbWVzc2FnZSAtLS0tLS0tLS0tCkZyb206IFN0ZWYgQm9uIDxz
+dGVmYm9uQGdtYWlsLmNvbT4KRGF0ZTogMjAxMS83LzE5ClN1YmplY3Q6IFJlOiBbZnVzZS1kZXZl
+bF0gUmVhZDogemVybyBzaXplPz8hIQpUbzogSm9obiBIYWVjaHRlbiA8amhhZWNodGVuQGNyb3Nz
+cm9hZHMuY29tPgoKClllcywKCnRoYW5rIHlvdSBmb3IgeW91ciByZWFjdGlvbi4gSSB3YXMgY29t
+cGxldGVseSBzdHVjayBoZXJlLiBTb21laG93IHRoZQpwcm9ibGVtIGhlcmUgaXMgc29sdmVkLCBi
+dXQgSSBkbyBub3Qga25vdyBob3cuIEJlbG93IGEgbG9nLCBhbmQgeW91CmNhbiBzZWUgaGVyZSB0
+aGUgcHJvYmxlbSB3aXRoIHplcm8gc2l6ZSBpcyBzb2x2ZWQuCgpNYXliZSB0aGUgYXBwbGljYXRp
+b24gd2FzIGRvaW5nIHRoaXMgKHZsYyBtZWRpYSBwbGF5ZXIpLiBJdCBhbHNvIHRyaWVzCnRvIG9w
+ZW4gdGhlIGZpbGUgbW9yZSB0aGFuIG9uY2UsIHlvdSBzZWUgbXVsdGlwbGUgT1BFTiBjYWxscyBm
+b3IgdGhlCnNhbWUgZmlsZS4KVGhlIGZzIGJsb2NrcyB0aGUgc2Vjb25kIGF0dGVtcHQuIE15IGZz
+IGNvbnNpZGVycyB0aGUgb3BlbiBvZiBhCnZpcnR1YWwgZW50cnkgKD1kZWNvZGUgZmlsZSkgYXMg
+ZXhjbHVzaXZlLgoKTm93IEkgc3RpbGwgZG8gaGF2ZSBpdCB3b3JraW5nLCB0aGUgZGVjb2RlciBk
+b2VzIG5vdCByZWFkIGFueXRoaW5nLiBJCndpbGwgZ2V0IGJhY2sgd2hlbiBJJ3ZlIGdvdCB0aGlz
+IHdvcmtpbmcuCgpTdGVmCgpKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogT1BF
+TgpKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogZGV0ZXJtaW5lX2xvY2FsaG9z
+dF9wYXRoCkp1bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiB2aXJ0dWFsIGVudHJ5
+IHRlc3QuYWlmZiwgbG9va2luZwpmb3IgcGF0aCBvZiByZWFsIGVudHJ5Ckp1bCAxNiAyMTo0NToz
+NSBjbGZzMjAwOTEwMzAgYmFzZWZzOiBhYnNwYXRoOiAvaG9tZS9zYm9uL3Rlc3RkaXIvcm9vdC90
+ZXN0LmZsYWMKSnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGRldGVybWluZV9m
+dXNlX3BhdGg6Ckp1bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiByZWxwYXRoOiB0
+ZXN0LmZsYWMKSnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGZkOiAzCkp1bCAx
+NiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiBvcGVuX3ZpcnR1YWwsIHRlc3QuZmxhYwpK
+dWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogZm9wZW4gZmlsZQovaG9tZS9zYm9u
+L3Rlc3RkaXIvcm9vdC90ZXN0LmZsYWMKSnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNl
+ZnM6IGNyZWF0aW5nIG5ldyBmbGFjLWFpZmYgZGVjb2RlciBjb250ZXh0Ckp1bCAxNiAyMTo0NToz
+NSBjbGZzMjAwOTEwMzAgYmFzZWZzOiBmdXNlcGF0aDogdGVzdC5mbGFjCkp1bCAxNiAyMTo0NToz
+NSBjbGZzMjAwOTEwMzAgYmFzZWZzOiBkZXRlcm1pbmVfbG9jYWxob3N0X3BhdGgKSnVsIDE2IDIx
+OjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGFic3BhdGg6IC9ob21lL3Nib24vdGVzdGRpci9y
+b290L3Rlc3QuZmxhYwpKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogcmVscGF0
+aDogdGVzdC5mbGFjCkp1bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiBmZDogMwpK
+dWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2Vmczogb3Blbl92aXJ0dWFsLCB0ZXN0LmZs
+YWMKSnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGFscmVhZHkgb3Blbi4uCkp1
+bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiBvcGVuIG5yZXR1cm46IC0xMwpKdWwg
+MTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogdGhyZWFkIDk6IHNldCBzdGF0ZSB0byBu
+b3QgYnVzeQpKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2Vmczogb3BlbiBucmV0dXJu
+OiAwCkp1bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiB0aHJlYWQgODogc2V0IHN0
+YXRlIHRvIG5vdCBidXN5Ckp1bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiBtYWlu
+bG9vcDogc2VtIHBvc3QgZm9yIHRocmVhZCAwCkp1bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAg
+YmFzZWZzOiB0aHJlYWQgMCB3YWtpbmcgdXAsIHNldHRpbmcgc3RhdGUgdG8gYnVzeQpKdWwgMTYg
+MjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogZGF0YSBmb3VuZCwgc3RhcnQgZnVzZV9zZXNz
+aW9uX3Byb2Nlc3MKSnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IFNUQVRGUwpK
+dWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogZGV0ZXJtaW5lX2Z1c2VfcGF0aDoK
+SnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGZ1c2VwYXRoOiB0ZXN0LmFpZmYK
+SnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IHN0YXRmcywgQiwgbnJldHVybjog
+MApKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogdGhyZWFkIDA6IHNldCBzdGF0
+ZSB0byBub3QgYnVzeQpKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogbWFpbmxv
+b3A6IHNlbSBwb3N0IGZvciB0aHJlYWQgMQpKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJh
+c2VmczogdGhyZWFkIDEgd2FraW5nIHVwLCBzZXR0aW5nIHN0YXRlIHRvIGJ1c3kKSnVsIDE2IDIx
+OjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGRhdGEgZm91bmQsIHN0YXJ0IGZ1c2Vfc2Vzc2lv
+bl9wcm9jZXNzCkp1bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiBSRUFELCBvZmZz
+ZXQgMCBhbmQgc2l6ZSAoPjApIDQwOTYKSnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNl
+ZnM6IHJlYWRfdmlydHVhbCwgb2Zmc2V0IDAgYW5kIHNpemUgNDA5NgpKdWwgMTYgMjE6NDU6MzUg
+Y2xmczIwMDkxMDMwIGJhc2VmczogY2FsbGluZyBhaWZmcmVhZCBmcm9tIHJlYWRfdmlydWFsCkp1
+bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiBBaWZmUmVhZCB3aXRoIG9mZnNldCAw
+IGFuZCBzaXplIDQwOTYKSnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IHJlYWQs
+IDAgYnl0ZXMgcmVhZApKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogdGhyZWFk
+IDE6IHNldCBzdGF0ZSB0byBub3QgYnVzeQpKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJh
+c2VmczogbWFpbmxvb3A6IHNlbSBwb3N0IGZvciB0aHJlYWQgMgpKdWwgMTYgMjE6NDU6MzUgY2xm
+czIwMDkxMDMwIGJhc2VmczogdGhyZWFkIDIgd2FraW5nIHVwLCBzZXR0aW5nIHN0YXRlCnRvIGJ1
+c3kKSnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGRhdGEgZm91bmQsIHN0YXJ0
+CmZ1c2Vfc2Vzc2lvbl9wcm9jZXNzCkp1bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZz
+OiBSRUxFQVNFCkp1bCAxNiAyMTo0NTozNSBjbGZzMjAwOTEwMzAgYmFzZWZzOiByZWxlYXNlIHZp
+cnR1YWwKSnVsIDE2IDIxOjQ1OjM1IGNsZnMyMDA5MTAzMCBiYXNlZnM6IHJlbGVhc2UsIG5yZXR1
+cm4gMApKdWwgMTYgMjE6NDU6MzUgY2xmczIwMDkxMDMwIGJhc2VmczogdGhyZWFkIDI6IHNldCBz
+dGF0ZSB0byBub3QgYnVzeQoKMjAxMS83LzE4IEpvaG4gSGFlY2h0ZW4gPGpoYWVjaHRlbkBjcm9z
+c3JvYWRzLmNvbT46Cj4gSSBoYXZlIHdvcmtlZCBpbiB0aGUgc3RvcmFnZSBpbmR1c3RyeSBmb3Ig
+bWFueSB5ZWFycywgaW4gdGhlIEZDIHN0b3JhZ2Ugcm91dGVyIGJ1c2luZXNzLiDCoFRoaXMgcmVh
+ZCB3aWxsIHRyYW5zbGF0ZSBpbnRvIGEgU0NTSSBSRUFEIENtZCBvZiBaZXJvIExlbmd0aC4gwqBU
+aGVzZSBkbyBvY2N1ciBhbmQgaGF2ZSB0byBiZSBoYW5kbGVkLiDCoEkgZG8gbm90IGtub3cgd2hh
+dCBpbmZvcm1hdGlvbiBpcyBnYWluZWQgZnJvbSBhIFplcm8gTGVuZ3RoIFJlYWQgb3RoZXIgdGhh
+biBSRUFEIEFjY2VzcyBpcyBncmFudGVkIHRvIHRoZSBmaWxlLiDCoFRoZSBNZWRpYSBjYW4gbm90
+IGNoYW5nZSBwb3NpdGlvbiBvciBtb3ZlLiDCoElmIGl0IHdhcyBmb3IgNCBvciA4IGJ5dGVzLCBJ
+J2Qgc2F5IHRoYXQgdGhlIGFwcGxpY2F0aW9uIGlzIGdldHRpbmcgdGhlIHNpemUgb2YgdGhlIGZp
+bGUsIGJ1dCBaZXJvIHJlYWxseSBoYXMgbm8gdXNlIG90aGVyIHRoYW4gdGhlIGFwcGxpY2F0aW9u
+IG1pc2NhbGN1bGF0ZWQgc29tZXRoaW5nLCBwb3NzaWJseS4KPgo+IEpvaG4gSGFlY2h0ZW4KPgo+
+Cj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiBGcm9tOiBTdGVmIEJvbiBbbWFpbHRvOnN0
+ZWZib25AZ21haWwuY29tXQo+IFNlbnQ6IFNhdHVyZGF5LCBKdWx5IDE2LCAyMDExIDEyOjA1IFBN
+Cj4gVG86IGZ1c2UtZGV2ZWxAbGlzdHMuc291cmNlZm9yZ2UubmV0Cj4gU3ViamVjdDogW2Z1c2Ut
+ZGV2ZWxdIFJlYWQ6IHplcm8gc2l6ZT8/ISEKPgo+IEhpLAo+Cj4gSSd2ZSBhIHN0cmFuZ2UgcHJv
+YmxlbS4gTXkgZnMgaXMgYSBzaW1wbGUgb3ZlcmxheSBmcywgbW91bnRlZCBhdAo+Cj4gL2hvbWUv
+c2Jvbi90ZXN0ZGlyL21vdW50Cj4KPiB3aGVyZSB0aGUgYmFja2VuZCBpcwo+Cj4gL2hvbWUvc2Jv
+bi90ZXN0ZGlyL3Jvb3QKPgo+IEluIHRoZSByb290IGlzIHRlc3RmaWxlLCB3aGljaCBhbHNvIGFw
+cGVhcnMgY29ycmVjdGx5LCB3aXRoIHRoZSByaWdodCBzaXplLgo+Cj4KPiBCdXQgd2l0aCByZWFk
+aW5nIGEgZmlsZSwgYWZ0ZXIgb3BlbiwgSSBnZXQgYSB6ZXJvIHNpemU6Cj4KPiBKdWwgMTYgMTg6
+NDY6NDggY2xmczIwMDkxMDMwIGJhc2VmczogT1BFTgo+IEp1bCAxNiAxODo0Njo0OCBjbGZzMjAw
+OTEwMzAgYmFzZWZzOiBkZXRlcm1pbmVfZnVzZV9wYXRoOgo+IEp1bCAxNiAxODo0Njo0OCBjbGZz
+MjAwOTEwMzAgYmFzZWZzOiBmdXNlcGF0aDogdGVzdGZpbGUKPiBKdWwgMTYgMTg6NDY6NDggY2xm
+czIwMDkxMDMwIGJhc2VmczogZGV0ZXJtaW5lX2xvY2FsaG9zdF9wYXRoCj4gSnVsIDE2IDE4OjQ2
+OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGFic3BhdGg6IC9ob21lL3Nib24vdGVzdGRpci9yb290
+L3Rlc3RmaWxlCj4gSnVsIDE2IDE4OjQ2OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IHJlbHBhdGg6
+IHRlc3RmaWxlCj4gSnVsIDE2IDE4OjQ2OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGZkOiAzCj4g
+SnVsIDE2IDE4OjQ2OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IG9wZW5fbG9jYWxob3N0Cj4gSnVs
+IDE2IDE4OjQ2OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IG9wZW5fbG9jYWxob3N0LCBvcGVuaW5n
+IHZpYSBmZAo+IEp1bCAxNiAxODo0Njo0OCBjbGZzMjAwOTEwMzAgYmFzZWZzOiBvcGVuX2xvY2Fs
+aG9zdDogZmQ6IDEzCj4gSnVsIDE2IDE4OjQ2OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IG9wZW4g
+bnJldHVybjogMTMKPiBKdWwgMTYgMTg6NDY6NDggY2xmczIwMDkxMDMwIGJhc2VmczogdGhyZWFk
+IDU6IHNldCBzdGF0ZSB0byBub3QgYnVzeQo+IEp1bCAxNiAxODo0Njo0OCBjbGZzMjAwOTEwMzAg
+YmFzZWZzOiBtYWlubG9vcDogc2VtIHBvc3QgZm9yIHRocmVhZCA2Cj4gSnVsIDE2IDE4OjQ2OjQ4
+IGNsZnMyMDA5MTAzMCBiYXNlZnM6IHRocmVhZCA2IHdha2luZyB1cCwgc2V0dGluZyBzdGF0ZSB0
+byBidXN5Cj4gSnVsIDE2IDE4OjQ2OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IGRhdGEgZm91bmQs
+IHN0YXJ0IGZ1c2Vfc2Vzc2lvbl9wcm9jZXNzCj4gSnVsIDE2IDE4OjQ2OjQ4IGNsZnMyMDA5MTAz
+MCBiYXNlZnM6IFJFQUQsIG9mZnNldCAwIGFuZCBzaXplIDAKPiBKdWwgMTYgMTg6NDY6NDggY2xm
+czIwMDkxMDMwIGJhc2VmczogcmVhZF9sb2NhbGhvc3QKPiBKdWwgMTYgMTg6NDY6NDggY2xmczIw
+MDkxMDMwIGJhc2VmczogcmVhZCwgMTAgYnl0ZXMgcmVhZAo+IEp1bCAxNiAxODo0Njo0OCBjbGZz
+MjAwOTEwMzAgYmFzZWZzOiB0aHJlYWQgNjogc2V0IHN0YXRlIHRvIG5vdCBidXN5Cj4gSnVsIDE2
+IDE4OjQ2OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IG1haW5sb29wOiBzZW0gcG9zdCBmb3IgdGhy
+ZWFkIDcKPiBKdWwgMTYgMTg6NDY6NDggY2xmczIwMDkxMDMwIGJhc2VmczogdGhyZWFkIDcgd2Fr
+aW5nIHVwLCBzZXR0aW5nIHN0YXRlIHRvIGJ1c3kKPiBKdWwgMTYgMTg6NDY6NDggY2xmczIwMDkx
+MDMwIGJhc2VmczogZGF0YSBmb3VuZCwgc3RhcnQgZnVzZV9zZXNzaW9uX3Byb2Nlc3MKPiBKdWwg
+MTYgMTg6NDY6NDggY2xmczIwMDkxMDMwIGJhc2VmczogUkVBRCwgb2Zmc2V0IDAgYW5kIHNpemUg
+MAo+IEp1bCAxNiAxODo0Njo0OCBjbGZzMjAwOTEwMzAgYmFzZWZzOiByZWFkX2xvY2FsaG9zdAo+
+IEp1bCAxNiAxODo0Njo0OCBjbGZzMjAwOTEwMzAgYmFzZWZzOiByZWFkLCAxMCBieXRlcyByZWFk
+Cj4gSnVsIDE2IDE4OjQ2OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IHRocmVhZCA3OiBzZXQgc3Rh
+dGUgdG8gbm90IGJ1c3kKPiBKdWwgMTYgMTg6NDY6NDggY2xmczIwMDkxMDMwIGJhc2VmczogbWFp
+bmxvb3A6IHNlbSBwb3N0IGZvciB0aHJlYWQgOAo+IEp1bCAxNiAxODo0Njo0OCBjbGZzMjAwOTEw
+MzAgYmFzZWZzOiB0aHJlYWQgOCB3YWtpbmcgdXAsIHNldHRpbmcgc3RhdGUgdG8gYnVzeQo+IEp1
+bCAxNiAxODo0Njo0OCBjbGZzMjAwOTEwMzAgYmFzZWZzOiBkYXRhIGZvdW5kLCBzdGFydCBmdXNl
+X3Nlc3Npb25fcHJvY2Vzcwo+IEp1bCAxNiAxODo0Njo0OCBjbGZzMjAwOTEwMzAgYmFzZWZzOiBS
+RUxFQVNFCj4gSnVsIDE2IDE4OjQ2OjQ4IGNsZnMyMDA5MTAzMCBiYXNlZnM6IHJlbGVhc2VfbG9j
+YWxob3N0LCBmZDogMTMKPiBKdWwgMTYgMTg6NDY6NDggY2xmczIwMDkxMDMwIGJhc2VmczogcmVs
+ZWFzZSwgbnJldHVybiAwCj4KPgo+IEkndmUgbmV2ZXIgc2VlbiB0aGlzIGJlZm9yZS4gUkVBRCBz
+dGFydHMgYXQgb2Zmc2V0IDAgQU5EIHNpemUgMCEKPiBXZWxsIG15IGZzIGFsbG9jYXRlcyBhIGJ1
+ZmZlciB3aXRoIHNpemUgc2l6ZSwgc28gdGhpcyB3aWxsIHJldHVybgo+IG5vdGhpbmcsIHRoYXQn
+cyBub3Qgc3VwcmlzaW5nLCBidXQgdGhlIHNpemUKPiBhcyBwYXJhbWV0ZXIgaXMgemVybyAodGhl
+IFJFQUQgY2FsbGJhY2sgaXMgY2FsbGVkIHdpdGggemVybyBzaXplKT8/Cj4KPiBTdGVmCj4KPiAt
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0KPiBBcHBTdW1vIFByZXNlbnRzIGEgRlJFRSBWaWRlbyBmb3Ig
+dGhlIFNvdXJjZUZvcmdlIENvbW11bml0eSBieSBFcmljCj4gUmllcywgdGhlIGNyZWF0b3Igb2Yg
+dGhlIExlYW4gU3RhcnR1cCBNZXRob2RvbG9neSBvbiAiTGVhbiBTdGFydHVwCj4gU2VjcmV0cyBS
+ZXZlYWxlZC4iIFRoaXMgdmlkZW8gc2hvd3MgeW91IGhvdyB0byB2YWxpZGF0ZSB5b3VyIGlkZWFz
+LAo+IG9wdGltaXplIHlvdXIgaWRlYXMgYW5kIGlkZW50aWZ5IHlvdXIgYnVzaW5lc3Mgc3RyYXRl
+Z3kuCj4gaHR0cDovL3Auc2YubmV0L3NmdS9hcHBzdW1vc2ZkZXYyZGV2Cj4gX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBmdXNlLWRldmVsIG1haWxpbmcg
+bGlzdAo+IGZ1c2UtZGV2ZWxAbGlzdHMuc291cmNlZm9yZ2UubmV0Cj4gaHR0cHM6Ly9saXN0cy5z
+b3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vZnVzZS1kZXZlbAo+CgotLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0KTWFnaWMgUXVhZHJhbnQgZm9yIENvbnRlbnQtQXdhcmUgRGF0YSBMb3NzIFByZXZl
+bnRpb24KUmVzZWFyY2ggc3R1ZHkgZXhwbG9yZXMgdGhlIGRhdGEgbG9zcyBwcmV2ZW50aW9uIG1h
+cmtldC4gSW5jbHVkZXMgaW4tZGVwdGgKYW5hbHlzaXMgb24gdGhlIGNoYW5nZXMgd2l0aGluIHRo
+ZSBETFAgbWFya2V0LCBhbmQgdGhlIGNyaXRlcmlhIHVzZWQgdG8KZXZhbHVhdGUgdGhlIHN0cmVu
+Z3RocyBhbmQgd2Vha25lc3NlcyBvZiB0aGVzZSBETFAgc29sdXRpb25zLgpodHRwOi8vd3d3LmFj
+Y2VsYWNvbW0uY29tL2phdy9zZm5sLzExNC81MTM4NTA2My8KX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KZnVzZS1kZXZlbCBtYWlsaW5nIGxpc3QKZnVzZS1k
+ZXZlbEBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQv
+bGlzdHMvbGlzdGluZm8vZnVzZS1kZXZlbAo=
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311082523</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Stef Bon &lt;stefbon@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Fwd:  Read: zero size??!!</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

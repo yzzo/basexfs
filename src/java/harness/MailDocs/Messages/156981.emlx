@@ -1,0 +1,139 @@
+5601
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Wed, 06 Jul 2011 21:03:37 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 24A2852B1
+	for <alexander.holupirek@uni-konstanz.de>; Wed,  6 Jul 2011 21:03:37 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 06 Jul 2011 19:03:37 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 057F54D6C4; Wed,  6 Jul 2011 21:03:37 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id EE4E54D68C
+	for <holupire@inf.uni-konstanz.de>; Wed,  6 Jul 2011 21:03:36 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AgoBADixFE7YIrVYkWdsb2JhbABTmRyObBQBAQEBCQsLBxQFILAVi3yHDTmIbYY3BJA5kkU
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 06 Jul 2011 19:03:36 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QeXLP-0008PC-Fm; Wed, 06 Jul 2011 19:01:07 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from
+	<s-qWBKZ6KA4Dv2JXWr_s_MAXWWmcqEJTMrzy_2AwjSMfvLsnSwcd2kCX@bounce.linkedin.com>)
+	id 1QeXLN-0008Ox-W5
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 19:01:05 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of
+	bounce.linkedin.com designates 216.52.242.164 as permitted
+	sender) client-ip=216.52.242.164;
+	envelope-from=s-qWBKZ6KA4Dv2JXWr_s_MAXWWmcqEJTMrzy_2AwjSMfvLsnSwcd2kCX@bounce.linkedin.com;
+	helo=maile-ba.linkedin.com; 
+Received: from maile-ba.linkedin.com ([216.52.242.164])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QeXLM-0002hL-UZ
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 19:01:05 +0000
+Date: Wed, 6 Jul 2011 19:00:59 +0000 (UTC)
+From: chris meyers <chris.meyers.fsu@gmail.com>
+To: <fuse-devel@lists.sourceforge.net>
+Message-ID: <1930022987.16792004.1309978859367.JavaMail.app@ela4-bed40.prod>
+MIME-Version: 1.0
+X-LinkedIn-Template: invite_guest_59
+X-LinkedIn-Class: ROLE-ACC
+X-LinkedIn-fbl: s-qWBKZ6KA4Dv2JXWr_s_MAXWWmcqEJTMrzy_2AwjSMfvLsnSwcd2kCX
+X-Spam-Score: -4.5 (----)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(chris.meyers.fsu[at]gmail.com)
+	-3.0 RCVD_IN_RP_CERTIFIED RBL: Sender is in Return Path Certified
+	(trusted relay) [Return Path SenderScore Certified (formerly]
+	[Bonded Sender) - <http://www.senderscorecertified.com>]
+	-2.0 RCVD_IN_RP_SAFE RBL: Sender is in Return Path Safe (trusted relay)
+	[Return Path SenderScore Safe List (formerly]
+	[Habeas Safelist) - <http://www.senderscorecertified.com>]
+	0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+	CUSTOM_MED
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	1.0 HTML_MESSAGE           BODY: HTML included in message
+	1.0 HTML_IMAGE_ONLY_16 BODY: HTML: images with 1200-1600 bytes of words
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+X-Headers-End: 1QeXLM-0002hL-UZ
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Subject: [fuse-devel] Invitation to connect on LinkedIn
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+LinkedIn
+------------
+
+   
+I'd like to add you to my professional network on LinkedIn.
+
+- chris
+
+chris meyers
+Student at Florida State University
+Tallahassee, Florida Area
+
+Confirm that you know chris meyers
+https://www.linkedin.com/e/-fs2dny-gpsnl8wz-1w/isd/3452909791/giwfr7cn/
+
+
+ 
+-- 
+(c) 2011, LinkedIn Corporation
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309978859</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>chris meyers &lt;chris.meyers.fsu@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Invitation to connect on LinkedIn</string>
+	<key>to</key>
+	<string>&lt;fuse-devel@lists.sourceforge.net&gt;</string>
+</dict>
+</plist>

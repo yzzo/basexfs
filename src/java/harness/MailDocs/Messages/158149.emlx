@@ -1,0 +1,215 @@
+13101
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 12 Jul 2011 17:15:52 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id C0D7D12819
+	for <alexander.holupirek@uni-konstanz.de>; Tue, 12 Jul 2011 17:15:52 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 12 Jul 2011 15:15:52 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id A6FF74D9D0; Tue, 12 Jul 2011 17:15:52 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 936B74D65C
+	for <holupire@inf.uni-konstanz.de>; Tue, 12 Jul 2011 17:15:52 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AiQAAFFkHE7YIrVYkWdsb2JhbABThEaTLA+OPXAUAQEBAQkLCwcUBSCIegKxKZB9gSuEAIEPBJBRgguJWoZz
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 12 Jul 2011 15:15:51 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QgefL-0001Df-45; Tue, 12 Jul 2011 15:14:27 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <ct@pipapo.org>) id 1QgefJ-0001DQ-Eo
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 15:14:25 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of pipapo.org
+	designates 213.240.181.249 as permitted sender)
+	client-ip=213.240.181.249; envelope-from=ct@pipapo.org;
+	helo=mail.pipapo.org; 
+Received: from pipapo.org ([213.240.181.249] helo=mail.pipapo.org)
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QgefH-0008KQ-J4
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 15:14:25 +0000
+Received: from pluto.pipapo.org (unknown [10.20.221.212])
+	by mail.pipapo.org (Postfix) with ESMTP id 96F3A18964A
+	for <fuse-devel@lists.sourceforge.net>;
+	Tue, 12 Jul 2011 17:24:33 +0200 (CEST)
+Date: Tue, 12 Jul 2011 17:14:17 +0200
+From: Christian Thaeter <ct@pipapo.org>
+To: fuse-devel@lists.sourceforge.net
+Message-ID: <20110712171417.682d973f@pluto.pipapo.org>
+In-Reply-To: <1310483296.78108.YahooMailClassic@web39409.mail.mud.yahoo.com>
+References: <1310464995.24019.YahooMailClassic@web39410.mail.mud.yahoo.com>
+	<1310483296.78108.YahooMailClassic@web39409.mail.mud.yahoo.com>
+X-Mailer: Claws Mail 3.7.6 (GTK+ 2.20.1; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
+X-Spam-Score: -1.5 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+X-Headers-End: 1QgefH-0008KQ-J4
+Subject: Re: [fuse-devel] Understanding debug output
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+QW0gVHVlLCAxMiBKdWwgMjAxMSAwODowODoxNiAtMDcwMCAoUERUKQpzY2hyaWViIFdlc2xleSBQ
+QTRXREggPHBhNHdkaEB5YWhvby5jb20+OgoKPiBIaSBTdGVmIGFuZCBOaWtvbGF1cywKPiAKPiBU
+aGFua3MgYWdhaW4gZm9yIHlvdXIgaGVscCwgYnV0IHRoZSBwcm9ibGVtIHdhcyBub3QgcmVhbGx5
+IGZ1c2UKPiByZWxhdGVkIChhbHRob3VnaCBpIGRvbid0IHJlYWxseSB1bmRlcnN0YW5kIHdoeSBp
+dCB0cmlnZ2VyZWQgYXQgdGhlCj4gcG9pbnQgd2hlcmUgaXQgZGlkKSwgYnV0IGl0J3Mgc29sdmVk
+Lgo+IAo+IEkgd29uJ3QgZ28gaW50byBkZXRhaWxzIG9mIHRoZSBub24gZnVzZSByZWxhdGVkIHBh
+cnRzLCBidXQgdGhlCj4gcHJvYmxlbSB3YXMgdGhhdCBpIHdhcyBhbGxvY2F0aW5nIDIgYnl0ZXMg
+bGVzcyB0aGFuIGkgYWN0dWFsbHkgd2FudGVkCj4gYW5kIG5lZWRlZCB0byBkby4gSSB0aGluayBp
+dCdzIGEgY2xhc3NpYyBtaXN0YWtlOiBJIGRpZDoKPiBwb2ludGVyPW1hbGxvYyhzdHJsZW4oYXJy
+YXlbaW5kZXhdKzEpKTsgV2hpbGUgaSBhY3R1YWxseSB3YW50ZWQgdG8KPiBkbzogcG9pbnRlcj1t
+YWxsb2Moc3RybGVuKGFycmF5W2luZGV4XSkrMSk7IFdoZXJlIHRoZSArMSB3YXMgb2YKPiBjb3Vy
+c2UgZm9yIHRoZSB0ZXJtaW5hdGluZyBudWxsIGNoYXJhY3RlciwgYnV0IHdoYXQgaSBhY3R1YWxs
+eSBkaWQKPiB3YXMgbWFraW5nIHRoZSBzdHJpbmcgYSBjaGFyYWN0ZXIgc2hvcnRlciBieSBzdGFy
+dGluZyBhdCBpdCdzIHNlY29uZAo+IGNoYXJhY3RlciA6LSggSSB0aGluayB0aGlzIGFjdHVhbGx5
+IHNjcmV3ZWQgdXAgc29tZSBwb2ludGVycyBpbiB0aGUKPiBzdHJ1Y3Qgd2hlbiBpIHN0YXJ0ZWQg
+dXNpbmcgdGhlIG1lbW9yeSBpICp0aG91Z2h0KiBpIGhhZCBhbGxvY2F0ZWQuCj4gCj4gVGhhbmtz
+IGZvciB5b3VyIGhlbHAuCgpoaW50OiBydW4geW91ciB0ZXN0cyB1bmRlciB2YWxncmluZCBzdXBl
+cnZpc2lvbiwgdGhhdCB3b3VsZCBoYXZlCmNhdGNoZWQgdGhhdCBlYXNpbHkuCgo+IAo+IEJlc3Qg
+cmVnYXJkcywKPiBXZXNsZXkKPiAKPiAKPiAtLS0gT24gVHVlLCA3LzEyLzExLCBXZXNsZXkgUEE0
+V0RIIDxwYTR3ZGhAeWFob28uY29tPiB3cm90ZToKPiAKPiA+IEZyb206IFdlc2xleSBQQTRXREgg
+PHBhNHdkaEB5YWhvby5jb20+Cj4gPiBTdWJqZWN0OiBSZTogW2Z1c2UtZGV2ZWxdIFVuZGVyc3Rh
+bmRpbmcgZGVidWcgb3V0cHV0Cj4gPiBUbzogZnVzZS1kZXZlbEBsaXN0cy5zb3VyY2Vmb3JnZS5u
+ZXQKPiA+IERhdGU6IFR1ZXNkYXksIEp1bHkgMTIsIDIwMTEsIDEyOjAzIFBNCj4gPiBIaSBTdGVm
+LAo+ID4gCj4gPiBUaGFua3MgZm9yIHlvdXIgYW5zd2VyLiBJJ20gYXdhcmUgb2YgbWFsbG9jIGFu
+ZCBpJ20gdXNpbmcKPiA+IGl0IG1vcmUgdGhhbiBpcyBnb29kIGZvciBtZSA6LSkKPiA+IEhvd2V2
+ZXIsIGkgZG9uJ3QgdW5kZXJzdGFuZCBob3cgaSBjYW4gZ2V0IGEgbWFsbG9jIGVycm9yCj4gPiBm
+cm9tIGEgZnVuY3Rpb24gdGhhdCBvbmx5IHVzZXMgYSByZXR1cm47Lgo+ID4gCj4gPiBGb3IgeW91
+ciBpbmZvcm1hdGlvbjoKPiA+ICJzaW1yZWFkIiBpcyB0aGUgbmFtZSBvZiBteSBwcm9ncmFtLCBi
+ZWNhdXNlIHdoZW4gaSBzdGFydGVkCj4gPiBpdCB3YXMgdXNlZCB0byAuLi4gd2VsbCAuLi4gcmVh
+ZCBzaW0gY2FyZHMgOi0pIFRoZSBGVVNFCj4gPiBjYWxscyBoYXZlIGJlZW4gbmFtZWQgd2l0aCBh
+IHNjZnNfIHByZWZpeCAoU21hcnRDYXJkRlMpLCBzbwo+ID4gc2Nmc19yZWFkLCBzY2ZzX3JlYWRk
+aXIsIGV0Yy4gVGhleSB1c2UgbWVtb3J5IHN0cnVjdHVyZXMKPiA+IGZpbGxlZCBieSB0aGUgcmVz
+dCBvZiB0aGUgcHJvZ3JhbS4KPiA+IAo+ID4gQmVzdCByZWdhcmRzLAo+ID4gV2VzbGV5Cj4gPiAK
+PiA+IAo+ID4gCj4gPiAtLS0gT24gVHVlLCA3LzEyLzExLCBTdGVmIEJvbiA8c3RlZmJvbkBnbWFp
+bC5jb20+Cj4gPiB3cm90ZToKPiA+IAo+ID4gPiBGcm9tOiBTdGVmIEJvbiA8c3RlZmJvbkBnbWFp
+bC5jb20+Cj4gPiA+IFN1YmplY3Q6IFJlOiBbZnVzZS1kZXZlbF0gVW5kZXJzdGFuZGluZyBkZWJ1
+ZyBvdXRwdXQKPiA+ID4gVG86ICJXZXNsZXkgUEE0V0RIIiA8cGE0d2RoQHlhaG9vLmNvbT4KPiA+
+ID4gQ2M6IGZ1c2UtZGV2ZWxAbGlzdHMuc291cmNlZm9yZ2UubmV0Cj4gPiA+IERhdGU6IFR1ZXNk
+YXksIEp1bHkgMTIsIDIwMTEsIDExOjQ5IEFNCj4gPiA+IEhpIFdlc2xleSwKPiA+ID4gCj4gPiA+
+IHRoZSBpbml0IGZ1bmN0aW9uIGlzIGFsd2F5cyBjYWxsZWQgZmlyc3QsIGJlZm9yZSBhbnkKPiA+
+IG90aGVyCj4gPiA+IGNhbGwuIFNlZToKPiA+ID4gCj4gPiA+IGh0dHA6Ly9mdXNlLnNvdXJjZWZv
+cmdlLm5ldC9kb3h5Z2VuL3N0cnVjdGZ1c2VfX2xvd2xldmVsX19vcHMuaHRtbCNiNmZhMGI5ZWRi
+NWIwMDJjZDE1MDJjOTY5Yzg4NzMyOQo+ID4gPiAKPiA+ID4gc28geWVzIGl0J3MgcHJvY2Vzc2lu
+ZyB5b3VyIGluaXQgZnVuY3Rpb24uCj4gPiA+IAo+ID4gPiBBYm91dCB0aGUgbWFsbG9jIGZ1bmN0
+aW9uLCB0aGlzIGhhcyBhbnl0aGluZyB0byBkaW8KPiA+IHdpdGgKPiA+ID4gbWVtb3J5Cj4gPiA+
+IGFsbG9jYXRpb24uIEV2ZXJ5IHByb2dyYW0gbmVlZHMgdGhpcy4KPiA+ID4gU28geW91J3JlIHBy
+b2dyYW0gaXMgdXNpbmcgdGhpcyBhbHNvLgo+ID4gPiAKPiA+ID4gSWYgeW91IHdhbnQgdG8gaGF2
+ZSBtb3JlIGRlYnVnIGluZm8sIGJ1aWxkIGluIHNvbWUKPiA+ID4gZnVuY3Rpb25zIGluIHlvdXIg
+ZnMgbGlrZToKPiA+ID4gCj4gPiA+IHN5c2xvZyhMT0dfREVCVUcsICJtZXNzYWdlLi4uLiIpCj4g
+PiA+IAo+ID4gPiB0aGUgc3ludGF4IGlzIHNpbXVsYXIgbGlrZSB0aGF0IG9mIHNwcmludGYuCj4g
+PiA+IAo+ID4gPiBJcyB5b3VyIGZzIHNvdCBzb21laHdlcmUgY2FsbGluZyBzaW1yZWFkPz8gaXQg
+c2hvdWxkLgo+ID4gPiBTb21ld2hlcmUgaW4gbWFpbj8KPiA+ID4gCj4gPiA+IFN0ZWYKPiA+ID4g
+Cj4gPiA+IDIwMTEvNy8xMiBXZXNsZXkgUEE0V0RIIDxwYTR3ZGhAeWFob28uY29tPjoKPiA+ID4g
+PiBIaSBBbGwsCj4gPiA+ID4KPiA+ID4gPiBJIGdvdCBteSBGUyB0byBydW4gaW4gZGVidWcgbW9k
+ZSwgYnV0IG5vdyBpCj4gPiBkb24ndAo+ID4gPiByZWFsbHkgdW5kZXJzdGFuZCB0aGUgZGVidWcg
+b3V0cHV0IDotKQo+ID4gPiA+Cj4gPiA+ID4gVGhlIG91dHB1dCAoanVzdCBiZWZvcmUgYSBpdCBl
+eGlzdCB1bmV4cGVjdGVkbHkpCj4gPiBpczoKPiA+ID4gPiBGVVNFIGxpYnJhcnkgdmVyc2lvbjog
+Mi44LjUKPiA+ID4gPiBudWxscGF0aF9vazogMAo+ID4gPiA+IHVuaXF1ZTogMSwgb3Bjb2RlOiBJ
+TklUICgyNiksIG5vZGVpZDogMCwgaW5zaXplOgo+ID4gNTYKPiA+ID4gPiBzaW1yZWFkOiBtYWxs
+b2MuYzozMDk3OiBzWVNNQUxMT2M6IEFzc2VydGlvbgo+ID4gYChvbGRfdG9wCj4gPiA+ID09ICgo
+KG1iaW5wdHIpICgoKGNoYXIgKikgJigoYXYpLT5iaW5zWygoMSkgLQo+ID4gMSkgKgo+ID4gPiAy
+XSkpIC0gX19idWlsdGluX29mZnNldG9mIChzdHJ1Y3QgbWFsbG9jX2NodW5rLAo+ID4gZmQpKSkp
+Cj4gPiA+ICYmIG9sZF9zaXplID09IDApIHx8ICgodW5zaWduZWQgbG9uZykKPiA+IChvbGRfc2l6
+ZSkKPiA+ID4gPj0gKHVuc2lnbmVkIGxvbmcpKCgoKF9fYnVpbHRpbl9vZmZzZXRvZiAoc3RydWN0
+Cj4gPiA+IG1hbGxvY19jaHVuaywgZmRfbmV4dHNpemUpKSsoKDIgKiAoc2l6ZW9mKHNpemVfdCkp
+KSAtCj4gPiAxKSkKPiA+ID4gJiB+KCgyICogKHNpemVvZihzaXplX3QpKSkgLSAxKSkpICYmCj4g
+PiA+ICgob2xkX3RvcCktPnNpemUgJiAweDEpICYmICgodW5zaWduZWQKPiA+ID4gbG9uZylvbGRf
+ZW5kICYgcGFnZW1hc2spID09IDApJyBmYWlsZWQuCj4gPiA+ID4gQWJvcnRlZAo+ID4gPiA+Cj4g
+PiA+ID4gRG9lcyAib3Bjb2RlOiBJTklUIiBtZWFuIGl0J3MgcnVubmluZyBteSBpbml0Cj4gPiBm
+dW5jdGlvbgo+ID4gPiA/Cj4gPiA+ID4gV2hhdCBpIGRvbid0IHJlYWxseSB1bmRlcnN0YW5kIGlz
+IHRoZSBtYWxsb2MKPiA+IGVycm9yLAo+ID4gPiBiZWNhdXNlIG15IGluaXQgZnVuY3Rpb24gZG9l
+cyBub3QgdXNlIG1hbGxvYzoKPiA+ID4gPgo+ID4gPiA+IHZvaWQgKnNjZnNfaW5pdChzdHJ1Y3Qg
+ZnVzZV9jb25uX2luZm8gKmNvbm4pCj4gPiA+ID4gewo+ID4gPiA+IMKgcmV0dXJuIE5VTEw7Cj4g
+PiA+ID4gfQo+ID4gPiA+Cj4gPiA+ID4gRG8geW91IGhhdmUgYW55IGNsdWVzID8KPiA+ID4gPgo+
+ID4gPiA+IFRoYW5rcyBpbiBhZHZhbmNlLgo+ID4gPiA+Cj4gPiA+ID4gQmVzdCByZWdhcmRzLAo+
+ID4gPiA+IFdlc2xleQo+ID4gPiA+Cj4gPiA+ID4KPiA+ID4KPiA+IC0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLQo+ID4gPiA+IEFsbCBvZiB0aGUgZGF0YSBnZW5lcmF0ZWQgaW4geW91ciBJVAo+ID4gaW5m
+cmFzdHJ1Y3R1cmUgaXMKPiA+ID4gc2VyaW91c2x5IHZhbHVhYmxlLgo+ID4gPiA+IFdoeT8gSXQg
+Y29udGFpbnMgYSBkZWZpbml0aXZlIHJlY29yZCBvZgo+ID4gYXBwbGljYXRpb24KPiA+ID4gcGVy
+Zm9ybWFuY2UsIHNlY3VyaXR5Cj4gPiA+ID4gdGhyZWF0cywgZnJhdWR1bGVudCBhY3Rpdml0eSwg
+YW5kIG1vcmUuIFNwbHVuawo+ID4gdGFrZXMKPiA+ID4gdGhpcyBkYXRhIGFuZCBtYWtlcwo+ID4g
+PiA+IHNlbnNlIG9mIGl0LiBJVCBzZW5zZS4gQW5kIGNvbW1vbiBzZW5zZS4KPiA+ID4gPiBodHRw
+Oi8vcC5zZi5uZXQvc2Z1L3NwbHVuay1kMmQtYzIKPiA+ID4gPiBfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+ID4gPiA+IGZ1c2UtZGV2ZWwgbWFpbGluZyBs
+aXN0Cj4gPiA+ID4gZnVzZS1kZXZlbEBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKPiA+ID4gPiBodHRw
+czovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby9mdXNlLWRldmVsCj4gPiA+
+ID4KPiA+ID4gCj4gPiAKPiA+IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+ID4gQWxsIG9mIHRoZSBk
+YXRhIGdlbmVyYXRlZCBpbiB5b3VyIElUIGluZnJhc3RydWN0dXJlIGlzCj4gPiBzZXJpb3VzbHkg
+dmFsdWFibGUuCj4gPiBXaHk/IEl0IGNvbnRhaW5zIGEgZGVmaW5pdGl2ZSByZWNvcmQgb2YgYXBw
+bGljYXRpb24KPiA+IHBlcmZvcm1hbmNlLCBzZWN1cml0eSAKPiA+IHRocmVhdHMsIGZyYXVkdWxl
+bnQgYWN0aXZpdHksIGFuZCBtb3JlLiBTcGx1bmsgdGFrZXMgdGhpcwo+ID4gZGF0YSBhbmQgbWFr
+ZXMgCj4gPiBzZW5zZSBvZiBpdC4gSVQgc2Vuc2UuIEFuZCBjb21tb24gc2Vuc2UuCj4gPiBodHRw
+Oi8vcC5zZi5uZXQvc2Z1L3NwbHVuay1kMmQtYzIKPiA+IF9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCj4gPiBmdXNlLWRldmVsIG1haWxpbmcgbGlzdAo+ID4g
+ZnVzZS1kZXZlbEBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKPiA+IGh0dHBzOi8vbGlzdHMuc291cmNl
+Zm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZvL2Z1c2UtZGV2ZWwKPiA+IAo+IAo+IC0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLQo+IEFsbCBvZiB0aGUgZGF0YSBnZW5lcmF0ZWQgaW4geW91ciBJVCBpbmZyYXN0
+cnVjdHVyZSBpcyBzZXJpb3VzbHkKPiB2YWx1YWJsZS4gV2h5PyBJdCBjb250YWlucyBhIGRlZmlu
+aXRpdmUgcmVjb3JkIG9mIGFwcGxpY2F0aW9uCj4gcGVyZm9ybWFuY2UsIHNlY3VyaXR5IHRocmVh
+dHMsIGZyYXVkdWxlbnQgYWN0aXZpdHksIGFuZCBtb3JlLiBTcGx1bmsKPiB0YWtlcyB0aGlzIGRh
+dGEgYW5kIG1ha2VzIHNlbnNlIG9mIGl0LiBJVCBzZW5zZS4gQW5kIGNvbW1vbiBzZW5zZS4KPiBo
+dHRwOi8vcC5zZi5uZXQvc2Z1L3NwbHVuay1kMmQtYzIKPiBfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwo+IGZ1c2UtZGV2ZWwgbWFpbGluZyBsaXN0Cj4gZnVz
+ZS1kZXZlbEBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKPiBodHRwczovL2xpc3RzLnNvdXJjZWZvcmdl
+Lm5ldC9saXN0cy9saXN0aW5mby9mdXNlLWRldmVsCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQWxs
+IG9mIHRoZSBkYXRhIGdlbmVyYXRlZCBpbiB5b3VyIElUIGluZnJhc3RydWN0dXJlIGlzIHNlcmlv
+dXNseSB2YWx1YWJsZS4KV2h5PyBJdCBjb250YWlucyBhIGRlZmluaXRpdmUgcmVjb3JkIG9mIGFw
+cGxpY2F0aW9uIHBlcmZvcm1hbmNlLCBzZWN1cml0eSAKdGhyZWF0cywgZnJhdWR1bGVudCBhY3Rp
+dml0eSwgYW5kIG1vcmUuIFNwbHVuayB0YWtlcyB0aGlzIGRhdGEgYW5kIG1ha2VzIApzZW5zZSBv
+ZiBpdC4gSVQgc2Vuc2UuIEFuZCBjb21tb24gc2Vuc2UuCmh0dHA6Ly9wLnNmLm5ldC9zZnUvc3Bs
+dW5rLWQyZC1jMgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpmdXNlLWRldmVsIG1haWxpbmcgbGlzdApmdXNlLWRldmVsQGxpc3RzLnNvdXJjZWZvcmdlLm5l
+dApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby9mdXNlLWRldmVs
+Cg==
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310483657</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Christian Thaeter &lt;ct@pipapo.org&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Understanding debug output</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

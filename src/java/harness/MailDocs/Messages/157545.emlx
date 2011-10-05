@@ -1,0 +1,126 @@
+5280
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 08 Jul 2011 16:03:00 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 6E78212AFC
+	for <alexander.holupirek@uni-konstanz.de>; Fri,  8 Jul 2011 16:03:00 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 08 Jul 2011 14:03:00 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 5AD184D6C4; Fri,  8 Jul 2011 16:03:00 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 4CA1A42677
+	for <holupire@inf.uni-konstanz.de>; Fri,  8 Jul 2011 16:03:00 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AvYAAPcNF07YIrVYkWdsb2JhbABTmFCOdRQBAQEBCQsLBxQFIIh9wmSGOASQQpJQ
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 08 Jul 2011 14:02:45 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QfBcK-0002Fo-V9; Fri, 08 Jul 2011 14:01:16 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <grosser.meister.morti@gmx.net>) id 1QfBcJ-0002Ff-TW
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 14:01:15 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of gmx.net
+	designates 213.165.64.22 as permitted sender)
+	client-ip=213.165.64.22;
+	envelope-from=grosser.meister.morti@gmx.net;
+	helo=mailout-de.gmx.net; 
+Received: from mailout-de.gmx.net ([213.165.64.22])
+	by sog-mx-1.v43.ch3.sourceforge.com with smtp (Exim 4.76)
+	id 1QfBcJ-0003jB-12
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 14:01:15 +0000
+Received: (qmail invoked by alias); 08 Jul 2011 14:01:08 -0000
+Received: from 80-121-34-209.adsl.highway.telekom.at (EHLO [10.0.0.140])
+	[80.121.34.209]
+	by mail.gmx.net (mp008) with SMTP; 08 Jul 2011 16:01:08 +0200
+X-Authenticated: #24390232
+X-Provags-ID: V01U2FsdGVkX19pNA1t0zxpdFWtgw+0V3INyCV5rHAfq7VLM8M4RM
+	IRshmzTpnB2Z7o
+Message-ID: <4E170D97.70404@gmx.net>
+Date: Fri, 08 Jul 2011 16:00:55 +0200
+From: =?ISO-8859-1?Q?Mathias_Panzenb=F6ck?=
+ <grosser.meister.morti@gmx.net>
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US;
+	rv:1.9.2.17) Gecko/20110428 Fedora/3.1.10-1.fc14 Thunderbird/3.1.10
+MIME-Version: 1.0
+To: fuse-devel@lists.sourceforge.net
+References: <1310131643.70950.YahooMailClassic@web39405.mail.mud.yahoo.com>
+In-Reply-To: <1310131643.70950.YahooMailClassic@web39405.mail.mud.yahoo.com>
+X-Y-GMX-Trusted: 0
+X-Spam-Score: -1.5 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [213.165.64.22 listed in list.dnswl.org]
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(grosser.meister.morti[at]gmx.net)
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1QfBcJ-0003jB-12
+Subject: Re: [fuse-devel] Preventing a FUSE filesystem from backgrounding
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+On 07/08/2011 03:27 PM, Wesley PA4WDH wrote:
+> Hi Panzi,
+>
+> I'm indeed using the high level API and what you describe sounds useful to me.
+> I guess i'll have to put these in the argc/argv i'll give to fuse_main() ?
+>
+
+Yes.
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310133655</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Mathias Panzenböck &lt;grosser.meister.morti@gmx.net&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Preventing a FUSE filesystem from backgrounding</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

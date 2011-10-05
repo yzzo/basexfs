@@ -1,0 +1,136 @@
+6813
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Wed, 13 Jul 2011 05:15:57 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 6F814126DD
+	for <alexander.holupirek@uni-konstanz.de>; Wed, 13 Jul 2011 05:15:57 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 13 Jul 2011 03:15:57 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 510FE4D6C4; Wed, 13 Jul 2011 05:15:57 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 3DBBF34895
+	for <holupire@inf.uni-konstanz.de>; Wed, 13 Jul 2011 05:15:57 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApQAABsNHU7YIrVYkWdsb2JhbABFDhuEK5NLjjRqCBQBAQEBCQsLBxQFIIh6pW6LcD6HDTuIbYErgXeCCYEPBIs6hRuCC4w2PIN0
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 13 Jul 2011 03:15:56 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qgptg-0005kS-I5; Wed, 13 Jul 2011 03:14:00 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <hanwenn@gmail.com>) id 1Qgpte-0005kN-UC
+	for fuse-devel@lists.sourceforge.net; Wed, 13 Jul 2011 03:13:58 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.214.175 as permitted sender)
+	client-ip=209.85.214.175; envelope-from=hanwenn@gmail.com;
+	helo=mail-iw0-f175.google.com; 
+Received: from mail-iw0-f175.google.com ([209.85.214.175])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1Qgpta-0005Rz-A0
+	for fuse-devel@lists.sourceforge.net; Wed, 13 Jul 2011 03:13:58 +0000
+Received: by iwn4 with SMTP id 4so7061895iwn.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Tue, 12 Jul 2011 20:13:49 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.231.210.10 with SMTP id gi10mr539771ibb.173.1310526828997;
+	Tue, 12 Jul 2011 20:13:48 -0700 (PDT)
+Received: by 10.231.58.194 with HTTP; Tue, 12 Jul 2011 20:13:48 -0700 (PDT)
+In-Reply-To: <8739ib5uwf.fsf@tucsk.pomaz.szeredi.hu>
+References: <CAOw_e7bKciatAh2xTQmBMw-En=y1a32SVqy5X9zFo6ind3QX_w@mail.gmail.com>
+	<8739ib5uwf.fsf@tucsk.pomaz.szeredi.hu>
+Date: Wed, 13 Jul 2011 00:13:48 -0300
+Message-ID: <CAOw_e7a2pJafQ6Fa-oLA5-8AsnDjHpR-tHCFJYFh7UFb3ieg=g@mail.gmail.com>
+From: Han-Wen Nienhuys <hanwenn@gmail.com>
+To: Miklos Szeredi <miklos@szeredi.hu>
+X-Spam-Score: -1.5 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(hanwenn[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.1 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1Qgpta-0005Rz-A0
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] DESTROY message?
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+Reply-To: hanwen@xs4all.nl
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+T24gVHVlLCBKdWwgMTIsIDIwMTEgYXQgMToyNCBQTSwgTWlrbG9zIFN6ZXJlZGkgPG1pa2xvc0Bz
+emVyZWRpLmh1PiB3cm90ZToKPj4gSSBsb29raW5nIGF0IGhvdyB0byBoYW5kbGUgZGFlbW9uIHNo
+dXRkb3duIGNsZWFubHkuIMKgVGhlIC5oIGZpbGVzCj4+IHN1Z2dlc3RzIHRoYXQgdGhlIGtlcm5l
+bCB3aWxsIHNlbmQgYSBERVNUUk9ZIG9wZXJhdGlvbiBpZiB0aGUgRlMgaXMKPj4gdW5tb3VudGVk
+LiBIb3dldmVyLCBJIGRvbid0IHNlZSB0aGlzIG1lc3NhZ2UgcGFzc2luZyBieSBvbiBteSBzeXN0
+ZW06Cj4KPiBUaGUgREVTVFJPWSBtZXNzYWdlIGlzIG9ubHkgc2VudCBmb3IgZnVzZWJsayBmaWxl
+c3lzdGVtcyAoc3VjaCBhcwo+IE5URlMtM2cpLgoKSSB0cmllZCB0byBmaW5kIG1vcmUgaW5mbyBv
+biBmdXNlYmxrIGZpbGVzeXN0ZW1zLCBidXQgSSBhbSBzdGlsbCBub3QKc3VyZSB3aGF0IHRoZXkg
+YXJlLgoKPiBJdCBjb3VsZCBiZSBleHRlbmRlZCB0byBiZSBzZW50IG9uIHBsYWluICJmdXNlIiBm
+aWxlc3lzdGVtcywgYnV0IHRoZXJlCj4gYXJlIHNvbWUgcHJvYmxlbXMgd2l0aCB0aGF0LCBzdWNo
+IGFzIGJlaW5nIGFibGUgdG8gYmxvY2sgYSBwcml2aWxlZ2VkCj4gdW1vdW50IGNhbGwgZnJvbSBh
+biB1bnByaXZpbGVnZWQgZmlsZXN5c3RlbSBkYWVtb24uCgpPSy4KCj4+IEFsc28sIHdoYXQgaXMg
+dGhlIG9mZmljaWFsIGNvZGUgZm9yIHJlYWRzIG9uIGEgc2h1dGRvd24gY29ubmVjdGlvbj8KPj4g
+VGhlIGxpYmZ1c2Ugc291cmNlIHN1Z2dlc3RzIGl0IGlzIEVOT0RFViwgYW5kIHRoaXMgaXMgd2hh
+dCBJIGdldCBvbgo+PiBVYnVudHUgMTAuMDQsIGJ1dCBvbiBGZWRvcmEgMTQsIEkgc2F3IEVOT1NZ
+Uy4KPgo+IFdoZXJlIGRpZCB5b3Ugc2VlIEVOT1NZUz8gwqBUaGF0IHNvdW5kcyBhIGJpdCB3ZWly
+ZC4KCkkgc2F3IGl0IG9uIEZlZG9yYSAxNCwgYnV0IHNvbWUgdGltZSBhZ28uIEkgY2FuJ3QgcmVw
+cm9kdWNlIGl0CmFueW1vcmUsIGFuZCB1cGdyYWRlZCB0byBGZWRvcmEgMTUuICBJdCBpcyBtb3Jl
+IHByb2JhYmxlIHRoYXQgSQptaXN1bmRlcnN0b29kIHNvbWUgb3RoZXIgZXJyb3IgZHVyaW5nIGRl
+dmVsb3BtZW50LCBJIGd1ZXNzLgoKLS0gCkhhbi1XZW4gTmllbmh1eXMgLSBoYW53ZW5AeHM0YWxs
+Lm5sIC0gaHR0cDovL3d3dy54czRhbGwubmwvfmhhbndlbgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+CkFwcFN1bW8gUHJlc2VudHMgYSBGUkVFIFZpZGVvIGZvciB0aGUgU291cmNlRm9yZ2UgQ29tbXVu
+aXR5IGJ5IEVyaWMgClJpZXMsIHRoZSBjcmVhdG9yIG9mIHRoZSBMZWFuIFN0YXJ0dXAgTWV0aG9k
+b2xvZ3kgb24gIkxlYW4gU3RhcnR1cCAKU2VjcmV0cyBSZXZlYWxlZC4iIFRoaXMgdmlkZW8gc2hv
+d3MgeW91IGhvdyB0byB2YWxpZGF0ZSB5b3VyIGlkZWFzLCAKb3B0aW1pemUgeW91ciBpZGVhcyBh
+bmQgaWRlbnRpZnkgeW91ciBidXNpbmVzcyBzdHJhdGVneS4KaHR0cDovL3Auc2YubmV0L3NmdS9h
+cHBzdW1vc2ZkZXYyZGV2Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmZ1c2UtZGV2ZWwgbWFpbGluZyBsaXN0CmZ1c2UtZGV2ZWxAbGlzdHMuc291cmNlZm9y
+Z2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZvL2Z1c2Ut
+ZGV2ZWwK
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310526828</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Han-Wen Nienhuys &lt;hanwenn@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] DESTROY message?</string>
+	<key>to</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+</dict>
+</plist>

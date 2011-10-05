@@ -1,0 +1,153 @@
+5847
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Mon, 04 Jul 2011 21:57:35 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 6977150E8
+	for <alexander.holupirek@uni-konstanz.de>; Mon,  4 Jul 2011 21:57:35 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 04 Jul 2011 19:57:35 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 5008E4D98E; Mon,  4 Jul 2011 21:57:35 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 3D8394D942
+	for <holupire@inf.uni-konstanz.de>; Mon,  4 Jul 2011 21:57:35 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap0AALoaEk7YIrVYkWdsb2JhbABTp3wUAQEBAQkLCwcUBSCIegK4cYg9gzSDAgSQL4Z/gx6IIg
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 04 Jul 2011 19:57:34 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QdpFS-0006Ue-K7; Mon, 04 Jul 2011 19:56:02 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <webmaster@hartwork.org>) id 1QdpFR-0006UV-7v
+	for fuse-devel@lists.sourceforge.net; Mon, 04 Jul 2011 19:56:01 +0000
+X-ACL-Warn: 
+Received: from smtprelay02.ispgateway.de ([80.67.18.14])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QdpFP-0002wU-Mp
+	for fuse-devel@lists.sourceforge.net; Mon, 04 Jul 2011 19:56:01 +0000
+Received: from [85.179.14.51] (helo=[192.168.1.2])
+	by smtprelay02.ispgateway.de with esmtpsa (TLSv1:AES256-SHA:256)
+	(Exim 4.68) (envelope-from <webmaster@hartwork.org>)
+	id 1Qdp0y-00059Y-1A; Mon, 04 Jul 2011 21:41:04 +0200
+Message-ID: <4E12174A.8080108@hartwork.org>
+Date: Mon, 04 Jul 2011 21:40:58 +0200
+From: Sebastian Pipping <webmaster@hartwork.org>
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US;
+	rv:1.9.2.18) Gecko/20110628 Thunderbird/3.1.11
+MIME-Version: 1.0
+To: Miklos Szeredi <miklos@szeredi.hu>
+References: <4E0EC48A.8010506@hartwork.org>
+	<8762nhzzwa.fsf@tucsk.pomaz.szeredi.hu>
+In-Reply-To: <8762nhzzwa.fsf@tucsk.pomaz.szeredi.hu>
+X-Df-Sender: hartwork@binera.de
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [80.67.18.14 listed in list.dnswl.org]
+	-0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+X-Headers-End: 1QdpFP-0002wU-Mp
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Miklos,
+
+
+thanks for your detailed reply!  The need for ulockmgr_server is clear
+to me now.
+
+
+On 07/04/2011 08:03 PM, Miklos Szeredi wrote:
+> It's because of a not well thought out patch (commit a9ff4f87 "fuse:
+> support BSD locking semantics")
+> 
+> There are several problems with this patch:
+> 
+>   - it's not backward compatible, passing flock(2) calls to userspace
+>     unconditionally (if userspace sets FUSE_POSIX_LOCKS)
+> 
+>   - it doesn't cater for the fact that flock locks are automatically
+>     unlocked on file release
+> 
+>   - it doesn't take into account the fact that flock exclusive locks
+>     (write locks) don't need an fd opened for write.
+> 
+> The last one invalidates the original premise of the patch that flock
+> locks can be emulated with POSIX locks.
+> 
+> Will fix these issues.
+
+Glad to hear.  How can I best track progress on this?
+
+
+>>   Currently either
+>>    the FUSE file system or ulockmgr_server seem to become
+>>    owner of the lock, instead.
+> 
+> Yep, ulockmgr_server should be the owner.
+
+I wonder: if FUSE is handling GETLK would it be possible to set l_pid to
+the value that fuse_get_context()->pid had back when the (successful)
+call to SETLK(W) took place?  Unless the kernel prevents that it would
+allow pretending that the actual lock requestee is the owner, not
+ulockmgr_server.  Do you see problems with this approach?  If so maybe
+it could be made a mount parameter switch?
+
+Best,
+
+
+
+Sebastian
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309808458</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Sebastian Pipping &lt;webmaster@hartwork.org&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example</string>
+	<key>to</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+</dict>
+</plist>

@@ -1,0 +1,150 @@
+6509
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 19 Jul 2011 12:38:31 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 720C312C0E
+	for <alexander.holupirek@uni-konstanz.de>; Tue, 19 Jul 2011 12:38:31 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 19 Jul 2011 10:38:31 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 52F354D9FD; Tue, 19 Jul 2011 12:38:31 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 3EE584D98E
+	for <holupire@inf.uni-konstanz.de>; Tue, 19 Jul 2011 12:38:31 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApwAAG9dJU7YIrVYkWdsb2JhbABTp0IIFAEBAQEJCwsHFAUgiHwCpyIKnQ2GPASQXIILjEM8g10
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 19 Jul 2011 10:38:30 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qj7fb-0005Lw-NH; Tue, 19 Jul 2011 10:36:55 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1Qj7fa-0005Ll-3s
+	for fuse-devel@lists.sourceforge.net; Tue, 19 Jul 2011 10:36:54 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.215.171 as permitted sender)
+	client-ip=209.85.215.171; envelope-from=miklos@szeredi.hu;
+	helo=mail-ey0-f171.google.com; 
+Received: from mail-ey0-f171.google.com ([209.85.215.171])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-MD5:128)
+	(Exim 4.76) id 1Qj7fW-0007u5-5j
+	for fuse-devel@lists.sourceforge.net; Tue, 19 Jul 2011 10:36:54 +0000
+Received: by mail-ey0-f171.google.com with SMTP id 22so2025239eye.2
+	for <fuse-devel@lists.sourceforge.net>;
+	Tue, 19 Jul 2011 03:36:49 -0700 (PDT)
+Received: by 10.213.22.205 with SMTP id o13mr68915ebb.71.1311071809276;
+	Tue, 19 Jul 2011 03:36:49 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (catv-80-99-97-248.catv.broadband.hu
+	[80.99.97.248])
+	by mx.google.com with ESMTPS id n42sm1575398eef.2.2011.07.19.03.36.47
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Tue, 19 Jul 2011 03:36:48 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: John Haechten <jhaechten@Crossroads.com>
+References: <B7C4AE6690D8644FB819AFB98EDEFAC20B83FE11@CRDS-DAG02.COMMSTOR.Crossroads.com>
+Date: Tue, 19 Jul 2011 12:37:47 +0200
+In-Reply-To: <B7C4AE6690D8644FB819AFB98EDEFAC20B83FE11@CRDS-DAG02.COMMSTOR.Crossroads.com>
+	(John Haechten's message of "Fri, 15 Jul 2011 15:31:05 +0000")
+Message-ID: <87aacablok.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: -1.6 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+X-Headers-End: 1Qj7fW-0007u5-5j
+Cc: "fuse-devel@lists.sourceforge.net" <fuse-devel@lists.sourceforge.net>
+Subject: Re: [fuse-devel] NFS-FUSE Directory Listing Question
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+John Haechten <jhaechten@Crossroads.com> writes:
+
+> I am having an issue where I can not see more than about 25 items in
+> the directory listing through NFS.
+>
+> I access my FUSE file system through SAMBA and NFS.
+> I can see all the files through the SAMBA share.
+>
+> If I copy files through the SAMBA share, they do appear to show up in
+> NFS as long as the directory has less than 26 items.  I am following
+> the Unix/Linux guidelines on updated the Modification times, etc. of
+> the Parent Directory when files are added.  so I do not believe this
+> is a Stale Cache issue.  The new files do show up until there are 26
+> or more in the list.
+>
+> It appears to be more of an issue between NFS-FUSE interface and it
+> behaves like the buffer used for the directory list may not be of
+> sufficient size or is getting truncated.
+>
+> I have logging when populating the directory structure in the readdir
+> fuse callback which uses the "filler" function (I use an offset = 0)
+> and I believe that all filenames and attributes are being returned to
+> FUSE correctly.  This does appear to work fine through SAMBA.
+>
+> Any ideas on what might cause this type of behavior?
+
+Which fuse filesystem is this?
+
+If it's using the lowlevel interface, then my best guess would be an
+incorrect use of the directory offset.
+
+Thanks,
+Miklos
+
+------------------------------------------------------------------------------
+Magic Quadrant for Content-Aware Data Loss Prevention
+Research study explores the data loss prevention market. Includes in-depth
+analysis on the changes within the DLP market, and the criteria used to
+evaluate the strengths and weaknesses of these DLP solutions.
+http://www.accelacomm.com/jaw/sfnl/114/51385063/
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311071867</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] NFS-FUSE Directory Listing Question</string>
+	<key>to</key>
+	<string>John Haechten &lt;jhaechten@Crossroads.com&gt;</string>
+</dict>
+</plist>

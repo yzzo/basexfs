@@ -1,0 +1,143 @@
+6241
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Sat, 09 Jul 2011 11:34:11 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 59B1F128D4
+	for <alexander.holupirek@uni-konstanz.de>; Sat,  9 Jul 2011 11:34:11 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 09 Jul 2011 09:34:11 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 47D664D942; Sat,  9 Jul 2011 11:34:11 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 39FCE4D6C4
+	for <holupire@inf.uni-konstanz.de>; Sat,  9 Jul 2011 11:34:11 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AoUAACIgGE7YIrVYkWdsb2JhbAAoK6dJCBQBAQEBCQsLBxQFIIh6JaUojCyGNDuIbYY6BIdMiH2CC4gihA88g2I
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 09 Jul 2011 09:34:10 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QfTtc-0001Qd-OL; Sat, 09 Jul 2011 09:32:20 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <anand.avati@gmail.com>) id 1QfTtb-0001QS-A4
+	for fuse-devel@lists.sourceforge.net; Sat, 09 Jul 2011 09:32:19 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.214.47 as permitted sender)
+	client-ip=209.85.214.47; envelope-from=anand.avati@gmail.com;
+	helo=mail-bw0-f47.google.com; 
+Received: from mail-bw0-f47.google.com ([209.85.214.47])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QfTta-00017Z-83
+	for fuse-devel@lists.sourceforge.net; Sat, 09 Jul 2011 09:32:19 +0000
+Received: by bwf20 with SMTP id 20so3631645bwf.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Sat, 09 Jul 2011 02:32:11 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.15.144 with SMTP id k16mr726787bka.248.1310203931492; Sat,
+	09 Jul 2011 02:32:11 -0700 (PDT)
+Received: by 10.205.81.200 with HTTP; Sat, 9 Jul 2011 02:32:11 -0700 (PDT)
+In-Reply-To: <32023853.post@talk.nabble.com>
+References: <BANLkTikOWNuw5zRDFPiYEwUVRdrNuVQF3w@mail.gmail.com>
+	<BANLkTi=+uQoS9_A8TdN3pGAKeH=_GTX7uw@mail.gmail.com>
+	<BANLkTin0TEegMBCVZHJzGLU+HW94wpdLgA@mail.gmail.com>
+	<BANLkTinvJuuNmyAmPMD+Sk=fkEFWQi4vGQ@mail.gmail.com>
+	<BANLkTikW1BZPHkstbE+jdoFv=Bsigk=DUQ@mail.gmail.com>
+	<32023853.post@talk.nabble.com>
+Date: Sat, 9 Jul 2011 15:02:11 +0530
+Message-ID: <CAFboF2y1P8-mYoP571K6cKiVc11UqfWrr+nb=S-idt3fU3EaiQ@mail.gmail.com>
+From: Anand Avati <anand.avati@gmail.com>
+To: dbanerjee <dbanerjee@avid.com>, Miklos Szeredi <miklos@szeredi.hu>
+X-Spam-Score: -0.3 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(anand.avati[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	1.0 HTML_MESSAGE           BODY: HTML included in message
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.3 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QfTta-00017Z-83
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] Does fuse support O_DIRECT?
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+>
+> IMHO O_DIRECT should be wired directly to fh->directio of file handle ops
+> like read/write.
+
+
+This has been discussed before and was decided at that time that handling
+O_DIRECT setting/unsetting via fcntl() would make proper support tricky.
+Here is the link to the discussion (which also has a patch which does what
+you describe) -
+
+thread -
+http://sourceforge.net/mailarchive/forum.php?thread_name=E1IhXuJ-0001ve-00%40dorka.pomaz.szeredi.hu&forum_name=fuse-devel
+
+patch -
+http://sourceforge.net/mailarchive/attachment.php?list_name=fuse-devel&message_id=8bd4838e0710151250l74ea34d3reccbc089cda1a28e%40mail.gmail.com&counter=1
+
+
+Miklos, while I agree that handling of dynamic O_DIRECT setting/unsetting
+could be tricky, why not make that fcntl call alone unsupported instead of
+open with O_DIRECT? Almost every application opens and fd in O_DIRECT till
+it is closed and fcntl seems to be hardly used ever.
+
+Avati
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310203931</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Anand Avati &lt;anand.avati@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Does fuse support O_DIRECT?</string>
+	<key>to</key>
+	<string>dbanerjee &lt;dbanerjee@avid.com&gt;, Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+</dict>
+</plist>

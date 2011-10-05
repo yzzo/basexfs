@@ -1,0 +1,612 @@
+21145
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Wed, 06 Jul 2011 13:28:26 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 8F49712466
+	for <alexander.holupirek@uni-konstanz.de>; Wed,  6 Jul 2011 13:28:26 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 06 Jul 2011 11:28:27 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 779654D68C; Wed,  6 Jul 2011 13:28:26 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 6239A423E1
+	for <holupire@inf.uni-konstanz.de>; Wed,  6 Jul 2011 13:28:26 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqUAAEFGFE7YIrVYkWdsb2JhbABTp3sIFAEBAQEJCwsHFAUgiHymZZx/hjYEkDmCCIwnPINb
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 06 Jul 2011 11:28:25 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QeQFb-0000vc-BF; Wed, 06 Jul 2011 11:26:39 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1QeQFZ-0000vM-LG
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 11:26:37 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.161.47 as permitted sender)
+	client-ip=209.85.161.47; envelope-from=miklos@szeredi.hu;
+	helo=mail-fx0-f47.google.com; 
+Received: from mail-fx0-f47.google.com ([209.85.161.47])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QeQFY-0003LC-3m
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 11:26:37 +0000
+Received: by fxg11 with SMTP id 11so7879056fxg.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Wed, 06 Jul 2011 04:26:29 -0700 (PDT)
+Received: by 10.223.97.219 with SMTP id m27mr13042722fan.81.1309951589663;
+	Wed, 06 Jul 2011 04:26:29 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (catv-80-98-43-182.catv.broadband.hu
+	[80.98.43.182])
+	by mx.google.com with ESMTPS id u20sm3811157fac.42.2011.07.06.04.26.28
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Wed, 06 Jul 2011 04:26:29 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: fuse-devel@lists.sourceforge.net
+Date: Wed, 06 Jul 2011 13:27:18 +0200
+Message-ID: <877h7v3azt.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: -0.5 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	1.1 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QeQFY-0003LC-3m
+Subject: [fuse-devel] [PATCH] Add ->flock() operation to low and high level
+	interfaces
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+This fixes problems with emulating flock() with POSIX locking.
+Reported by Sebastian Pipping.
+
+As with lock/setlk/getlk most filesystems don't need to implement
+this, as the kernel takes care of file locking.  The only reason to
+implement locking operations is for network filesystems which want
+file locking to work between clients.
+---
+ ChangeLog               |   10 +++++++++
+ example/fusexmp_fh.c    |   14 ++++++++++++
+ include/fuse.h          |   23 ++++++++++++++++++++
+ include/fuse_common.h   |    9 +++++++-
+ include/fuse_kernel.h   |    9 +++++++-
+ include/fuse_lowlevel.h |   21 ++++++++++++++++++-
+ lib/fuse.c              |   44 +++++++++++++++++++++++++++++++++++++++
+ lib/fuse_i.h            |    3 +-
+ lib/fuse_lowlevel.c     |   52 ++++++++++++++++++++++++++++++++++++++++------
+ lib/modules/iconv.c     |   13 +++++++++++
+ lib/modules/subdir.c    |   13 +++++++++++
+ 11 files changed, 200 insertions(+), 11 deletions(-)
+
+diff --git a/ChangeLog b/ChangeLog
+index 0af2703..7073061 100644
+--- a/ChangeLog
++++ b/ChangeLog
+@@ -1,3 +1,13 @@
++2011-07-06  Miklos Szeredi <miklos@szeredi.hu>
++
++	* Add ->flock() operation to low and high level interfaces.  This
++	fixes problems with emulating flock() with POSIX locking.
++	Reported by Sebastian Pipping.  As with lock/setlk/getlk most
++	filesystems don't need to implement this, as the kernel takes care
++	of file locking.  The only reason to implement locking operations
++	is for network filesystems which want file locking to work between
++	clients.
++
+ 2011-07-02  Sebastian Pipping <sebastian@pipping.org>
+ 
+ 	* Make xmp_utimens of examples "fusexmp" and "fusexmp_fh"
+diff --git a/example/fusexmp_fh.c b/example/fusexmp_fh.c
+index 96427b3..046185c 100644
+--- a/example/fusexmp_fh.c
++++ b/example/fusexmp_fh.c
+@@ -31,6 +31,7 @@
+ #ifdef HAVE_SETXATTR
+ #include <sys/xattr.h>
+ #endif
++#include <sys/file.h> /* flock(2) */
+ 
+ static int xmp_getattr(const char *path, struct stat *stbuf)
+ {
+@@ -481,6 +482,18 @@ static int xmp_lock(const char *path, struct fuse_file_info *fi, int cmd,
+ 			   sizeof(fi->lock_owner));
+ }
+ 
++static int xmp_flock(const char *path, struct fuse_file_info *fi, int op)
++{
++	int res;
++	(void) path;
++
++	res = flock(fi->fh, op);
++	if (res == -1)
++		return -errno;
++
++	return 0;
++}
++
+ static struct fuse_operations xmp_oper = {
+ 	.getattr	= xmp_getattr,
+ 	.fgetattr	= xmp_fgetattr,
+@@ -518,6 +531,7 @@ static struct fuse_operations xmp_oper = {
+ 	.removexattr	= xmp_removexattr,
+ #endif
+ 	.lock		= xmp_lock,
++	.flock		= xmp_flock,
+ 
+ 	.flag_nullpath_ok = 1,
+ };
+diff --git a/include/fuse.h b/include/fuse.h
+index 7e52719..b05152d 100644
+--- a/include/fuse.h
++++ b/include/fuse.h
+@@ -548,6 +548,27 @@ struct fuse_operations {
+ 	 */
+ 	int (*read_buf) (const char *, struct fuse_bufvec **bufp,
+ 			 size_t size, off_t off, struct fuse_file_info *);
++	/**
++	 * Perform BSD file locking operation
++	 *
++	 * The op argument will be either LOCK_SH, LOCK_EX or LOCK_UN
++	 *
++	 * Nonblocking requests will be indicated by ORing LOCK_NB to
++	 * the above operations
++	 *
++	 * For more information see the flock(2) manual page.
++	 *
++	 * Additionally fi->owner will be set to a value unique to
++	 * this open file.  This same value will be supplied to
++	 * ->release() when the file is released.
++	 *
++	 * Note: if this method is not implemented, the kernel will still
++	 * allow file locking to work locally.  Hence it is only
++	 * interesting for network filesystems and similar.
++	 *
++	 * Introduced in version 2.9
++	 */
++	int (*flock) (const char *, struct fuse_file_info *, int op);
+ };
+ 
+ /** Extra context that may be needed by some filesystems
+@@ -813,6 +834,8 @@ int fuse_fs_create(struct fuse_fs *fs, const char *path, mode_t mode,
+ 		   struct fuse_file_info *fi);
+ int fuse_fs_lock(struct fuse_fs *fs, const char *path,
+ 		 struct fuse_file_info *fi, int cmd, struct flock *lock);
++int fuse_fs_flock(struct fuse_fs *fs, const char *path,
++		  struct fuse_file_info *fi, int op);
+ int fuse_fs_chmod(struct fuse_fs *fs, const char *path, mode_t mode);
+ int fuse_fs_chown(struct fuse_fs *fs, const char *path, uid_t uid, gid_t gid);
+ int fuse_fs_truncate(struct fuse_fs *fs, const char *path, off_t size);
+diff --git a/include/fuse_common.h b/include/fuse_common.h
+index db17fa6..76f7200 100644
+--- a/include/fuse_common.h
++++ b/include/fuse_common.h
+@@ -70,8 +70,14 @@ struct fuse_file_info {
+ 	    seekable.  Introduced in version 2.8 */
+ 	unsigned int nonseekable : 1;
+ 
++	/* Indicates that flock locks for this file should be
++	   released.  If set, lock_owner shall contain a valid value.
++	   May only be set in ->release().  Introduced in version
++	   2.9 */
++	unsigned int flock_release : 1;
++
+ 	/** Padding.  Do not use*/
+-	unsigned int padding : 28;
++	unsigned int padding : 27;
+ 
+ 	/** File handle.  May be filled in by filesystem in open().
+ 	    Available in all other file operations */
+@@ -103,6 +109,7 @@ struct fuse_file_info {
+ #define FUSE_CAP_SPLICE_WRITE	(1 << 7)
+ #define FUSE_CAP_SPLICE_MOVE	(1 << 8)
+ #define FUSE_CAP_SPLICE_READ	(1 << 9)
++#define FUSE_CAP_FLOCK_LOCKS	(1 << 10)
+ 
+ /**
+  * Ioctl flags
+diff --git a/include/fuse_kernel.h b/include/fuse_kernel.h
+index ab8b94e..8b65f46 100644
+--- a/include/fuse_kernel.h
++++ b/include/fuse_kernel.h
+@@ -73,6 +73,9 @@
+  *  - FUSE_IOCTL_UNRESTRICTED shall now return with array of 'struct
+  *    fuse_ioctl_iovec' instead of ambiguous 'struct iovec'
+  *  - add FUSE_IOCTL_32BIT flag
++ *
++ * 7.17
++ *  - add FUSE_FLOCK_LOCKS and FUSE_RELEASE_FLOCK_UNLOCK
+  */
+ 
+ #ifndef _LINUX_FUSE_H
+@@ -109,7 +112,7 @@
+ #define FUSE_KERNEL_VERSION 7
+ 
+ /** Minor version number of this interface */
+-#define FUSE_KERNEL_MINOR_VERSION 16
++#define FUSE_KERNEL_MINOR_VERSION 17
+ 
+ /** The node ID of the root inode */
+ #define FUSE_ROOT_ID 1
+@@ -184,8 +187,10 @@ struct fuse_file_lock {
+ /**
+  * INIT request/reply flags
+  *
++ * FUSE_POSIX_LOCKS: remote locking for POSIX file locks
+  * FUSE_EXPORT_SUPPORT: filesystem handles lookups of "." and ".."
+  * FUSE_DONT_MASK: don't apply umask to file mode on create operations
++ * FUSE_FLOCK_LOCKS: remote locking for BSD style file locks
+  */
+ #define FUSE_ASYNC_READ		(1 << 0)
+ #define FUSE_POSIX_LOCKS	(1 << 1)
+@@ -194,6 +199,7 @@ struct fuse_file_lock {
+ #define FUSE_EXPORT_SUPPORT	(1 << 4)
+ #define FUSE_BIG_WRITES		(1 << 5)
+ #define FUSE_DONT_MASK		(1 << 6)
++#define FUSE_FLOCK_LOCKS	(1 << 10)
+ 
+ /**
+  * CUSE INIT request/reply flags
+@@ -206,6 +212,7 @@ struct fuse_file_lock {
+  * Release flags
+  */
+ #define FUSE_RELEASE_FLUSH	(1 << 0)
++#define FUSE_RELEASE_FLOCK_UNLOCK	(1 << 1)
+ 
+ /**
+  * Getattr flags
+diff --git a/include/fuse_lowlevel.h b/include/fuse_lowlevel.h
+index e38fe92..7c00f76 100644
+--- a/include/fuse_lowlevel.h
++++ b/include/fuse_lowlevel.h
+@@ -796,7 +796,7 @@ struct fuse_lowlevel_ops {
+ 	 * @param req request handle
+ 	 * @param ino the inode number
+ 	 * @param fi file information
+-	 * @param lock the region/type to test
++	 * @param lock the region/type to set
+ 	 * @param sleep locking operation may sleep
+ 	 */
+ 	void (*setlk) (fuse_req_t req, fuse_ino_t ino,
+@@ -932,6 +932,25 @@ struct fuse_lowlevel_ops {
+ 	void (*forget_multi) (fuse_req_t req, size_t count,
+ 			      struct fuse_forget_data *forgets);
+ 
++	/**
++	 * Acquire, modify or release a BSD file lock
++	 *
++	 * Note: if the locking methods are not implemented, the kernel
++	 * will still allow file locking to work locally.  Hence these are
++	 * only interesting for network filesystems and similar.
++	 *
++	 * Introduced in version 2.9
++	 *
++	 * Valid replies:
++	 *   fuse_reply_err
++	 *
++	 * @param req request handle
++	 * @param ino the inode number
++	 * @param fi file information
++	 * @param op the locking operation, see flock(2)
++	 */
++	void (*flock) (fuse_req_t req, fuse_ino_t ino,
++		       struct fuse_file_info *fi, int op);
+ };
+ 
+ /**
+diff --git a/lib/fuse.c b/lib/fuse.c
+index 50f3d0d..f7740c3 100644
+--- a/lib/fuse.c
++++ b/lib/fuse.c
+@@ -1933,6 +1933,27 @@ int fuse_fs_lock(struct fuse_fs *fs, const char *path,
+ 	}
+ }
+ 
++int fuse_fs_flock(struct fuse_fs *fs, const char *path,
++		  struct fuse_file_info *fi, int op)
++{
++	fuse_get_context()->private_data = fs->user_data;
++	if (fs->op.flock) {
++		if (fs->debug) {
++			int xop = op & ~LOCK_NB;
++
++			fprintf(stderr, "lock[%llu] %s%s\n",
++				(unsigned long long) fi->fh,
++				xop == LOCK_SH ? "LOCK_SH" :
++				(xop == LOCK_EX ? "LOCK_EX" :
++				 (xop == LOCK_UN ? "LOCK_UN" : "???")),
++				(op & LOCK_NB) ? "|LOCK_NB" : "");
++		}
++		return fs->op.flock(path, fi, op);
++	} else {
++		return -ENOSYS;
++	}
++}
++
+ int fuse_fs_chown(struct fuse_fs *fs, const char *path, uid_t uid, gid_t gid)
+ {
+ 	fuse_get_context()->private_data = fs->user_data;
+@@ -2410,6 +2431,10 @@ void fuse_fs_init(struct fuse_fs *fs, struct fuse_conn_info *conn)
+ 	fuse_get_context()->private_data = fs->user_data;
+ 	if (!fs->op.write_buf)
+ 		conn->want &= ~FUSE_CAP_SPLICE_READ;
++	if (!fs->op.lock)
++		conn->want &= ~FUSE_CAP_POSIX_LOCKS;
++	if (!fs->op.flock)
++		conn->want &= ~FUSE_CAP_FLOCK_LOCKS;
+ 	if (fs->op.init)
+ 		fs->user_data = fs->op.init(conn);
+ }
+@@ -3754,6 +3779,24 @@ static void fuse_lib_setlk(fuse_req_t req, fuse_ino_t ino,
+ 	reply_err(req, err);
+ }
+ 
++static void fuse_lib_flock(fuse_req_t req, fuse_ino_t ino,
++			   struct fuse_file_info *fi, int op)
++{
++	struct fuse *f = req_fuse_prepare(req);
++	char *path;
++	int err;
++
++	err = get_path_nullok(f, ino, &path);
++	if (err == 0) {
++		struct fuse_intr_data d;
++		fuse_prepare_interrupt(f, req, &d);
++		err = fuse_fs_flock(f->fs, path, fi, op);
++		fuse_finish_interrupt(f, req, &d);
++		free_path(f, ino, path);
++	}
++	reply_err(req, err);
++}
++
+ static void fuse_lib_bmap(fuse_req_t req, fuse_ino_t ino, size_t blocksize,
+ 			  uint64_t idx)
+ {
+@@ -3939,6 +3982,7 @@ static struct fuse_lowlevel_ops fuse_path_ops = {
+ 	.removexattr = fuse_lib_removexattr,
+ 	.getlk = fuse_lib_getlk,
+ 	.setlk = fuse_lib_setlk,
++	.flock = fuse_lib_flock,
+ 	.bmap = fuse_lib_bmap,
+ 	.ioctl = fuse_lib_ioctl,
+ 	.poll = fuse_lib_poll,
+diff --git a/lib/fuse_i.h b/lib/fuse_i.h
+index dd98737..78f1467 100644
+--- a/lib/fuse_i.h
++++ b/lib/fuse_i.h
+@@ -62,7 +62,8 @@ struct fuse_ll {
+ 	int debug;
+ 	int allow_root;
+ 	int atomic_o_trunc;
+-	int no_remote_lock;
++	int no_remote_posix_lock;
++	int no_remote_flock;
+ 	int big_writes;
+ 	int splice_write;
+ 	int splice_move;
+diff --git a/lib/fuse_lowlevel.c b/lib/fuse_lowlevel.c
+index 3cf747d..b101523 100644
+--- a/lib/fuse_lowlevel.c
++++ b/lib/fuse_lowlevel.c
+@@ -1322,6 +1322,10 @@ static void do_release(fuse_req_t req, fuse_ino_t nodeid, const void *inarg)
+ 		fi.flush = (arg->release_flags & FUSE_RELEASE_FLUSH) ? 1 : 0;
+ 		fi.lock_owner = arg->lock_owner;
+ 	}
++	if (arg->release_flags & FUSE_RELEASE_FLOCK_UNLOCK) {
++		fi.flock_release = 1;
++		fi.lock_owner = arg->lock_owner;
++	}
+ 
+ 	if (req->f->op.release)
+ 		req->f->op.release(req, nodeid, &fi);
+@@ -1505,11 +1509,34 @@ static void do_setlk_common(fuse_req_t req, fuse_ino_t nodeid,
+ 	fi.fh = arg->fh;
+ 	fi.lock_owner = arg->owner;
+ 
+-	convert_fuse_file_lock(&arg->lk, &flock);
+-	if (req->f->op.setlk)
+-		req->f->op.setlk(req, nodeid, &fi, &flock, sleep);
+-	else
+-		fuse_reply_err(req, ENOSYS);
++	if (arg->lk_flags & FUSE_LK_FLOCK) {
++		int op = 0;
++
++		switch (arg->lk.type) {
++		case F_RDLCK:
++			op = LOCK_SH;
++			break;
++		case F_WRLCK:
++			op = LOCK_EX;
++			break;
++		case F_UNLCK:
++			op = LOCK_UN;
++			break;
++		}
++		if (!sleep)
++			op |= LOCK_NB;
++
++		if (req->f->op.flock)
++			req->f->op.flock(req, nodeid, &fi, op);
++		else
++			fuse_reply_err(req, ENOSYS);
++	} else {
++		convert_fuse_file_lock(&arg->lk, &flock);
++		if (req->f->op.setlk)
++			req->f->op.setlk(req, nodeid, &fi, &flock, sleep);
++		else
++			fuse_reply_err(req, ENOSYS);
++	}
+ }
+ 
+ static void do_setlk(fuse_req_t req, fuse_ino_t nodeid, const void *inarg)
+@@ -1726,6 +1753,8 @@ static void do_init(fuse_req_t req, fuse_ino_t nodeid, const void *inarg)
+ 			f->conn.capable |= FUSE_CAP_BIG_WRITES;
+ 		if (arg->flags & FUSE_DONT_MASK)
+ 			f->conn.capable |= FUSE_CAP_DONT_MASK;
++		if (arg->flags & FUSE_FLOCK_LOCKS)
++			f->conn.capable |= FUSE_CAP_FLOCK_LOCKS;
+ 	} else {
+ 		f->conn.async_read = 0;
+ 		f->conn.max_readahead = 0;
+@@ -1748,8 +1777,10 @@ static void do_init(fuse_req_t req, fuse_ino_t nodeid, const void *inarg)
+ 
+ 	if (f->atomic_o_trunc)
+ 		f->conn.want |= FUSE_CAP_ATOMIC_O_TRUNC;
+-	if (f->op.getlk && f->op.setlk && !f->no_remote_lock)
++	if (f->op.getlk && f->op.setlk && !f->no_remote_posix_lock)
+ 		f->conn.want |= FUSE_CAP_POSIX_LOCKS;
++	if (f->op.flock && !f->no_remote_flock)
++		f->conn.want |= FUSE_CAP_FLOCK_LOCKS;
+ 	if (f->big_writes)
+ 		f->conn.want |= FUSE_CAP_BIG_WRITES;
+ 
+@@ -1786,6 +1817,8 @@ static void do_init(fuse_req_t req, fuse_ino_t nodeid, const void *inarg)
+ 		outarg.flags |= FUSE_BIG_WRITES;
+ 	if (f->conn.want & FUSE_CAP_DONT_MASK)
+ 		outarg.flags |= FUSE_DONT_MASK;
++	if (f->conn.want & FUSE_CAP_FLOCK_LOCKS)
++		outarg.flags |= FUSE_FLOCK_LOCKS;
+ 	outarg.max_readahead = f->conn.max_readahead;
+ 	outarg.max_write = f->conn.max_write;
+ 	if (f->conn.proto_minor >= 13) {
+@@ -2360,7 +2393,10 @@ static struct fuse_opt fuse_ll_opts[] = {
+ 	{ "async_read", offsetof(struct fuse_ll, conn.async_read), 1 },
+ 	{ "sync_read", offsetof(struct fuse_ll, conn.async_read), 0 },
+ 	{ "atomic_o_trunc", offsetof(struct fuse_ll, atomic_o_trunc), 1},
+-	{ "no_remote_lock", offsetof(struct fuse_ll, no_remote_lock), 1},
++	{ "no_remote_lock", offsetof(struct fuse_ll, no_remote_posix_lock), 1},
++	{ "no_remote_lock", offsetof(struct fuse_ll, no_remote_flock), 1},
++	{ "no_remote_flock", offsetof(struct fuse_ll, no_remote_flock), 1},
++	{ "no_remote_posix_lock", offsetof(struct fuse_ll, no_remote_posix_lock), 1},
+ 	{ "big_writes", offsetof(struct fuse_ll, big_writes), 1},
+ 	{ "splice_write", offsetof(struct fuse_ll, splice_write), 1},
+ 	{ "no_splice_write", offsetof(struct fuse_ll, no_splice_write), 1},
+@@ -2394,6 +2430,8 @@ static void fuse_ll_help(void)
+ "    -o atomic_o_trunc      enable atomic open+truncate support\n"
+ "    -o big_writes          enable larger than 4kB writes\n"
+ "    -o no_remote_lock      disable remote file locking\n"
++"    -o no_remote_flock     disable remote file locking (BSD)\n"
++"    -o no_remote_posix_lock disable remove file locking (POSIX)\n"
+ "    -o [no_]splice_write   use splice to write to the fuse device\n"
+ "    -o [no_]splice_move    move data while splicing to the fuse device\n"
+ "    -o [no_]splice_read    use splice to read from the fuse device\n"
+diff --git a/lib/modules/iconv.c b/lib/modules/iconv.c
+index b9946d9..1b78192 100644
+--- a/lib/modules/iconv.c
++++ b/lib/modules/iconv.c
+@@ -549,6 +549,18 @@ static int iconv_lock(const char *path, struct fuse_file_info *fi, int cmd,
+ 	return err;
+ }
+ 
++static int iconv_flock(const char *path, struct fuse_file_info *fi, int op)
++{
++	struct iconv *ic = iconv_get();
++	char *newpath;
++	int err = iconv_convpath(ic, path, &newpath, 0);
++	if (!err) {
++		err = fuse_fs_flock(ic->next, newpath, fi, op);
++		free(newpath);
++	}
++	return err;
++}
++
+ static int iconv_bmap(const char *path, size_t blocksize, uint64_t *idx)
+ {
+ 	struct iconv *ic = iconv_get();
+@@ -616,6 +628,7 @@ static struct fuse_operations iconv_oper = {
+ 	.listxattr	= iconv_listxattr,
+ 	.removexattr	= iconv_removexattr,
+ 	.lock		= iconv_lock,
++	.flock		= iconv_flock,
+ 	.bmap		= iconv_bmap,
+ 
+ 	.flag_nullpath_ok = 1,
+diff --git a/lib/modules/subdir.c b/lib/modules/subdir.c
+index 6d9ac89..24dede6 100644
+--- a/lib/modules/subdir.c
++++ b/lib/modules/subdir.c
+@@ -536,6 +536,18 @@ static int subdir_lock(const char *path, struct fuse_file_info *fi, int cmd,
+ 	return err;
+ }
+ 
++static int subdir_flock(const char *path, struct fuse_file_info *fi, int op)
++{
++	struct subdir *d = subdir_get();
++	char *newpath;
++	int err = subdir_addpath(d, path, &newpath);
++	if (!err) {
++		err = fuse_fs_flock(d->next, newpath, fi, op);
++		free(newpath);
++	}
++	return err;
++}
++
+ static int subdir_bmap(const char *path, size_t blocksize, uint64_t *idx)
+ {
+ 	struct subdir *d = subdir_get();
+@@ -599,6 +611,7 @@ static struct fuse_operations subdir_oper = {
+ 	.listxattr	= subdir_listxattr,
+ 	.removexattr	= subdir_removexattr,
+ 	.lock		= subdir_lock,
++	.flock		= subdir_flock,
+ 	.bmap		= subdir_bmap,
+ 
+ 	.flag_nullpath_ok = 1,
+-- 
+1.7.3.4
+
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309951638</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] [PATCH] Add -&gt;flock() operation to low and high level interfaces</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

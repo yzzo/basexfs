@@ -1,0 +1,248 @@
+10187
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Wed, 20 Jul 2011 15:14:14 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 6072F12FD5
+	for <alexander.holupirek@uni-konstanz.de>; Wed, 20 Jul 2011 15:14:14 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 20 Jul 2011 13:14:14 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 3B0304D9FA; Wed, 20 Jul 2011 15:14:14 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 2DFE74D9F0
+	for <holupire@inf.uni-konstanz.de>; Wed, 20 Jul 2011 15:14:14 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqQAAHXUJk7YIrVYkWdsb2JhbABTp2IUAQEBAQkLCwcUBSCIfsEChV5fBJBjgguFEItP
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 20 Jul 2011 13:13:55 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QjWZC-0000Un-03; Wed, 20 Jul 2011 13:11:58 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <bjoern.haake@iternity.com>) id 1QjWZA-0000Ug-L6
+	for fuse-devel@lists.sourceforge.net; Wed, 20 Jul 2011 13:11:56 +0000
+X-ACL-Warn: 
+Received: from mail.pyramid.de ([213.217.123.99])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QjWZ4-0000GU-5D
+	for fuse-devel@lists.sourceforge.net; Wed, 20 Jul 2011 13:11:56 +0000
+Received: from mail.pyramid.de ([192.168.0.2]) by mail.pyramid.de with
+	Microsoft SMTPSVC(7.5.7600.16544); Wed, 20 Jul 2011 15:11:42 +0200
+X-MimeOLE: Produced By Microsoft Exchange V6.5
+Content-class: urn:content-classes:message
+MIME-Version: 1.0
+Date: Wed, 20 Jul 2011 15:11:41 +0200
+Message-ID: <F627FDFCC6078649A5ADD613704427CF05DC0B39@exch03.intern.pyramid.de>
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+Thread-Topic: How do I apply a 2.9 patch?
+Thread-Index: AcxGvS5QYnyhZ9zcTKu4imzJL63OpQ==
+From: =?iso-8859-1?Q?Bj=F6rn_Haake?= <bjoern.haake@iternity.com>
+To: <fuse-devel@lists.sourceforge.net>
+X-OriginalArrivalTime: 20 Jul 2011 13:11:42.0593 (UTC)
+	FILETIME=[91933710:01CC46DE]
+X-Spam-Score: 1.0 (+)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	1.0 HTML_MESSAGE           BODY: HTML included in message
+X-Headers-End: 1QjWZ4-0000GU-5D
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Subject: [fuse-devel] How do I apply a 2.9 patch?
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hello,
+
+ 
+
+I was wondering if there are instructions somewhere on how to apply the patches? I have tried various things but all have been failing. I am probably just missing something very obvious...
+
+ 
+
+This is on RHEL 5 - 2.6.18-238.5.1.el5.  
+
+ 
+
+I have tried two ways: 
+
+1.) Copy the files from the snapshot into (a copy of) the current 2.8.5 install (since the snapshots don't contain all the necessary files to compile it)
+
+2.) Use the automake, aclocal, autocoonf tools on the snapshot to generate the necessary makefiles etc.
+
+ 
+
+1.)
+
+ 
+
+For the latest snapshot (utimens change from July 4) I get the below compile error. I assume it is picking up the wrong fcntl.h, although from what I could tell it was using the one in my /usr/include, which does have the definition of AT_SYMLINK_NOFOLLOW. 
+
+ 
+
+I have downloaded the snapshot of the latest patch () and copied it into (a copy of) my local 2.8.5, e.g. replacing all the files in 2.8.5. with the ones that are in the snapshot ziptar. I did this because the snapshot is missing things like configure and Makefile.in files, but I am not sure if this is the correct procedure?
+
+ 
+
+Here is the compile output with latest patch (July 4):
+
+ 
+
+make[1]: Entering directory `/home/devel/fuse285test/example'
+
+gcc -DHAVE_CONFIG_H -I. -I../include  -I../include -D_FILE_OFFSET_BITS=64 -D_REENTRANT   -Wall -W -Wno-sign-compare -Wstrict-prototypes -Wmissing-declarations -Wwrite-strings -g -O2 -fno-strict-aliasing -MT fusexmp.o -MD -MP -MF .deps/fusexmp.Tpo -c -o fusexmp.o fusexmp.c
+
+fusexmp.c: In function 'xmp_utimens':
+
+fusexmp.c:220: warning: implicit declaration of function 'utimensat'
+
+fusexmp.c:220: error: 'AT_SYMLINK_NOFOLLOW' undeclared (first use in this function)
+
+fusexmp.c:220: error: (Each undeclared identifier is reported only once
+
+fusexmp.c:220: error: for each function it appears in.)
+
+make[1]: *** [fusexmp.o] Error 1
+
+make[1]: Leaving directory `/home/devel/fuse285test/example'
+
+make: *** [all-recursive] Error 1
+
+ 
+
+With an earlier snapshot (May 19) that doesn't have the AT_SYMLINK_NOFOLLOW variable in it yet, I get a different error:
+
+Making all in example
+make[1]: Entering directory `/root/Downloads/fuse-a785697/example'
+gcc -DHAVE_CONFIG_H -I. -I../include  -I../include -D_FILE_OFFSET_BITS=64 -D_REENTRANT   -Wall -W -Wno-sign-compare -Wstrict-prototypes -Wmissing-declarations -Wwrite-strings -g -O3 -fno-strict-aliasing -MT fusexmp.o -MD -MP -MF .deps/fusexmp.Tpo -c -o fusexmp.o fusexmp.c
+mv -f .deps/fusexmp.Tpo .deps/fusexmp.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -Wall -W -Wno-sign-compare -Wstrict-prototypes -Wmissing-declarations -Wwrite-strings -g -O3 -fno-strict-aliasing   -o fusexmp fusexmp.o ../lib/libfuse.la -pthread -lrt -ldl   
+libtool: link: gcc -Wall -W -Wno-sign-compare -Wstrict-prototypes -Wmissing-declarations -Wwrite-strings -g -O3 -fno-strict-aliasing -o .libs/fusexmp fusexmp.o -pthread  ../lib/.libs/libfuse.so -lrt -ldl -pthread -Wl,-rpath -Wl,/usr/local/lib
+../lib/.libs/libfuse.so: undefined reference to `fuse_buf_copy'
+../lib/.libs/libfuse.so: undefined reference to `fuse_buf_size'
+collect2: ld returned 1 exit status
+make[1]: *** [fusexmp] Fehler 1
+make[1]: Leaving directory `/root/Downloads/fuse-a785697/example'
+make: *** [all-recursive] Fehler 1
+
+I have taken out the example from the build as I don't need it, but obviously I still get a run time failure because it can't resolve fuse_buf_copy and fuse_buf_size.
+
+ 
+
+2.)
+
+I then tried to use the auto generation tools, but that worked even less. I should note that AC_PROG_LIBTOOL is in the confiugre.in file, so I am not sure why it is complaining.
+
+ 
+
+[root@localhost fusenewtestaclocal]# automake
+
+lib/Makefile.am:6: Libtool library used but `LIBTOOL' is undefined
+
+lib/Makefile.am:6: 
+
+lib/Makefile.am:6: The usual way to define `LIBTOOL' is to add `AC_PROG_LIBTOOL'
+
+lib/Makefile.am:6: to `configure.in' and run `aclocal' and `autoconf' again.
+
+[root@localhost fusenewtestaclocal]# aclocal
+
+/usr/share/aclocal/log4c.m4:7: warning: underquoted definition of AM_PATH_LOG4C
+
+  run info '(automake)Extending aclocal'
+
+  or see http://sources.redhat.com/automake/automake.html#Extending-aclocal
+
+aclocal:configure.in:76: warning: macro `AM_ICONV' not found in library
+
+[root@localhost fusenewtestaclocal]# autoconf
+
+configure.in:8: error: possibly undefined macro: AC_PROG_LIBTOOL
+
+      If this token and others are legitimate, please use m4_pattern_allow.
+
+      See the Autoconf documentation.
+
+configure.in:76: error: possibly undefined macro: AM_ICONV
+
+[root@localhost fusenewtestaclocal]# ./configure 
+
+configure: error: cannot find macro directory `m4'
+
+[root@localhost fusenewtestaclocal]#
+
+ 
+
+ 
+
+Making all in example
+make[1]: Entering directory `/root/Downloads/fuse-a785697/example'
+gcc -DHAVE_CONFIG_H -I. -I../include  -I../include -D_FILE_OFFSET_BITS=64 -D_REENTRANT   -Wall -W -Wno-sign-compare -Wstrict-prototypes -Wmissing-declarations -Wwrite-strings -g -O3 -fno-strict-aliasing -MT fusexmp.o -MD -MP -MF .deps/fusexmp.Tpo -c -o fusexmp.o fusexmp.c
+mv -f .deps/fusexmp.Tpo .deps/fusexmp.Po
+/bin/sh ../libtool --tag=CC   --mode=link gcc  -Wall -W -Wno-sign-compare -Wstrict-prototypes -Wmissing-declarations -Wwrite-strings -g -O3 -fno-strict-aliasing   -o fusexmp fusexmp.o ../lib/libfuse.la -pthread -lrt -ldl   
+libtool: link: gcc -Wall -W -Wno-sign-compare -Wstrict-prototypes -Wmissing-declarations -Wwrite-strings -g -O3 -fno-strict-aliasing -o .libs/fusexmp fusexmp.o -pthread  ../lib/.libs/libfuse.so -lrt -ldl -pthread -Wl,-rpath -Wl,/usr/local/lib
+../lib/.libs/libfuse.so: undefined reference to `fuse_buf_copy'
+../lib/.libs/libfuse.so: undefined reference to `fuse_buf_size'
+collect2: ld returned 1 exit status
+make[1]: *** [fusexmp] Fehler 1
+make[1]: Leaving directory `/root/Downloads/fuse-a785697/example'
+make: *** [all-recursive] Fehler 1
+
+ 
+
+Any help would be greatly appreciated.
+
+Thanks!
+
+bjorn
+
+ 
+
+------------------------------------------------------------------------------
+10 Tips for Better Web Security
+Learn 10 ways to better secure your business today. Topics covered include:
+Web security, SSL, hacker attacks & Denial of Service (DoS), private keys,
+security Microsoft Exchange, secure Instant Messaging, and much more.
+http://www.accelacomm.com/jaw/sfnl/114/51426210/
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311167501</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Björn Haake &lt;bjoern.haake@iternity.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] How do I apply a 2.9 patch?</string>
+	<key>to</key>
+	<string>&lt;fuse-devel@lists.sourceforge.net&gt;</string>
+</dict>
+</plist>

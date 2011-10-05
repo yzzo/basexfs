@@ -1,0 +1,159 @@
+7100
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 15 Jul 2011 17:32:42 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 8FCD01295E
+	for <alexander.holupirek@uni-konstanz.de>; Fri, 15 Jul 2011 17:32:42 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 15 Jul 2011 15:32:42 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 70CAE4D9C1; Fri, 15 Jul 2011 17:32:42 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 6485C4D93A
+	for <holupire@inf.uni-konstanz.de>; Fri, 15 Jul 2011 17:32:42 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AgMBAGlcIE7YIrVYkWdsb2JhbABFDqdkFAEBAQEJCwsHFAUZB8tFgyKCOV8EkFuSXg
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 15 Jul 2011 15:32:42 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QhkMJ-0004QF-6M; Fri, 15 Jul 2011 15:31:19 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <btv1==1772e7a37d9==jhaechten@crossroads.com>)
+	id 1QhkMH-0004Q4-RL
+	for fuse-devel@lists.sourceforge.net; Fri, 15 Jul 2011 15:31:17 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of crossroads.com
+	designates 72.165.173.99 as permitted sender)
+	client-ip=72.165.173.99;
+	envelope-from=btv1==1772e7a37d9==jhaechten@crossroads.com;
+	helo=crcuda.crossroads.com; 
+Received: from crcuda.crossroads.com ([72.165.173.99])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QhkME-0006jF-77
+	for fuse-devel@lists.sourceforge.net; Fri, 15 Jul 2011 15:31:17 +0000
+X-ASG-Debug-ID: 1310743867-66f668fe0001-X8mPs6
+Received: from crds-transport1.COMMSTOR.Crossroads.com
+	(crds-transport1.commstor.crossroads.com [192.168.120.151]) by
+	crcuda.crossroads.com with ESMTP id hFKbcxBo9XVU0cnY for
+	<fuse-devel@lists.sourceforge.net>;
+	Fri, 15 Jul 2011 10:31:07 -0500 (CDT)
+X-Barracuda-Envelope-From: jhaechten@Crossroads.com
+X-Barracuda-RBL-Trusted-Forwarder: 192.168.120.151
+Received: from CRDS-DAG02.COMMSTOR.Crossroads.com ([fe80::10b3:dd38:bf9:f980])
+	by crds-transport1.COMMSTOR.Crossroads.com
+	([fe80::4c49:7958:8eff:8ac2%11])
+	with mapi id 14.01.0270.001; Fri, 15 Jul 2011 10:31:05 -0500
+From: John Haechten <jhaechten@Crossroads.com>
+X-Barracuda-Apparent-Source-IP: fe80::10b3:dd38:bf9:f980
+To: "fuse-devel@lists.sourceforge.net" <fuse-devel@lists.sourceforge.net>
+Thread-Topic: NFS-FUSE Directory Listing Question
+X-ASG-Orig-Subj: NFS-FUSE Directory Listing Question
+Thread-Index: AcxDBDW+itsVwxKTTmmDsK0D3piRwQ==
+Date: Fri, 15 Jul 2011 15:31:05 +0000
+Message-ID: <B7C4AE6690D8644FB819AFB98EDEFAC20B83FE11@CRDS-DAG02.COMMSTOR.Crossroads.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [192.168.100.33]
+MIME-Version: 1.0
+X-Barracuda-Connect: crds-transport1.commstor.crossroads.com[192.168.120.151]
+X-Barracuda-Start-Time: 1310743867
+X-Barracuda-URL: http://crcuda.crossroads.com:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at crossroads.com
+X-Barracuda-Bayes: INNOCENT GLOBAL 0.4999 1.0000 0.0000
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=1000.0
+	QUARANTINE_LEVEL=1000.0 KILL_LEVEL=9.0 tests=HTML_MESSAGE
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.2.69002
+	Rule breakdown below
+	pts rule name              description
+	---- ----------------------
+	--------------------------------------------------
+	0.00 HTML_MESSAGE           BODY: HTML included in message
+X-Spam-Score: -0.5 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	0.0 RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain 1.0 HTML_MESSAGE           BODY: HTML included in message
+X-Headers-End: 1QhkME-0006jF-77
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Subject: [fuse-devel] NFS-FUSE Directory Listing Question
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+I am having an issue where I can not see more than about 25 items in the directory listing through NFS.
+
+I access my FUSE file system through SAMBA and NFS.
+I can see all the files through the SAMBA share.
+
+If I copy files through the SAMBA share, they do appear to show up in NFS as long as the directory has less than 26 items.
+I am following the Unix/Linux guidelines on updated the Modification times, etc. of the Parent Directory when files are added.
+so I do not believe this is a Stale Cache issue.  The new files do show up until there are 26 or more in the list.
+
+It appears to be more of an issue between NFS-FUSE interface and it behaves like the buffer used for the directory list may not be of sufficient size or is getting truncated.
+
+I have logging when populating the directory structure in the readdir fuse callback which uses the "filler" function (I use an offset = 0)
+and I believe that all filenames and attributes are being returned to FUSE correctly.  This does appear to work fine through SAMBA.
+
+Any ideas on what might cause this type of behavior?
+
+Thanks,
+John Haechten
+
+
+
+
+
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310743865</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>John Haechten &lt;jhaechten@Crossroads.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] NFS-FUSE Directory Listing Question</string>
+	<key>to</key>
+	<string>"fuse-devel@lists.sourceforge.net" &lt;fuse-devel@lists.sourceforge.net&gt;</string>
+</dict>
+</plist>

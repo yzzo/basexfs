@@ -1,0 +1,156 @@
+6238
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Sat, 16 Jul 2011 22:23:20 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id B286C12C0C
+	for <alexander.holupirek@uni-konstanz.de>; Sat, 16 Jul 2011 22:23:20 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 16 Jul 2011 20:23:21 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 98FA34D9E5; Sat, 16 Jul 2011 22:23:20 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 891EB34895
+	for <holupire@inf.uni-konstanz.de>; Sat, 16 Jul 2011 22:23:20 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApAAANPxIU7YIrVYkWdsb2JhbAAnHQIMEKddCBQBAQEBCQsLBxQFIIkhpGQKjCOGKjuIcIMjAxCDBgSQW4ILjD48gyQ5Og
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 16 Jul 2011 20:23:19 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QiBMW-0000WE-QM; Sat, 16 Jul 2011 20:21:20 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <stefbon@gmail.com>) id 1QiBMV-0000W9-84
+	for fuse-devel@lists.sourceforge.net; Sat, 16 Jul 2011 20:21:19 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.214.175 as permitted sender)
+	client-ip=209.85.214.175; envelope-from=stefbon@gmail.com;
+	helo=mail-iw0-f175.google.com; 
+Received: from mail-iw0-f175.google.com ([209.85.214.175])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QiBMU-0003Yj-7r
+	for fuse-devel@lists.sourceforge.net; Sat, 16 Jul 2011 20:21:19 +0000
+Received: by iwn4 with SMTP id 4so2689131iwn.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Sat, 16 Jul 2011 13:21:13 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.42.169.130 with SMTP id b2mr4289833icz.209.1310847672743; Sat,
+	16 Jul 2011 13:21:12 -0700 (PDT)
+Received: by 10.42.171.201 with HTTP; Sat, 16 Jul 2011 13:21:12 -0700 (PDT)
+Date: Sat, 16 Jul 2011 22:21:12 +0200
+Message-ID: <CANXojcxDLJnBQnWQqbn6t3HXG+qtt3m_NvnnLQxmOuvB5SXT3w@mail.gmail.com>
+From: Stef Bon <stefbon@gmail.com>
+To: Michael McTernan <Michael.McTernan.2001@cs.bris.ac.uk>
+X-Spam-Score: -1.2 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(stefbon[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.4 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QiBMU-0003Yj-7r
+Cc: fuse-devel@lists.sourceforge.net
+Subject: [fuse-devel] Question about AiffRead (no output: extra logging?).
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi,
+
+I'm working on a FUSE fs basefs. My aim to test various decoders like
+the one you
+are using in Aifffffs.
+
+See:
+
+git clone git://gitorious.org/basefs/basefs.git basefs
+
+and
+
+http://linux.bononline.nl/wiki/index.php/Basefs,_a_FUSE_fs_to_test_various_decoders_(Gstreamer,_FLAC)
+
+
+I've taken the files aiff.c, aiff.h, id3.c and id3.h from your fs, and
+written functions
+open_virtual, read_virtual, release_virtual and size_virtual, which
+call the function
+AiffNew, AiffRead, AiffDestroy and AiffSize.
+
+The only change I did was the removal of the lock.
+
+I'm using a "locked" integer, which indicates the decoder is locked.
+When a (virual) file is open, the decoder is initialized, and the lock
+integer is set from 0 to 1.
+
+This prevents other "open" calls to create another decoders context on
+the same file, causing problems.
+
+Now when a read arrives, it finds this lock integer, and it must be 1.
+If it is 0, it is not open.
+When it's 2, another read is busy, and it's waiting using a condition variable.
+
+When it's 1, it's setting the value to2, and the read is able to get
+access to the decoder, and get bytes read.
+When ready, it's setting the lock value back again to 1.
+
+Note this is not ready yet, it's not taking into account the serialization.
+
+Now it gives no valid output on the decoded virtual file. Do you maybe
+know howto add some more logging?
+
+Stef
+
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310847672</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Stef Bon &lt;stefbon@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Question about AiffRead (no output: extra logging?).</string>
+	<key>to</key>
+	<string>Michael McTernan &lt;Michael.McTernan.2001@cs.bris.ac.uk&gt;</string>
+</dict>
+</plist>

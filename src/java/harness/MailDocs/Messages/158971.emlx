@@ -1,0 +1,168 @@
+7437
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Sat, 16 Jul 2011 19:07:16 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 8EA9B12B3F
+	for <alexander.holupirek@uni-konstanz.de>; Sat, 16 Jul 2011 19:07:16 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 16 Jul 2011 17:07:17 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 734864D9E5; Sat, 16 Jul 2011 19:07:16 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 61ED04D972
+	for <holupire@inf.uni-konstanz.de>; Sat, 16 Jul 2011 19:07:16 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AuoBACPEIU7YIrVYkWdsb2JhbABEDqdoBQgUAQEBAQkLCwcUBSCtFgqMI4Y+O4hwgyODGQSQW4ILjD48g10
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 16 Jul 2011 17:07:16 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qi8Il-0005I5-KI; Sat, 16 Jul 2011 17:05:15 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <stefbon@gmail.com>) id 1Qi8Ij-0005Hy-Ks
+	for fuse-devel@lists.sourceforge.net; Sat, 16 Jul 2011 17:05:13 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.214.175 as permitted sender)
+	client-ip=209.85.214.175; envelope-from=stefbon@gmail.com;
+	helo=mail-iw0-f175.google.com; 
+Received: from mail-iw0-f175.google.com ([209.85.214.175])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1Qi8Ih-0003J7-Et
+	for fuse-devel@lists.sourceforge.net; Sat, 16 Jul 2011 17:05:13 +0000
+Received: by iwn4 with SMTP id 4so2597639iwn.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Sat, 16 Jul 2011 10:05:06 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.42.173.71 with SMTP id q7mr4529073icz.75.1310835906178; Sat,
+	16 Jul 2011 10:05:06 -0700 (PDT)
+Received: by 10.42.171.201 with HTTP; Sat, 16 Jul 2011 10:05:05 -0700 (PDT)
+Date: Sat, 16 Jul 2011 19:05:05 +0200
+Message-ID: <CANXojcw=-WEuvkC_jVuvaAp1ry3LBQw1QfKWebzNZ1dZU1GU3g@mail.gmail.com>
+From: Stef Bon <stefbon@gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -1.1 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(stefbon[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.3 PLING_QUERY Subject has exclamation mark and question mark
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+	0.2 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1Qi8Ih-0003J7-Et
+Subject: [fuse-devel] Read: zero size??!!
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi,
+
+I've a strange problem. My fs is a simple overlay fs, mounted at
+
+/home/sbon/testdir/mount
+
+where the backend is
+
+/home/sbon/testdir/root
+
+In the root is testfile, which also appears correctly, with the right size.
+
+
+But with reading a file, after open, I get a zero size:
+
+Jul 16 18:46:48 clfs20091030 basefs: OPEN
+Jul 16 18:46:48 clfs20091030 basefs: determine_fuse_path:
+Jul 16 18:46:48 clfs20091030 basefs: fusepath: testfile
+Jul 16 18:46:48 clfs20091030 basefs: determine_localhost_path
+Jul 16 18:46:48 clfs20091030 basefs: abspath: /home/sbon/testdir/root/testfile
+Jul 16 18:46:48 clfs20091030 basefs: relpath: testfile
+Jul 16 18:46:48 clfs20091030 basefs: fd: 3
+Jul 16 18:46:48 clfs20091030 basefs: open_localhost
+Jul 16 18:46:48 clfs20091030 basefs: open_localhost, opening via fd
+Jul 16 18:46:48 clfs20091030 basefs: open_localhost: fd: 13
+Jul 16 18:46:48 clfs20091030 basefs: open nreturn: 13
+Jul 16 18:46:48 clfs20091030 basefs: thread 5: set state to not busy
+Jul 16 18:46:48 clfs20091030 basefs: mainloop: sem post for thread 6
+Jul 16 18:46:48 clfs20091030 basefs: thread 6 waking up, setting state to busy
+Jul 16 18:46:48 clfs20091030 basefs: data found, start fuse_session_process
+Jul 16 18:46:48 clfs20091030 basefs: READ, offset 0 and size 0
+Jul 16 18:46:48 clfs20091030 basefs: read_localhost
+Jul 16 18:46:48 clfs20091030 basefs: read, 10 bytes read
+Jul 16 18:46:48 clfs20091030 basefs: thread 6: set state to not busy
+Jul 16 18:46:48 clfs20091030 basefs: mainloop: sem post for thread 7
+Jul 16 18:46:48 clfs20091030 basefs: thread 7 waking up, setting state to busy
+Jul 16 18:46:48 clfs20091030 basefs: data found, start fuse_session_process
+Jul 16 18:46:48 clfs20091030 basefs: READ, offset 0 and size 0
+Jul 16 18:46:48 clfs20091030 basefs: read_localhost
+Jul 16 18:46:48 clfs20091030 basefs: read, 10 bytes read
+Jul 16 18:46:48 clfs20091030 basefs: thread 7: set state to not busy
+Jul 16 18:46:48 clfs20091030 basefs: mainloop: sem post for thread 8
+Jul 16 18:46:48 clfs20091030 basefs: thread 8 waking up, setting state to busy
+Jul 16 18:46:48 clfs20091030 basefs: data found, start fuse_session_process
+Jul 16 18:46:48 clfs20091030 basefs: RELEASE
+Jul 16 18:46:48 clfs20091030 basefs: release_localhost, fd: 13
+Jul 16 18:46:48 clfs20091030 basefs: release, nreturn 0
+
+
+I've never seen this before. READ starts at offset 0 AND size 0!
+Well my fs allocates a buffer with size size, so this will return
+nothing, that's not suprising, but the size
+as parameter is zero (the READ callback is called with zero size)??
+
+Stef
+
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310835905</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Stef Bon &lt;stefbon@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Read: zero size??!!</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

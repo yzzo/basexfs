@@ -1,0 +1,131 @@
+5682
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 12 Jul 2011 18:36:59 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 7878D12B72
+	for <alexander.holupirek@uni-konstanz.de>; Tue, 12 Jul 2011 18:36:59 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 12 Jul 2011 16:36:59 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 53BD54D9D0; Tue, 12 Jul 2011 18:36:59 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 44AC5423CA
+	for <holupire@inf.uni-konstanz.de>; Tue, 12 Jul 2011 18:36:59 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: As0AABl3HE7YIrVYkWdsb2JhbABFDpg3jnkUAQEBAQkLCwcUBSCIfLFXhxeJKIMigxgEh1GJAIcKJotG
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 12 Jul 2011 16:36:58 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qgfvw-0001wQ-2x; Tue, 12 Jul 2011 16:35:40 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <pa4wdh@yahoo.com>) id 1Qgfvu-0001wF-FZ
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 16:35:38 +0000
+X-ACL-Warn: 
+Received: from nm10-vm0.bullet.mail.ac4.yahoo.com ([98.139.53.194])
+	by sog-mx-3.v43.ch3.sourceforge.com with smtp (Exim 4.76)
+	id 1Qgfvq-0002Ov-QA
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 16:35:38 +0000
+Received: from [98.139.52.197] by nm10.bullet.mail.ac4.yahoo.com with NNFMP;
+	12 Jul 2011 16:35:29 -0000
+Received: from [98.139.52.133] by tm10.bullet.mail.ac4.yahoo.com with NNFMP;
+	12 Jul 2011 16:35:29 -0000
+Received: from [127.0.0.1] by omp1016.mail.ac4.yahoo.com with NNFMP;
+	12 Jul 2011 16:35:29 -0000
+X-Yahoo-Newman-Property: ymail-3
+X-Yahoo-Newman-Id: 533635.79538.bm@omp1016.mail.ac4.yahoo.com
+Received: (qmail 53118 invoked by uid 60001); 12 Jul 2011 16:35:29 -0000
+X-YMail-OSG: 1bf80soVM1nryEo.HIL4AqowJPQ44krX7qYe7u5H2v2Wl0C
+	G.fDv.TqMuPd_hpg4tR0MsQRpdrlKCe108O34D31bENeykkXrRlLKVUX3r9J
+	cljQ4K_xe4Bte5Pr51bHgY2Ie8Ujm3jAqC4bf3UoWoE._BkoZlHgXF.wS9hz
+	V5rKnVoHMGnbuv6Q1Vqu2KYKW_005w8d2CHQQ38dNpoI3QGtgugcH1LI3FAD
+	j2nZ0.a_J3102RjuFYMJVywBLw8By_b_EMiOvWScvzafQX_J.LbRRX0USqPQ
+	CogubRGgLZ5bn5jgGTWKsg37E_9.M0kqZ1tlFEPD0OkAlFw6v5zCivCfqqL1
+	lcgojgvD1S62gX.DKNQZ5V5oKsh4Esc1A6zjlXju6tmwAofRWSrDaQvQ-
+Received: from [213.84.93.147] by web39409.mail.mud.yahoo.com via HTTP;
+	Tue, 12 Jul 2011 09:35:23 PDT
+X-Mailer: YahooMailClassic/14.0.3 YahooMailWebService/0.8.112.307740
+Message-ID: <1310488523.47911.YahooMailClassic@web39409.mail.mud.yahoo.com>
+Date: Tue, 12 Jul 2011 09:35:23 -0700 (PDT)
+From: Wesley PA4WDH <pa4wdh@yahoo.com>
+To: fuse-devel@lists.sourceforge.net
+In-Reply-To: <20110712171417.682d973f@pluto.pipapo.org>
+MIME-Version: 1.0
+X-Spam-Score: -0.1 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [98.139.53.194 listed in list.dnswl.org]
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(pa4wdh[at]yahoo.com)
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1Qgfvq-0002Ov-QA
+Subject: Re: [fuse-devel] Understanding debug output
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+--- On Tue, 7/12/11, Christian Thaeter <ct@pipapo.org> wrote:
+> hint: run your tests under valgrind supervision, that would
+> have catched that easily.
+
+Thanks for the tip, I'm installing valgrind right now :-)
+
+Best regards,
+Wesley
+
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310488523</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Wesley PA4WDH &lt;pa4wdh@yahoo.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Understanding debug output</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

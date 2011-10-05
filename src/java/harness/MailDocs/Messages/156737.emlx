@@ -1,0 +1,116 @@
+4565
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 05 Jul 2011 21:30:51 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 2C5FB5FDD
+	for <alexander.holupirek@uni-konstanz.de>; Tue,  5 Jul 2011 21:30:51 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 05 Jul 2011 19:30:51 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 0277B4D690; Tue,  5 Jul 2011 21:30:51 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id E9FD54D4F8
+	for <holupire@inf.uni-konstanz.de>; Tue,  5 Jul 2011 21:30:50 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AhMBACRlE07YIrVYkWdsb2JhbABTmRGOdxQBAQEBCQsLBxQFIIh8ujqIPYY2BJAvhn+LQA
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 05 Jul 2011 19:30:50 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QeBIq-0003ro-Np; Tue, 05 Jul 2011 19:29:00 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <webmaster@hartwork.org>) id 1QeBIp-0003rS-3a
+	for fuse-devel@lists.sourceforge.net; Tue, 05 Jul 2011 19:28:59 +0000
+X-ACL-Warn: 
+Received: from smtprelay03.ispgateway.de ([80.67.31.30])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QeBIn-0006MQ-LZ
+	for fuse-devel@lists.sourceforge.net; Tue, 05 Jul 2011 19:28:59 +0000
+Received: from [85.179.3.135] (helo=[192.168.1.2])
+	by smtprelay03.ispgateway.de with esmtpsa (TLSv1:AES256-SHA:256)
+	(Exim 4.68) (envelope-from <webmaster@hartwork.org>)
+	id 1QeBIh-00082z-EX
+	for fuse-devel@lists.sourceforge.net; Tue, 05 Jul 2011 21:28:51 +0200
+Message-ID: <4E1365ED.8040108@hartwork.org>
+Date: Tue, 05 Jul 2011 21:28:45 +0200
+From: Sebastian Pipping <webmaster@hartwork.org>
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US;
+	rv:1.9.2.18) Gecko/20110628 Thunderbird/3.1.11
+MIME-Version: 1.0
+To: fuse-devel@lists.sourceforge.net
+X-Df-Sender: hartwork@binera.de
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [80.67.31.30 listed in list.dnswl.org]
+	-0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+X-Headers-End: 1QeBIn-0006MQ-LZ
+Subject: [fuse-devel] [2.8.x] Context all zeros while release handler
+	running?
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hello!
+
+
+It seems as if the pid, gid and uid I get from fuse_get_context() are
+all zero during a call to my own release handler (i.e. inside
+req->f->op.release(...)), always.  Does it have to be like that?  I
+would benefit from that information filled with proper values.
+
+Thanks,
+
+
+
+Sebastian
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309894125</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Sebastian Pipping &lt;webmaster@hartwork.org&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] [2.8.x] Context all zeros while release handler running?</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

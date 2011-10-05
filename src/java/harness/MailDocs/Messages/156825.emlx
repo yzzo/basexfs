@@ -1,0 +1,159 @@
+6538
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Wed, 06 Jul 2011 12:58:40 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 7D25812357
+	for <alexander.holupirek@uni-konstanz.de>; Wed,  6 Jul 2011 12:58:40 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 06 Jul 2011 10:58:40 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 518F74D6C5; Wed,  6 Jul 2011 12:58:40 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 432604D5EE
+	for <holupire@inf.uni-konstanz.de>; Wed,  6 Jul 2011 12:58:40 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqUAAI0/FE7YIrVYkWdsb2JhbABTp3sIFAEBAQEJCwsHFAUgiHoCpm6dAYY2BJA5ggiIGYQOPINb
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 06 Jul 2011 10:58:40 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QePmZ-0006GC-7Y; Wed, 06 Jul 2011 10:56:39 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1QePmY-0006G4-AQ
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 10:56:38 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.161.47 as permitted sender)
+	client-ip=209.85.161.47; envelope-from=miklos@szeredi.hu;
+	helo=mail-fx0-f47.google.com; 
+Received: from mail-fx0-f47.google.com ([209.85.161.47])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QePmX-0002J9-7s
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 10:56:38 +0000
+Received: by mail-fx0-f47.google.com with SMTP id 11so7851328fxg.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Wed, 06 Jul 2011 03:56:36 -0700 (PDT)
+Received: by 10.223.7.8 with SMTP id b8mr13183003fab.19.1309949796412;
+	Wed, 06 Jul 2011 03:56:36 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (catv-80-98-43-182.catv.broadband.hu
+	[80.98.43.182])
+	by mx.google.com with ESMTPS id l9sm2824039fal.43.2011.07.06.03.56.32
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Wed, 06 Jul 2011 03:56:35 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: Sebastian Pipping <webmaster@hartwork.org>
+References: <4E0EC48A.8010506@hartwork.org>
+	<8762nhzzwa.fsf@tucsk.pomaz.szeredi.hu>
+	<4E12174A.8080108@hartwork.org>
+Date: Wed, 06 Jul 2011 12:57:19 +0200
+In-Reply-To: <4E12174A.8080108@hartwork.org> (Sebastian Pipping's message of
+	"Mon, 04 Jul 2011 21:40:58 +0200")
+Message-ID: <87ei233cds.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	1.4 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QePmX-0002J9-7s
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Sebastian Pipping <webmaster@hartwork.org> writes:
+
+>> 
+>> Will fix these issues.
+>
+> Glad to hear.  How can I best track progress on this?
+
+I'll have two patches for this, one kernel and one userspace.  I'll post
+them shortly.
+
+>> Yep, ulockmgr_server should be the owner.
+>
+> I wonder: if FUSE is handling GETLK would it be possible to set l_pid to
+> the value that fuse_get_context()->pid had back when the (successful)
+> call to SETLK(W) took place?  Unless the kernel prevents that it would
+> allow pretending that the actual lock requestee is the owner, not
+> ulockmgr_server.  Do you see problems with this approach?  If so maybe
+> it could be made a mount parameter switch?
+
+Lets take an example:
+
+File F on fusexmp_fh filesystem corresponds to file X on underlying
+filesystem.
+
+If Process P locks F then GETLK on F will return l_pid=P, GETLK on X will
+return l_pid=U, where U is the ulockmgr_server process corresponding to
+the lock.
+
+If process P locks X then GETLK on both F and X will return l_pid=P.
+
+If another fusexmp_fh is mounted and there G also corresponds to X on
+the underlying filesystem and P locks F the GETLK on G and X will return
+l_pid=U, while GETLK on F will return P.
+
+Again, without additional kernel interfaces there's absolutely no way to
+change this behavior, as it comes from the way ulockmgr works.
+
+Thanks,
+Miklos
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309949839</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example</string>
+	<key>to</key>
+	<string>Sebastian Pipping &lt;webmaster@hartwork.org&gt;</string>
+</dict>
+</plist>

@@ -1,0 +1,133 @@
+5790
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 15 Jul 2011 17:29:53 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 0EB6912854
+	for <alexander.holupirek@uni-konstanz.de>; Fri, 15 Jul 2011 17:29:53 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 15 Jul 2011 15:29:53 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id E697D4D9C1; Fri, 15 Jul 2011 17:29:52 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id D605642359
+	for <holupire@inf.uni-konstanz.de>; Fri, 15 Jul 2011 17:29:52 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AtIAAGlcIE7YIrVYkWdsb2JhbABFDqdcCBQBAQEBCQsLBxQFIIh6AqVInQGDIoMYBJBbgguJXoJePINd
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 15 Jul 2011 15:29:52 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QhkJR-0004BE-NX; Fri, 15 Jul 2011 15:28:21 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1QhkJQ-0004B2-Vg
+	for fuse-devel@lists.sourceforge.net; Fri, 15 Jul 2011 15:28:20 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.215.175 as permitted sender)
+	client-ip=209.85.215.175; envelope-from=miklos@szeredi.hu;
+	helo=mail-ey0-f175.google.com; 
+Received: from mail-ey0-f175.google.com ([209.85.215.175])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QhkJM-0006Jw-HB
+	for fuse-devel@lists.sourceforge.net; Fri, 15 Jul 2011 15:28:20 +0000
+Received: by eye27 with SMTP id 27so1056379eye.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Fri, 15 Jul 2011 08:28:10 -0700 (PDT)
+Received: by 10.213.25.84 with SMTP id y20mr1429209ebb.24.1310743689019;
+	Fri, 15 Jul 2011 08:28:09 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (fxip-0047f.externet.hu [88.209.222.127])
+	by mx.google.com with ESMTPS id a3sm807994een.51.2011.07.15.08.28.07
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Fri, 15 Jul 2011 08:28:08 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: S F <sfridella@gmail.com>
+References: <CAEfcQSHHed+w=-WAfVoMzX1dPepgQhYiX5cnq_Rwn8RQt=_A0A@mail.gmail.com>
+Date: Fri, 15 Jul 2011 17:29:07 +0200
+In-Reply-To: <CAEfcQSHHed+w=-WAfVoMzX1dPepgQhYiX5cnq_Rwn8RQt=_A0A@mail.gmail.com>
+	(S. F.'s message of "Thu, 14 Jul 2011 19:22:07 -0400")
+Message-ID: <87oc0vbm0s.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: 1.4 (+)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	3.0 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QhkJM-0006Jw-HB
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] Current status of posix ACL checking for FUSE
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+S F <sfridella@gmail.com> writes:
+
+> Hi All---
+> Quick question, I was wondering about the current status of POSIX ACL
+> checking on a FUSE file system using the "default permissions" option?
+>  If I faithfully store and return the system.posix_acl xattr via FUSE
+> will the kernel properly enforce posix ACL semantics?  I did some
+> Googling and came across an old proposed patch for this:
+> http://article.gmane.org/gmane.comp.file-systems.fuse.devel/5651 .
+> Did this solution or something like it ever make it into FUSE?
+
+It didn't make it, because the poster didn't follow it up with a patch
+addressing the problems with the original posting.
+
+Thanks,
+Miklos
+
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310743747</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Current status of posix ACL checking for FUSE</string>
+	<key>to</key>
+	<string>S F &lt;sfridella@gmail.com&gt;</string>
+</dict>
+</plist>

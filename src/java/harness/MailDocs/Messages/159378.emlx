@@ -1,0 +1,129 @@
+5559
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 19 Jul 2011 12:14:07 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id A41C112D8E
+	for <alexander.holupirek@uni-konstanz.de>; Tue, 19 Jul 2011 12:14:07 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 19 Jul 2011 10:14:07 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 395924DA03; Tue, 19 Jul 2011 12:14:07 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 2A0323541F
+	for <holupire@inf.uni-konstanz.de>; Tue, 19 Jul 2011 12:14:07 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AgkBALxYJU7YIrVYkWdsb2JhbABTmEqOeAgUAQEBAQkLCwcUBSCwAgqdDoY8BJBcgguMQzyDXQ
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 19 Jul 2011 10:14:01 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qj7H5-0002eR-Ou; Tue, 19 Jul 2011 10:11:35 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <chinhnguyen7@gmail.com>) id 1Qip6I-00073X-E4
+	for fuse-devel@lists.sourceforge.net; Mon, 18 Jul 2011 14:47:14 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 74.125.82.53 as permitted sender)
+	client-ip=74.125.82.53; envelope-from=chinhnguyen7@gmail.com;
+	helo=mail-ww0-f53.google.com; 
+Received: from mail-ww0-f53.google.com ([74.125.82.53])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1Qip6E-0007VJ-C8
+	for fuse-devel@lists.sourceforge.net; Mon, 18 Jul 2011 14:47:14 +0000
+Received: by wwf26 with SMTP id 26so2816729wwf.10
+	for <fuse-devel@lists.sourceforge.net>;
+	Mon, 18 Jul 2011 07:47:04 -0700 (PDT)
+Received: by 10.216.1.200 with SMTP id 50mr3351922wed.33.1311000424158; Mon,
+	18 Jul 2011 07:47:04 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.216.16.205 with HTTP; Mon, 18 Jul 2011 07:46:44 -0700 (PDT)
+From: Chinh Nguyen <nc7@kaist.ac.kr>
+Date: Mon, 18 Jul 2011 16:46:44 +0200
+X-Google-Sender-Auth: xFgD9hj6vyMoOczzBvx7BNHBIzY
+Message-ID: <CAE8i6z2ssbutY-BEjkdK6HZogxz1-Qk_SDfFTGCabpKnWPa0eQ@mail.gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -0.4 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(chinhnguyen7[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	0.1 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
+	digit (chinhnguyen7[at]gmail.com)
+	1.0 HTML_MESSAGE           BODY: HTML included in message
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1Qip6E-0007VJ-C8
+X-Mailman-Approved-At: Tue, 19 Jul 2011 10:11:32 +0000
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Subject: [fuse-devel] Access data from FUSE filesystem
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi everyone,
+
+Is there any way that I can access the data created by my FUSE filesystem
+process?
+e.g.
+in prefix_write() I store some data in memory and would like to access those
+data from another process.
+
+Shared memory should work. But I'm looking for a more elegant solution, such
+as a custom field in fuse_operations that I access as a function from other
+processes. But as far as I know, the fields in fuse_operations need to be
+from POSIX, so it's probably impossible to do so. Please correct me if I'm
+wrong.
+
+Thank you
+------------------------------------------------------------------------------
+Magic Quadrant for Content-Aware Data Loss Prevention
+Research study explores the data loss prevention market. Includes in-depth
+analysis on the changes within the DLP market, and the criteria used to
+evaluate the strengths and weaknesses of these DLP solutions.
+http://www.accelacomm.com/jaw/sfnl/114/51385063/
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311000404</real>
+	<key>flags</key>
+	<integer>261249</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Chinh Nguyen &lt;nc7@kaist.ac.kr&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Access data from FUSE filesystem</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

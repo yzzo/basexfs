@@ -1,0 +1,141 @@
+6282
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Sun, 10 Jul 2011 21:00:29 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 04DD012308
+	for <alexander.holupirek@uni-konstanz.de>; Sun, 10 Jul 2011 21:00:29 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 10 Jul 2011 19:00:29 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id DC8A74D985; Sun, 10 Jul 2011 21:00:28 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id D06C434895
+	for <holupire@inf.uni-konstanz.de>; Sun, 10 Jul 2011 21:00:28 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Au8AACf2GU7YIrVYkWdsb2JhbABTmEmOawgUAQEBAQkLCwcUBSCsUowshg87iG2GOgSQSYILiCKEDzyDXA
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 10 Jul 2011 19:00:28 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QfzDS-0006GA-AB; Sun, 10 Jul 2011 18:58:54 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <stefbon@gmail.com>) id 1QfzDQ-0006Fz-O0
+	for fuse-devel@lists.sourceforge.net; Sun, 10 Jul 2011 18:58:52 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.210.175 as permitted sender)
+	client-ip=209.85.210.175; envelope-from=stefbon@gmail.com;
+	helo=mail-iy0-f175.google.com; 
+Received: from mail-iy0-f175.google.com ([209.85.210.175])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QfzDQ-0001Pq-3U
+	for fuse-devel@lists.sourceforge.net; Sun, 10 Jul 2011 18:58:52 +0000
+Received: by iym10 with SMTP id 10so4240487iym.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Sun, 10 Jul 2011 11:58:46 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.42.247.195 with SMTP id md3mr4128540icb.140.1310324326656;
+	Sun, 10 Jul 2011 11:58:46 -0700 (PDT)
+Received: by 10.43.46.130 with HTTP; Sun, 10 Jul 2011 11:58:46 -0700 (PDT)
+In-Reply-To: <CANXojcynzwX2x6ACj+usMCN3SB+QLFvogJ_7Gdij0oNuSUHhFg@mail.gmail.com>
+References: <CANXojcynzwX2x6ACj+usMCN3SB+QLFvogJ_7Gdij0oNuSUHhFg@mail.gmail.com>
+Date: Sun, 10 Jul 2011 20:58:46 +0200
+Message-ID: <CANXojcxZw46Q5L0qSsRzBh-52kvGSSJnAC9ois6sHF5bOcRPaA@mail.gmail.com>
+From: Stef Bon <stefbon@gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -1.2 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(stefbon[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+	0.4 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QfzDQ-0001Pq-3U
+Subject: Re: [fuse-devel] Correct st_atim/st_mtim to now.
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi,
+
+I've already found the answer, I found it in bits/stat.h:
+
+#ifdef __USE_MISC
+    /* Nanosecond resolution timestamps are stored in a format
+       equivalent to 'struct timespec'.  This is the type used
+       whenever possible but the Unix namespace rules do not allow the
+       identifier 'timespec' to appear in the <sys/stat.h> header.
+       Therefore we have to handle the use of this header in strictly
+       standard-compliant sources special.  */
+    struct timespec st_atim;            /* Time of last access.  */
+    struct timespec st_mtim;            /* Time of last modification.  */
+    struct timespec st_ctim;            /* Time of last status change.  */
+# define st_atime st_atim.tv_sec        /* Backward compatibility.  */
+# define st_mtime st_mtim.tv_sec
+# define st_ctime st_ctim.tv_sec
+#else
+    __time_t st_atime;                  /* Time of last access.  */
+    unsigned long int st_atimensec;     /* Nscecs of last access.  */
+    __time_t st_mtime;                  /* Time of last modification.  */
+    unsigned long int st_mtimensec;     /* Nsecs of last modification.  */
+    __time_t st_ctime;                  /* Time of last status change.  */
+    unsigned long int st_ctimensec;     /* Nsecs of last status change.  */
+#endif
+
+Stef
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310324326</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Stef Bon &lt;stefbon@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Correct st_atim/st_mtim to now.</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

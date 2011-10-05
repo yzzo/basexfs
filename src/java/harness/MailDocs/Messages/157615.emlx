@@ -1,0 +1,173 @@
+6849
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 08 Jul 2011 22:30:56 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id AF30F123FF
+	for <alexander.holupirek@uni-konstanz.de>; Fri,  8 Jul 2011 22:30:56 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 08 Jul 2011 20:30:57 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 8A38F4D6C4; Fri,  8 Jul 2011 22:30:56 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 766722AB63
+	for <holupire@inf.uni-konstanz.de>; Fri,  8 Jul 2011 22:30:56 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AnkAADFoF07YIrVYkWdsb2JhbABIDKdRFAEBAQEJCwsHFAUgiHsCwFODJYMTBJBChweLSQ
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 08 Jul 2011 20:30:56 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QfHgC-0001ul-8U; Fri, 08 Jul 2011 20:29:40 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <jean-pierre.andre@wanadoo.fr>) id 1QfHgA-0001ue-Nq
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 20:29:38 +0000
+X-ACL-Warn: 
+Received: from smtp08.smtpout.orange.fr ([80.12.242.130]
+	helo=smtp.smtpout.orange.fr)
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QfHg9-0006qJ-8B
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 20:29:38 +0000
+Received: from [10.0.0.10] ([83.204.130.154]) by mwinf5d15 with ME
+	id 5YVV1h00b3L1D7X03YVW9c; Fri, 08 Jul 2011 22:29:31 +0200
+Message-ID: <4E176861.5050207@wanadoo.fr>
+Date: Fri, 08 Jul 2011 22:28:17 +0200
+From: =?ISO-8859-1?Q?Jean-Pierre_Andr=E9?= <jean-pierre.andre@wanadoo.fr>
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US;
+	rv:1.9.1.19) Gecko/20110429 Fedora/2.0.14-1.fc14 SeaMonkey/2.0.14
+MIME-Version: 1.0
+To: dbanerjee <dbanerjee@avid.com>
+References: <4D67CC19.5010203@wanadoo.fr> <32023490.post@talk.nabble.com>
+	<32024185.post@talk.nabble.com>
+In-Reply-To: <32024185.post@talk.nabble.com>
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [80.12.242.130 listed in list.dnswl.org]
+X-Headers-End: 1QfHg9-0006qJ-8B
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] File system with case insensitive names
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi,
+
+dbanerjee wrote:
+>
+> dbanerjee wrote:
+>    
+>>
+>> Jean-Pierre wrote:
+>>      
+>>> Hi,
+>>>
+>>> I am getting an unexpected behavior when implementing case insensitive
+>>> file names in a file system. After setting the current directory in a
+>>> terminal window, other processes have to use the same case sensitive
+>>> directory name, otherwise they get an EBUSY error. This error is
+>>> apparently not thrown by the fuse library.
+>>>
+>>> ...
+>>>
+>>> Has somebody a clue about what I am missing ? Is there something locked
+>>> related to the name of the current directory of a process ?
+>>>
+>>>
+>>>        
+>> EBUSY is returned explicitly by fuse in the kernel, it is not actually
+>> locked. This is because multiple dentries are not allowed for a single
+>> directory entry (nor are hardlinks) in linux, so when a faced with the
+>> choice of allocating another dentry with another case for the same
+>> directory
+>> inode, it just quits with EBUSY. Regular files work because another dentry
+>> with the exact case is allocated and points to the same inode, which is
+>> allowed.
+>>
+>> You can work around this by commenting out these two lines of code in
+>> dir.c,
+>> but I'm afraid this will result some race conditions and/or other
+>> nastiness
+>> in the kernel eventually.
+>>      
+
+Great ! Thank you for the long awaited explanation.
+
+>> Bottom line is the fuse kmod needs to be patched to support case
+>> insensitive
+>> directory names, and I am not quite sure how to do it the right way.
+>> Anyone?
+>>
+>>      
+> Regular files working case insensitive because multiple dentries are allows
+> is not the right thing to do. My conclusion is that case insensitive is not
+> suported by FUSE as-is and just works coincidentally most of the time. I
+> believe something like what is done in cifs/dir.c will have to be
+> implemented, fuse's own dentry_operations table with case insensitive dcache
+> functions that are used with an explicit case insensitive flag set by the
+> FUSE filesystem.
+>    
+
+Hope this is not true for plain files. Case insensitive names
+are much similar to hard links, and I have been using
+case insensitive file names and hard links with no problem
+(at the low level interface only).
+
+If some case insensitive processing had to be added to fuse,
+it would have to callback the file system. At least NTFS has
+to rely on on-disk uppercase tables, obviously unknown to
+fuse. I would much prefer the inode number to be used for
+deciding whether two names point to the same directory
+(or a file, should this be needed).
+
+Jean-Pierre
+
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310156897</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Jean-Pierre André &lt;jean-pierre.andre@wanadoo.fr&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] File system with case insensitive names</string>
+	<key>to</key>
+	<string>dbanerjee &lt;dbanerjee@avid.com&gt;</string>
+</dict>
+</plist>

@@ -1,0 +1,177 @@
+7244
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Sun, 10 Jul 2011 19:38:10 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 418371216C
+	for <alexander.holupirek@uni-konstanz.de>; Sun, 10 Jul 2011 19:38:10 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 10 Jul 2011 17:38:10 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 2846D4D985; Sun, 10 Jul 2011 19:38:10 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 1738E426AB
+	for <holupire@inf.uni-konstanz.de>; Sun, 10 Jul 2011 19:38:10 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Au8AAGbjGU7YIrVYkWdsb2JhbABOBZhJjmsIFAEBAQEJCwsHFAUgrTWMLIYNO4htgz0LgnIEkEmCC4gihA88g1w
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 10 Jul 2011 17:37:59 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QfxvG-0001md-Mb; Sun, 10 Jul 2011 17:36:02 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <stefbon@gmail.com>) id 1QfxvG-0001mT-0t
+	for fuse-devel@lists.sourceforge.net; Sun, 10 Jul 2011 17:36:02 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.214.175 as permitted sender)
+	client-ip=209.85.214.175; envelope-from=stefbon@gmail.com;
+	helo=mail-iw0-f175.google.com; 
+Received: from mail-iw0-f175.google.com ([209.85.214.175])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QfxvF-0008RN-Bu
+	for fuse-devel@lists.sourceforge.net; Sun, 10 Jul 2011 17:36:01 +0000
+Received: by iwn4 with SMTP id 4so4154484iwn.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Sun, 10 Jul 2011 10:35:56 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.42.21.204 with SMTP id l12mr4419229icb.341.1310319355940; Sun,
+	10 Jul 2011 10:35:55 -0700 (PDT)
+Received: by 10.43.46.130 with HTTP; Sun, 10 Jul 2011 10:35:55 -0700 (PDT)
+Date: Sun, 10 Jul 2011 19:35:55 +0200
+Message-ID: <CANXojcynzwX2x6ACj+usMCN3SB+QLFvogJ_7Gdij0oNuSUHhFg@mail.gmail.com>
+From: Stef Bon <stefbon@gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -1.2 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(stefbon[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+	0.4 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QfxvF-0008RN-Bu
+Subject: [fuse-devel] Correct st_atim/st_mtim to now.
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi,
+
+I'm working with a fs with virtual entries.
+
+To implement the setting of the time,
+I have to assign the a_tim or the m_tim to now, I do this as follows:
+
+time_t now;
+
+now=time(NULL);
+
+...
+.. some code
+
+stat->st_st_atim=now;
+
+According the man page of stat, these have the type
+of time_t, which is the same of the function time, so this assignment
+should be allright:
+
+           struct stat {
+               dev_t     st_dev;     /* ID of device containing file */
+               ino_t     st_ino;     /* inode number */
+               mode_t    st_mode;    /* protection */
+               nlink_t   st_nlink;   /* number of hard links */
+               uid_t     st_uid;     /* user ID of owner */
+               gid_t     st_gid;     /* group ID of owner */
+               dev_t     st_rdev;    /* device ID (if special file) */
+               off_t     st_size;    /* total size, in bytes */
+               blksize_t st_blksize; /* blocksize for file system I/O */
+               blkcnt_t  st_blocks;  /* number of 512B blocks allocated */
+               time_t    st_atime;   /* time of last access */
+               time_t    st_mtime;   /* time of last modification */
+               time_t    st_ctime;   /* time of last status change */
+           };
+
+
+but I get the following error:
+
+basefs-virtual.c:619: error: incompatible types when assigning to type
+'struct timespec' from type 'time_t'
+basefs-virtual.c:631: error: incompatible types when assigning to type
+'struct timespec' from type 'time_t'
+
+Now I read also in the same manpage:
+
+ Since kernel 2.5.48, the stat structure supports nanosecond
+resolution  for  the  three  file  timestamp
+       fields.  Glibc exposes the nanosecond component of each field
+using names of the form st_atim.tv_nsec if
+       the _BSD_SOURCE or  _SVID_SOURCE  feature  test  macro  is
+defined.   These  fields  are  specified  in
+       POSIX.1-2008,  and,  starting with version 2.12, glibc also
+exposes these field names if _POSIX_C_SOURCE
+       is defined with the value 200809L or greater, or _XOPEN_SOURCE
+is defined with the value 700 or greater.
+       If  none  of the aforementioned macros are defined, then the
+nanosecond values are exposed with names of
+       the form st_atimensec.  On file systems that do not support
+subsecond timestamps, the nanosecond  fields
+       are returned with the value 0.
+
+So what's happening here?
+
+Stef
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310319355</real>
+	<key>flags</key>
+	<integer>261249</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Stef Bon &lt;stefbon@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Correct st_atim/st_mtim to now.</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

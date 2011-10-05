@@ -1,0 +1,127 @@
+5355
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Sat, 16 Jul 2011 12:42:37 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id CA6DF12E21
+	for <alexander.holupirek@uni-konstanz.de>; Sat, 16 Jul 2011 12:42:37 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 16 Jul 2011 10:42:38 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id A9D434D9E5; Sat, 16 Jul 2011 12:42:37 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 9C12C4D9A6
+	for <holupire@inf.uni-konstanz.de>; Sat, 16 Jul 2011 12:42:37 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AtkAABdqIU7YIrVYkWdsb2JhbABFDqdsCBQBAQEBCQsLGwUgiHykfwqMI4ZmO4hwgyODGQSQW4ILjD48g10
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 16 Jul 2011 10:42:37 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qi2Ii-0002Z6-Nm; Sat, 16 Jul 2011 10:40:48 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <stefbon@gmail.com>) id 1Qi2Ig-0002Yn-Gh
+	for fuse-devel@lists.sourceforge.net; Sat, 16 Jul 2011 10:40:46 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.214.175 as permitted sender)
+	client-ip=209.85.214.175; envelope-from=stefbon@gmail.com;
+	helo=mail-iw0-f175.google.com; 
+Received: from mail-iw0-f175.google.com ([209.85.214.175])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1Qi2If-0008I4-QT
+	for fuse-devel@lists.sourceforge.net; Sat, 16 Jul 2011 10:40:46 +0000
+Received: by iwn4 with SMTP id 4so2392554iwn.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Sat, 16 Jul 2011 03:40:40 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.42.178.68 with SMTP id bl4mr4986076icb.343.1310812840352; Sat,
+	16 Jul 2011 03:40:40 -0700 (PDT)
+Received: by 10.42.171.201 with HTTP; Sat, 16 Jul 2011 03:40:40 -0700 (PDT)
+In-Reply-To: <87oc0vbm0s.fsf@tucsk.pomaz.szeredi.hu>
+References: <CAEfcQSHHed+w=-WAfVoMzX1dPepgQhYiX5cnq_Rwn8RQt=_A0A@mail.gmail.com>
+	<87oc0vbm0s.fsf@tucsk.pomaz.szeredi.hu>
+Date: Sat, 16 Jul 2011 12:40:40 +0200
+Message-ID: <CANXojcxHrYM1hNw33sGoCUHRJf8w2=s=rPjgsWFOYR4WfJ9WBw@mail.gmail.com>
+From: Stef Bon <stefbon@gmail.com>
+To: Miklos Szeredi <miklos@szeredi.hu>
+X-Spam-Score: -1.2 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(stefbon[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.4 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1Qi2If-0008I4-QT
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] Current status of posix ACL checking for FUSE
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+2011/7/15 Miklos Szeredi <miklos@szeredi.hu>:
+
+>> Did this solution or something like it ever make it into FUSE?
+>
+> It didn't make it, because the poster didn't follow it up with a patch
+> addressing the problems with the original posting.
+>
+
+Well this is interesting. You can make the xattr checking in your fs
+if your backend supports them.
+
+Stef
+
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310812840</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Stef Bon &lt;stefbon@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Current status of posix ACL checking for FUSE</string>
+	<key>to</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+</dict>
+</plist>

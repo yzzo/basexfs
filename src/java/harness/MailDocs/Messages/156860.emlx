@@ -1,0 +1,296 @@
+11171
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Wed, 06 Jul 2011 13:32:04 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id C0C7F12690
+	for <alexander.holupirek@uni-konstanz.de>; Wed,  6 Jul 2011 13:32:04 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 06 Jul 2011 11:32:05 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 9F2474D68C; Wed,  6 Jul 2011 13:32:04 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 85860423E1
+	for <holupire@inf.uni-konstanz.de>; Wed,  6 Jul 2011 13:32:04 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqUAAEFGFE7YIrVYkWdsb2JhbABTp3sIFAEBAQEJCwsHFAUgiHymZZx/gzSDAgSQOYIIjCc8g1s
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 06 Jul 2011 11:32:03 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QeQJO-00016R-Qs; Wed, 06 Jul 2011 11:30:34 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1QeQJN-00016K-2A
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 11:30:33 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.161.47 as permitted sender)
+	client-ip=209.85.161.47; envelope-from=miklos@szeredi.hu;
+	helo=mail-fx0-f47.google.com; 
+Received: from mail-fx0-f47.google.com ([209.85.161.47])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QeQJL-0005FU-Ur
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 11:30:33 +0000
+Received: by fxg11 with SMTP id 11so7882465fxg.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Wed, 06 Jul 2011 04:30:25 -0700 (PDT)
+Received: by 10.223.21.219 with SMTP id k27mr6420425fab.54.1309951776491;
+	Wed, 06 Jul 2011 04:29:36 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (catv-80-98-43-182.catv.broadband.hu
+	[80.98.43.182])
+	by mx.google.com with ESMTPS id m26sm5954533fab.10.2011.07.06.04.29.34
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Wed, 06 Jul 2011 04:29:36 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org
+Date: Wed, 06 Jul 2011 13:30:23 +0200
+Message-ID: <8739ij3auo.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: -0.8 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.8 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QeQJL-0005FU-Ur
+Cc: fuse-devel@lists.sourceforge.net
+Subject: [fuse-devel] [PATCH] fuse: fix flock
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+From: Miklos Szeredi <mszeredi@suse.cz>
+
+Commit a9ff4f87 "fuse: support BSD locking semantics" overlooked a
+number of issues with supporing flock locks over existing POSIX
+locking infrastructure:
+
+  - it's not backward compatible, passing flock(2) calls to userspace
+    unconditionally (if userspace sets FUSE_POSIX_LOCKS)
+
+  - it doesn't cater for the fact that flock locks are automatically
+    unlocked on file release
+
+  - it doesn't take into account the fact that flock exclusive locks
+    (write locks) don't need an fd opened for write.
+
+The last one invalidates the original premise of the patch that flock
+locks can be emulated with POSIX locks.
+
+This patch fixes the first two issues.  The last one needs to be fixed
+in userspace if the filesystem assumed that a write lock will happen
+only on a file operned for write (as in the case of the current fuse
+library).
+
+Reported-by: Sebastian Pipping <webmaster@hartwork.org>
+Signed-off-by: Miklos Szeredi <mszeredi@suse.cz>
+---
+ fs/fuse/file.c       |   11 ++++++++++-
+ fs/fuse/fuse_i.h     |    8 +++++++-
+ fs/fuse/inode.c      |    8 +++++++-
+ include/linux/fuse.h |    9 ++++++++-
+ 4 files changed, 32 insertions(+), 4 deletions(-)
+
+Index: linux-2.6/fs/fuse/file.c
+===================================================================
+--- linux-2.6.orig/fs/fuse/file.c	2011-07-04 17:05:52.000000000 +0200
++++ linux-2.6/fs/fuse/file.c	2011-07-04 17:15:36.000000000 +0200
+@@ -245,6 +245,12 @@ void fuse_release_common(struct file *fi
+ 	req = ff->reserved_req;
+ 	fuse_prepare_release(ff, file->f_flags, opcode);
+ 
++	if (ff->flock) {
++		struct fuse_release_in *inarg = &req->misc.release.in;
++		inarg->release_flags |= FUSE_RELEASE_FLOCK_UNLOCK;
++		inarg->lock_owner = fuse_lock_owner_id(ff->fc,
++						       (fl_owner_t) file);
++	}
+ 	/* Hold vfsmount and dentry until release is finished */
+ 	path_get(&file->f_path);
+ 	req->misc.release.path = file->f_path;
+@@ -1547,11 +1553,14 @@ static int fuse_file_flock(struct file *
+ 	struct fuse_conn *fc = get_fuse_conn(inode);
+ 	int err;
+ 
+-	if (fc->no_lock) {
++	if (fc->no_flock) {
+ 		err = flock_lock_file_wait(file, fl);
+ 	} else {
++		struct fuse_file *ff = file->private_data;
++
+ 		/* emulate flock with POSIX locks */
+ 		fl->fl_owner = (fl_owner_t) file;
++		ff->flock = true;
+ 		err = fuse_setlk(file, fl, 1);
+ 	}
+ 
+Index: linux-2.6/fs/fuse/fuse_i.h
+===================================================================
+--- linux-2.6.orig/fs/fuse/fuse_i.h	2011-07-04 17:05:52.000000000 +0200
++++ linux-2.6/fs/fuse/fuse_i.h	2011-07-04 17:06:05.000000000 +0200
+@@ -135,6 +135,9 @@ struct fuse_file {
+ 
+ 	/** Wait queue head for poll */
+ 	wait_queue_head_t poll_wait;
++
++	/** Has flock been performed on this file? */
++	bool flock:1;
+ };
+ 
+ /** One input argument of a request */
+@@ -448,7 +451,7 @@ struct fuse_conn {
+ 	/** Is removexattr not implemented by fs? */
+ 	unsigned no_removexattr:1;
+ 
+-	/** Are file locking primitives not implemented by fs? */
++	/** Are posix file locking primitives not implemented by fs? */
+ 	unsigned no_lock:1;
+ 
+ 	/** Is access not implemented by fs? */
+@@ -472,6 +475,9 @@ struct fuse_conn {
+ 	/** Don't apply umask to creation modes */
+ 	unsigned dont_mask:1;
+ 
++	/** Are BSD file locking primitives not implemented by fs? */
++	unsigned no_flock:1;
++
+ 	/** The number of requests waiting for completion */
+ 	atomic_t num_waiting;
+ 
+Index: linux-2.6/fs/fuse/inode.c
+===================================================================
+--- linux-2.6.orig/fs/fuse/inode.c	2011-07-04 17:05:52.000000000 +0200
++++ linux-2.6/fs/fuse/inode.c	2011-07-04 17:32:34.000000000 +0200
+@@ -809,6 +809,10 @@ static void process_init_reply(struct fu
+ 				fc->async_read = 1;
+ 			if (!(arg->flags & FUSE_POSIX_LOCKS))
+ 				fc->no_lock = 1;
++			if (arg->minor >= 17) {
++				if (!(arg->flags & FUSE_FLOCK_LOCKS))
++				    fc->no_flock = 1;
++			}
+ 			if (arg->flags & FUSE_ATOMIC_O_TRUNC)
+ 				fc->atomic_o_trunc = 1;
+ 			if (arg->minor >= 9) {
+@@ -823,6 +827,7 @@ static void process_init_reply(struct fu
+ 		} else {
+ 			ra_pages = fc->max_read / PAGE_CACHE_SIZE;
+ 			fc->no_lock = 1;
++			fc->no_flock = 1;
+ 		}
+ 
+ 		fc->bdi.ra_pages = min(fc->bdi.ra_pages, ra_pages);
+@@ -843,7 +848,8 @@ static void fuse_send_init(struct fuse_c
+ 	arg->minor = FUSE_KERNEL_MINOR_VERSION;
+ 	arg->max_readahead = fc->bdi.ra_pages * PAGE_CACHE_SIZE;
+ 	arg->flags |= FUSE_ASYNC_READ | FUSE_POSIX_LOCKS | FUSE_ATOMIC_O_TRUNC |
+-		FUSE_EXPORT_SUPPORT | FUSE_BIG_WRITES | FUSE_DONT_MASK;
++		FUSE_EXPORT_SUPPORT | FUSE_BIG_WRITES | FUSE_DONT_MASK |
++		FUSE_FLOCK_LOCKS;
+ 	req->in.h.opcode = FUSE_INIT;
+ 	req->in.numargs = 1;
+ 	req->in.args[0].size = sizeof(*arg);
+Index: linux-2.6/include/linux/fuse.h
+===================================================================
+--- linux-2.6.orig/include/linux/fuse.h	2011-07-04 17:05:52.000000000 +0200
++++ linux-2.6/include/linux/fuse.h	2011-07-05 14:09:06.000000000 +0200
+@@ -47,6 +47,9 @@
+  *  - FUSE_IOCTL_UNRESTRICTED shall now return with array of 'struct
+  *    fuse_ioctl_iovec' instead of ambiguous 'struct iovec'
+  *  - add FUSE_IOCTL_32BIT flag
++ *
++ * 7.17
++ *  - add FUSE_FLOCK_LOCKS and FUSE_RELEASE_FLOCK_UNLOCK
+  */
+ 
+ #ifndef _LINUX_FUSE_H
+@@ -78,7 +81,7 @@
+ #define FUSE_KERNEL_VERSION 7
+ 
+ /** Minor version number of this interface */
+-#define FUSE_KERNEL_MINOR_VERSION 16
++#define FUSE_KERNEL_MINOR_VERSION 17
+ 
+ /** The node ID of the root inode */
+ #define FUSE_ROOT_ID 1
+@@ -153,8 +156,10 @@ struct fuse_file_lock {
+ /**
+  * INIT request/reply flags
+  *
++ * FUSE_POSIX_LOCKS: remote locking for POSIX file locks
+  * FUSE_EXPORT_SUPPORT: filesystem handles lookups of "." and ".."
+  * FUSE_DONT_MASK: don't apply umask to file mode on create operations
++ * FUSE_FLOCK_LOCKS: remote locking for BSD style file locks
+  */
+ #define FUSE_ASYNC_READ		(1 << 0)
+ #define FUSE_POSIX_LOCKS	(1 << 1)
+@@ -163,6 +168,7 @@ struct fuse_file_lock {
+ #define FUSE_EXPORT_SUPPORT	(1 << 4)
+ #define FUSE_BIG_WRITES		(1 << 5)
+ #define FUSE_DONT_MASK		(1 << 6)
++#define FUSE_FLOCK_LOCKS	(1 << 10)
+ 
+ /**
+  * CUSE INIT request/reply flags
+@@ -175,6 +181,7 @@ struct fuse_file_lock {
+  * Release flags
+  */
+ #define FUSE_RELEASE_FLUSH	(1 << 0)
++#define FUSE_RELEASE_FLOCK_UNLOCK	(1 << 1)
+ 
+ /**
+  * Getattr flags
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309951823</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] [PATCH] fuse: fix flock</string>
+	<key>to</key>
+	<string>linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org</string>
+</dict>
+</plist>

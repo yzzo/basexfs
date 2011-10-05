@@ -1,0 +1,146 @@
+7426
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 12 Jul 2011 19:06:04 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id CCE7312425
+	for <alexander.holupirek@uni-konstanz.de>; Tue, 12 Jul 2011 19:06:04 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 12 Jul 2011 17:06:05 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id A7DFF4D9D2; Tue, 12 Jul 2011 19:06:04 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 948C94D9BF
+	for <holupire@inf.uni-konstanz.de>; Tue, 12 Jul 2011 19:06:04 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApoAADR+HE7YIrVYkWdsb2JhbAAoHQ6ERqF7aAgUAQEBAQkLCwcUBSCIegIjpQ6LcJB5gSuBd4IJgQ8EkFGCC4glgTWCWzyDXA
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 12 Jul 2011 17:06:04 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QggO4-0001cm-D8; Tue, 12 Jul 2011 17:04:44 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1QggO2-0001cb-Kq
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 17:04:42 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.214.47 as permitted sender)
+	client-ip=209.85.214.47; envelope-from=miklos@szeredi.hu;
+	helo=mail-bw0-f47.google.com; 
+Received: from mail-bw0-f47.google.com ([209.85.214.47])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QggNy-0003n9-KY
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 17:04:42 +0000
+Received: by bwf5 with SMTP id 5so1043130bwf.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Tue, 12 Jul 2011 10:04:32 -0700 (PDT)
+Received: by 10.204.156.194 with SMTP id y2mr60216bkw.369.1310490271841;
+	Tue, 12 Jul 2011 10:04:31 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (catv-80-98-43-182.catv.broadband.hu
+	[80.98.43.182])
+	by mx.google.com with ESMTPS id t9sm10329624bkn.8.2011.07.12.10.04.29
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Tue, 12 Jul 2011 10:04:30 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: Anand Avati <anand.avati@gmail.com>
+References: <BANLkTikOWNuw5zRDFPiYEwUVRdrNuVQF3w@mail.gmail.com>
+	<BANLkTi=+uQoS9_A8TdN3pGAKeH=_GTX7uw@mail.gmail.com>
+	<BANLkTin0TEegMBCVZHJzGLU+HW94wpdLgA@mail.gmail.com>
+	<BANLkTinvJuuNmyAmPMD+Sk=fkEFWQi4vGQ@mail.gmail.com>
+	<BANLkTikW1BZPHkstbE+jdoFv=Bsigk=DUQ@mail.gmail.com>
+	<32023853.post@talk.nabble.com>
+	<CAFboF2y1P8-mYoP571K6cKiVc11UqfWrr+nb=S-idt3fU3EaiQ@mail.gmail.com>
+Date: Tue, 12 Jul 2011 19:05:25 +0200
+In-Reply-To: <CAFboF2y1P8-mYoP571K6cKiVc11UqfWrr+nb=S-idt3fU3EaiQ@mail.gmail.com>
+	(Anand Avati's message of "Sat, 9 Jul 2011 15:02:11 +0530")
+Message-ID: <87pqlf4ega.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: -0.3 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	1.3 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QggNy-0003n9-KY
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] Does fuse support O_DIRECT?
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+QW5hbmQgQXZhdGkgPGFuYW5kLmF2YXRpQGdtYWlsLmNvbT4gd3JpdGVzOgoKPiAgICAgSU1ITyBP
+X0RJUkVDVCBzaG91bGQgYmUgd2lyZWQgZGlyZWN0bHkgdG8gZmgtPmRpcmVjdGlvIG9mIGZpbGUg
+aGFuZGxlIG9wcwo+ICAgICBsaWtlIHJlYWQvd3JpdGUuCj4KPgo+IFRoaXMgaGFzIGJlZW4gZGlz
+Y3Vzc2VkIGJlZm9yZSBhbmQgd2FzIGRlY2lkZWQgYXQgdGhhdCB0aW1lIHRoYXQgaGFuZGxpbmcK
+PiBPX0RJUkVDVCBzZXR0aW5nL3Vuc2V0dGluZyB2aWEgZmNudGwoKSB3b3VsZCBtYWtlIHByb3Bl
+ciBzdXBwb3J0IHRyaWNreS4gSGVyZQo+IGlzIHRoZSBsaW5rIHRvIHRoZSBkaXNjdXNzaW9uICh3
+aGljaCBhbHNvIGhhcyBhIHBhdGNoIHdoaWNoIGRvZXMgd2hhdCB5b3UKPiBkZXNjcmliZSkgLcKg
+wqAKPgo+IHRocmVhZCAtIGh0dHA6Ly9zb3VyY2Vmb3JnZS5uZXQvbWFpbGFyY2hpdmUvZm9ydW0u
+cGhwP3RocmVhZF9uYW1lPQo+IEUxSWhYdUotMDAwMXZlLTAwJTQwZG9ya2EucG9tYXouc3plcmVk
+aS5odSZmb3J1bV9uYW1lPWZ1c2UtZGV2ZWwKPgo+IHBhdGNoIC0gaHR0cDovL3NvdXJjZWZvcmdl
+Lm5ldC9tYWlsYXJjaGl2ZS9hdHRhY2htZW50LnBocD9saXN0X25hbWU9ZnVzZS1kZXZlbCYKPiBt
+ZXNzYWdlX2lkPThiZDQ4MzhlMDcxMDE1MTI1MGw3NGVhMzRkM3JlY2NiYzA4OWNkYTFhMjhlJTQw
+bWFpbC5nbWFpbC5jb20mCj4gY291bnRlcj0xCj4KPgo+IE1pa2xvcywgd2hpbGUgSSBhZ3JlZSB0
+aGF0IGhhbmRsaW5nIG9mIGR5bmFtaWMgT19ESVJFQ1Qgc2V0dGluZy91bnNldHRpbmcgY291bGQK
+PiBiZSB0cmlja3ksIHdoeSBub3QgbWFrZSB0aGF0IGZjbnRsIGNhbGwgYWxvbmUgdW5zdXBwb3J0
+ZWQgaW5zdGVhZCBvZiBvcGVuIHdpdGgKPiBPX0RJUkVDVD8gQWxtb3N0IGV2ZXJ5IGFwcGxpY2F0
+aW9uIG9wZW5zIGFuZCBmZCBpbiBPX0RJUkVDVCB0aWxsIGl0IGlzIGNsb3NlZAo+IGFuZCBmY250
+bCBzZWVtcyB0byBiZSBoYXJkbHkgdXNlZCBldmVyLgoKWWVhaCwgbWFrZXMgc2Vuc2UuICBUaGF0
+IG1lYW5zIGltcGxlbWVudGluZyBmX29wLT5jaGVja19mbGFncygpIGFuZApyZXR1cm5pbmcgLUVJ
+TlZBTCBpZiBPX0RJUkVDVCBpcyBiZWluZyBjaGFuZ2VkLgoKQWxzbyB0aGlzIHNob3VsZG4ndCBi
+ZSBkb25lIHdpdGhvdXQgdGhlIGNvbnNlbnQgb2YgdGhlIHVzZXJzcGFjZQpmaWxlc3lzdGVtLiAg
+U28gYSBGT1BFTl9BTExPV19PX0RJUkVDVCBmbGFnIHNob3VsZCBiZSBhZGRlZCB0byB0aGUKcHJv
+dG9jb2wuCgpXb3VsZCB5b3UgbGlrZSB0byBzdWJtaXQgYW4gdXBkYXRlZCBwYXRjaD8KClRoYW5r
+cywKTWlrbG9zCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQXBwU3VtbyBQcmVzZW50cyBhIEZSRUUg
+VmlkZW8gZm9yIHRoZSBTb3VyY2VGb3JnZSBDb21tdW5pdHkgYnkgRXJpYyAKUmllcywgdGhlIGNy
+ZWF0b3Igb2YgdGhlIExlYW4gU3RhcnR1cCBNZXRob2RvbG9neSBvbiAiTGVhbiBTdGFydHVwIApT
+ZWNyZXRzIFJldmVhbGVkLiIgVGhpcyB2aWRlbyBzaG93cyB5b3UgaG93IHRvIHZhbGlkYXRlIHlv
+dXIgaWRlYXMsIApvcHRpbWl6ZSB5b3VyIGlkZWFzIGFuZCBpZGVudGlmeSB5b3VyIGJ1c2luZXNz
+IHN0cmF0ZWd5LgpodHRwOi8vcC5zZi5uZXQvc2Z1L2FwcHN1bW9zZmRldjJkZXYKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KZnVzZS1kZXZlbCBtYWlsaW5n
+IGxpc3QKZnVzZS1kZXZlbEBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3Vy
+Y2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vZnVzZS1kZXZlbAo=
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310490325</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Does fuse support O_DIRECT?</string>
+	<key>to</key>
+	<string>Anand Avati &lt;anand.avati@gmail.com&gt;</string>
+</dict>
+</plist>

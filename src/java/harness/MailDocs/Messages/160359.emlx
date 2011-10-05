@@ -1,0 +1,179 @@
+6725
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 22 Jul 2011 10:36:32 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id E555112BE8
+	for <alexander.holupirek@uni-konstanz.de>; Fri, 22 Jul 2011 10:36:32 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 22 Jul 2011 08:36:32 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id C4CB14DA1A; Fri, 22 Jul 2011 10:36:32 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id B927C4D9D5
+	for <holupire@inf.uni-konstanz.de>; Fri, 22 Jul 2011 10:36:32 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AvIAAM41KU7YIrVYkGdsb2JhbABTmDmPCRQBAQEBCQkNBxQFILdbjQyGPwSHVYkOhxuDIYhO
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 22 Jul 2011 08:36:32 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QkBCX-0007Ai-RF; Fri, 22 Jul 2011 08:35:17 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <avati@gluster.com>) id 1QkBCW-0007AQ-LY
+	for fuse-devel@lists.sourceforge.net; Fri, 22 Jul 2011 08:35:16 +0000
+Received-SPF: softfail (sog-mx-2.v43.ch3.sourceforge.com: transitioning domain
+	of gluster.com does not designate 206.225.165.116 as permitted
+	sender) client-ip=206.225.165.116;
+	envelope-from=avati@gluster.com;
+	helo=HUB024-nj-1.exch024.serverdata.net; 
+Received: from hub024-nj-1.exch024.serverdata.net ([206.225.165.116])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtps (TLSv1:AES128-SHA:128)
+	(Exim 4.76) id 1QkBCV-0000tf-Vp
+	for fuse-devel@lists.sourceforge.net; Fri, 22 Jul 2011 08:35:16 +0000
+Received: from localhost.localdomain (184.107.76.11) by
+	east.exch024.serverdata.net (10.240.10.31) with Microsoft SMTP Server
+	(TLS) id 14.1.289.1; Fri, 22 Jul 2011 01:35:10 -0700
+From: Anand Avati <avati@gluster.com>
+To: <miklos@szeredi.hu>
+Date: Fri, 22 Jul 2011 01:33:26 -0700
+Message-ID: <1311323606-15040-2-git-send-email-avati@gluster.com>
+X-Mailer: git-send-email 1.7.4.1
+In-Reply-To: <1311323606-15040-1-git-send-email-avati@gluster.com>
+References: <y>
+ <1311323606-15040-1-git-send-email-avati@gluster.com>
+MIME-Version: 1.0
+X-Spam-Score: 1.0 (+)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	1.0 SPF_SOFTFAIL SPF: sender does not match SPF record (softfail)
+X-Headers-End: 1QkBCV-0000tf-Vp
+Cc: fuse-devel@lists.sourceforge.net, linux-fsdevel@vger.kernel.org,
+	linux-nfs@vger.kernel.org, Anand Avati <avati@gluster.com>
+Subject: [fuse-devel] [PATCH 2/2] fuse: permit O_DIRECT flag in open()
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+but do not permit setting of O_DIRECT flag via fcntl() (or unsetting)
+---
+ fs/fuse/file.c |   27 +++++++++++++++++++++++----
+ 1 files changed, 23 insertions(+), 4 deletions(-)
+
+diff --git a/fs/fuse/file.c b/fs/fuse/file.c
+index 82a6646..f30a7c6 100644
+--- a/fs/fuse/file.c
++++ b/fs/fuse/file.c
+@@ -154,6 +154,18 @@ int fuse_do_open(struct fuse_conn *fc, u64 nodeid, struct file *file,
+ 		return err;
+ 	}
+ 
++        if (file->f_flags & O_DIRECT) {
++                /* set fuse_direct_io_file_operations as fops in
++                   fuse_finish_open as though the FS enforced direct_io
++                */
++                outarg.open_flags |= FOPEN_DIRECT_IO;
++
++                /* make VFS believe we don't support O_DIRECT till we
++                   implement a_ops->direct_IO
++                */
++                file->f_flags &= ~O_DIRECT;
++        }
++
+ 	if (isdir)
+ 		outarg.open_flags &= ~FOPEN_DIRECT_IO;
+ 
+@@ -193,10 +205,6 @@ int fuse_open_common(struct inode *inode, struct file *file, bool isdir)
+ 	struct fuse_conn *fc = get_fuse_conn(inode);
+ 	int err;
+ 
+-	/* VFS checks this, but only _after_ ->open() */
+-	if (file->f_flags & O_DIRECT)
+-		return -EINVAL;
+-
+ 	err = generic_file_open(inode, file);
+ 	if (err)
+ 		return err;
+@@ -2132,6 +2140,15 @@ int fuse_notify_poll_wakeup(struct fuse_conn *fc,
+ 	return 0;
+ }
+ 
++
++static int fuse_check_flags(struct file *filp, int flags)
++{
++        if ((filp->f_flags ^ flags) & O_DIRECT)
++                return -EINVAL;
++	return 0;
++}
++
++
+ static const struct file_operations fuse_file_operations = {
+ 	.llseek		= fuse_file_llseek,
+ 	.read		= do_sync_read,
+@@ -2149,6 +2166,7 @@ static const struct file_operations fuse_file_operations = {
+ 	.unlocked_ioctl	= fuse_file_ioctl,
+ 	.compat_ioctl	= fuse_file_compat_ioctl,
+ 	.poll		= fuse_file_poll,
++        .check_flags    = fuse_check_flags,
+ };
+ 
+ static const struct file_operations fuse_direct_io_file_operations = {
+@@ -2165,6 +2183,7 @@ static const struct file_operations fuse_direct_io_file_operations = {
+ 	.unlocked_ioctl	= fuse_file_ioctl,
+ 	.compat_ioctl	= fuse_file_compat_ioctl,
+ 	.poll		= fuse_file_poll,
++        .check_flags    = fuse_check_flags,
+ 	/* no splice_read */
+ };
+ 
+-- 
+1.7.4.4
+
+
+------------------------------------------------------------------------------
+10 Tips for Better Web Security
+Learn 10 ways to better secure your business today. Topics covered include:
+Web security, SSL, hacker attacks & Denial of Service (DoS), private keys,
+security Microsoft Exchange, secure Instant Messaging, and much more.
+http://www.accelacomm.com/jaw/sfnl/114/51426210/
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311323606</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Anand Avati &lt;avati@gluster.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] [PATCH 2/2] fuse: permit O_DIRECT flag in open()</string>
+	<key>to</key>
+	<string>&lt;miklos@szeredi.hu&gt;</string>
+</dict>
+</plist>

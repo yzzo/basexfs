@@ -1,0 +1,150 @@
+6096
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Thu, 07 Jul 2011 16:33:27 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 3C33D1285E
+	for <alexander.holupirek@uni-konstanz.de>; Thu,  7 Jul 2011 16:33:27 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 07 Jul 2011 14:33:27 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 1A91C4D957; Thu,  7 Jul 2011 16:33:27 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 0B1394D815
+	for <holupire@inf.uni-konstanz.de>; Thu,  7 Jul 2011 16:33:27 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ag8BAAXDFU7YIrVYkWdsb2JhbABTmSeObAgUAQEBAQkLCwcUBSCIe6YfjCqGdzmIbYY4BJA+ggiJUYJaPIN2
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 07 Jul 2011 14:33:26 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qepbw-0001fy-QC; Thu, 07 Jul 2011 14:31:24 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <chris.meyers.fsu@gmail.com>) id 1Qepbv-0001fs-Tf
+	for fuse-devel@lists.sourceforge.net; Thu, 07 Jul 2011 14:31:23 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.215.47 as permitted sender)
+	client-ip=209.85.215.47;
+	envelope-from=chris.meyers.fsu@gmail.com;
+	helo=mail-ew0-f47.google.com; 
+Received: from mail-ew0-f47.google.com ([209.85.215.47])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1Qepbr-0000L5-Qa
+	for fuse-devel@lists.sourceforge.net; Thu, 07 Jul 2011 14:31:23 +0000
+Received: by ewy5 with SMTP id 5so465754ewy.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Thu, 07 Jul 2011 07:31:13 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.14.37.76 with SMTP id x52mr247066eea.222.1310049073439; Thu,
+	07 Jul 2011 07:31:13 -0700 (PDT)
+Received: by 10.14.45.68 with HTTP; Thu, 7 Jul 2011 07:31:13 -0700 (PDT)
+In-Reply-To: <1930022987.16792004.1309978859367.JavaMail.app@ela4-bed40.prod>
+References: <1930022987.16792004.1309978859367.JavaMail.app@ela4-bed40.prod>
+Date: Thu, 7 Jul 2011 10:31:13 -0400
+Message-ID: <CAHPXfP5E+ZPTCh2hncK2sRuCUQGRVDGhf9dTn7XnOvH-pamoHA@mail.gmail.com>
+From: chris meyers <chris.meyers.fsu@gmail.com>
+To: fuse-devel@lists.sourceforge.net
+X-Spam-Score: -0.6 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(chris.meyers.fsu[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	1.0 HTML_MESSAGE           BODY: HTML included in message
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1Qepbr-0000L5-Qa
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Subject: Re: [fuse-devel] Invitation to connect on LinkedIn
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Sorry for the spam :(
+
+On Wed, Jul 6, 2011 at 3:00 PM, chris meyers <chris.meyers.fsu@gmail.com>wrote:
+
+> LinkedIn
+> ------------
+>
+>
+> I'd like to add you to my professional network on LinkedIn.
+>
+> - chris
+>
+> chris meyers
+> Student at Florida State University
+> Tallahassee, Florida Area
+>
+> Confirm that you know chris meyers
+> https://www.linkedin.com/e/-fs2dny-gpsnl8wz-1w/isd/3452909791/giwfr7cn/
+>
+>
+>
+> --
+> (c) 2011, LinkedIn Corporation
+>
+> ------------------------------------------------------------------------------
+> All of the data generated in your IT infrastructure is seriously valuable.
+> Why? It contains a definitive record of application performance, security
+> threats, fraudulent activity, and more. Splunk takes this data and makes
+> sense of it. IT sense. And common sense.
+> http://p.sf.net/sfu/splunk-d2d-c2
+> _______________________________________________
+> fuse-devel mailing list
+> fuse-devel@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/fuse-devel
+>
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310049073</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>chris meyers &lt;chris.meyers.fsu@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Invitation to connect on LinkedIn</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

@@ -1,0 +1,147 @@
+6150
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 08 Jul 2011 21:04:54 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id AF0EA1234E
+	for <alexander.holupirek@uni-konstanz.de>; Fri,  8 Jul 2011 21:04:54 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 08 Jul 2011 19:04:55 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 973C84D7F8; Fri,  8 Jul 2011 21:04:54 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 88B222AB63
+	for <holupire@inf.uni-konstanz.de>; Fri,  8 Jul 2011 21:04:54 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Aq8AAONTF07YIrVYkWdsb2JhbABUmFyOdRQBAQEBCQsLBxQFIMlwhjgEh0yIdoIKiCCIRA
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 08 Jul 2011 19:04:54 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QfGKk-00077K-Hn; Fri, 08 Jul 2011 19:03:26 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <bounces@nabble.com>) id 1QfGKj-00077F-0b
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 19:03:25 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of nabble.com
+	designates 216.139.236.26 as permitted sender)
+	client-ip=216.139.236.26; envelope-from=bounces@nabble.com;
+	helo=sam.nabble.com; 
+Received: from sam.nabble.com ([216.139.236.26])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:AES256-SHA:256)
+	(Exim 4.76) id 1QfGKh-0006D5-Qv
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 19:03:24 +0000
+Received: from isper.nabble.com ([192.168.236.156])
+	by sam.nabble.com with esmtp (Exim 4.72)
+	(envelope-from <bounces@nabble.com>) id 1QfGKc-0000CK-G1
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 12:03:18 -0700
+Message-ID: <32023853.post@talk.nabble.com>
+Date: Fri, 8 Jul 2011 12:03:18 -0700 (PDT)
+From: dbanerjee <dbanerjee@avid.com>
+To: fuse-devel@lists.sourceforge.net
+In-Reply-To: <BANLkTikW1BZPHkstbE+jdoFv=Bsigk=DUQ@mail.gmail.com>
+MIME-Version: 1.0
+X-Nabble-From: dbanerjee@avid.com
+References: <BANLkTikOWNuw5zRDFPiYEwUVRdrNuVQF3w@mail.gmail.com>
+	<BANLkTi=+uQoS9_A8TdN3pGAKeH=_GTX7uw@mail.gmail.com>
+	<BANLkTin0TEegMBCVZHJzGLU+HW94wpdLgA@mail.gmail.com>
+	<BANLkTinvJuuNmyAmPMD+Sk=fkEFWQi4vGQ@mail.gmail.com>
+	<BANLkTikW1BZPHkstbE+jdoFv=Bsigk=DUQ@mail.gmail.com>
+X-Spam-Score: -1.1 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(bounces[at]nabble.com)
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+	0.4 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QfGKh-0006D5-Qv
+Subject: Re: [fuse-devel] Does fuse support O_DIRECT?
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+
+I know Linus hates O_DIRECT but what are these good reasons? The most
+important reason to have O_DIRECT, or a flag like O_DIRECT, is to bypass the
+VFS page cache either for performance reasons - the extra copy and
+management takes up memory bandwidth and compute power, or to bypass the VFS
+page cache because of cache coherency in the case of remote or shared
+filesystems. I would think FUSE filesystems would be a very good example of
+this.
+
+IMHO O_DIRECT should be wired directly to fh->directio of file handle ops
+like read/write.
+
+
+Anand Avati-4 wrote:
+> 
+> FUSE does not support O_DIRECT opens (for which there are good reasons).
+> If
+> you have an application which performs open() of files on FUSE with
+> O_DIRECT, it would be best to make it not do so, either by configuring it
+> (if it has such config options) or modifying it. In cases where modifying
+> the application is not an option, you can consider "faking" a succeeding
+> open with O_DIRECT with an LD PRELOAD'ed shared object like this -
+> 
+> https://github.com/avati/liboindirect
+> 
+> Avati
+> 
+> 
+
+-- 
+View this message in context: http://old.nabble.com/Does-fuse-support-O_DIRECT--tp31425199p32023853.html
+Sent from the Fuse - Dev mailing list archive at Nabble.com.
+
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310151798</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>dbanerjee &lt;dbanerjee@avid.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Does fuse support O_DIRECT?</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

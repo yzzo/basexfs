@@ -1,0 +1,131 @@
+5792
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 08 Jul 2011 11:54:54 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id E6D6C128BD
+	for <alexander.holupirek@uni-konstanz.de>; Fri,  8 Jul 2011 11:54:54 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 08 Jul 2011 09:54:55 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id CC34B42677; Fri,  8 Jul 2011 11:54:54 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id BC49135253
+	for <holupire@inf.uni-konstanz.de>; Fri,  8 Jul 2011 11:54:54 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AvYAAFTTFk7YIrVYkWdsb2JhbABTmE6OdRQBAQEBCQsLBxQFIIh9szSGfokohjgEh0yIdocHJotB
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 08 Jul 2011 09:54:54 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qf7kF-0002lC-CV; Fri, 08 Jul 2011 09:53:11 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <pa4wdh@yahoo.com>) id 1Qf7kD-0002l6-GN
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 09:53:09 +0000
+X-ACL-Warn: 
+Received: from nm30.bullet.mail.ac4.yahoo.com ([98.139.52.227])
+	by sog-mx-2.v43.ch3.sourceforge.com with smtp (Exim 4.76)
+	id 1Qf7kC-0002Qb-P7
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 09:53:09 +0000
+Received: from [98.139.52.197] by nm30.bullet.mail.ac4.yahoo.com with NNFMP;
+	08 Jul 2011 09:53:03 -0000
+Received: from [98.139.52.171] by tm10.bullet.mail.ac4.yahoo.com with NNFMP;
+	08 Jul 2011 09:53:03 -0000
+Received: from [127.0.0.1] by omp1054.mail.ac4.yahoo.com with NNFMP;
+	08 Jul 2011 09:53:03 -0000
+X-Yahoo-Newman-Property: ymail-3
+X-Yahoo-Newman-Id: 404719.79989.bm@omp1054.mail.ac4.yahoo.com
+Received: (qmail 31928 invoked by uid 60001); 8 Jul 2011 09:53:02 -0000
+X-YMail-OSG: yJ7y_XEVM1nfnFMetrmjl5XYmfDohyqCgnzy16kMx8USOUR
+	JIjCSKvFdJrsrm2GqQ67q47oNFTR0eMCckMfmxiVLD2WfGerUpKk5YAy7lC_
+	I9nU1L6Q1qA85xopNMhh.ny805bHzCdFggDosSwzFGlZjptm8ezPwypELb6_
+	93DS8SK97gljYmpgFThmvBDfFGn0u_I8fZCjbNRNOu34VEcWRwof9EeeKslH
+	8QDFeqpJfpmXBc6x6eWBXslGDkbxGnmYDa2B7debAuTk.OLA7B0V7y2NqxgQ
+	Brky9CihnNHsaN6xPof0KcosiTYM7ZjjHYavPTS_QBJceSNgA8r7VycoHck5
+	REZcov4fd7UIHnNRnFJoUJLx737qAp0R5SmW41Rhc9gegs9VcaLYSQN0-
+Received: from [213.84.93.147] by web39414.mail.mud.yahoo.com via HTTP;
+	Fri, 08 Jul 2011 02:53:02 PDT
+X-Mailer: YahooMailClassic/14.0.3 YahooMailWebService/0.8.112.307740
+Message-ID: <1310118782.30351.YahooMailClassic@web39414.mail.mud.yahoo.com>
+Date: Fri, 8 Jul 2011 02:53:02 -0700 (PDT)
+From: Wesley PA4WDH <pa4wdh@yahoo.com>
+To: fuse-devel@lists.sourceforge.net
+MIME-Version: 1.0
+X-Spam-Score: -0.1 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(pa4wdh[at]yahoo.com)
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [98.139.52.227 listed in list.dnswl.org]
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1Qf7kC-0002Qb-P7
+Subject: [fuse-devel] Preventing a FUSE filesystem from backgrounding
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi All,
+
+I'm still working on my smartcard project, and now i have a problem to debug which is not really fuse related. However, the backgrounding behavior makes it nearly impossible to debug.
+Is there some way to prevent this from happening ? I'd like to use strace to see what's happening. Are there any other hints on how to debug this kind of programs ?
+
+Thanks in advance.
+
+Best regards,
+Wesley
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310118782</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Wesley PA4WDH &lt;pa4wdh@yahoo.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Preventing a FUSE filesystem from backgrounding</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

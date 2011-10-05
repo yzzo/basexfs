@@ -1,0 +1,169 @@
+9173
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 15 Jul 2011 16:23:43 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 8979812F61
+	for <alexander.holupirek@uni-konstanz.de>; Fri, 15 Jul 2011 16:23:43 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 15 Jul 2011 14:23:43 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 6A64F4D9C1; Fri, 15 Jul 2011 16:23:43 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 56B124D9B1
+	for <holupire@inf.uni-konstanz.de>; Fri, 15 Jul 2011 16:23:43 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AtMAADZNIE7YIrVYkWdsb2JhbABFDoRIoilrCBQBAQEBCQsLBxQFIIh6AqVwi22REYErgXeCCYEPBJBbgguIKIE2gl48g10
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 15 Jul 2011 14:23:33 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QhjGC-0000iC-4m; Fri, 15 Jul 2011 14:20:56 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1QhjGA-0000i2-JC
+	for fuse-devel@lists.sourceforge.net; Fri, 15 Jul 2011 14:20:54 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.215.47 as permitted sender)
+	client-ip=209.85.215.47; envelope-from=miklos@szeredi.hu;
+	helo=mail-ew0-f47.google.com; 
+Received: from mail-ew0-f47.google.com ([209.85.215.47])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QhjG6-0004A0-E3
+	for fuse-devel@lists.sourceforge.net; Fri, 15 Jul 2011 14:20:54 +0000
+Received: by ewy5 with SMTP id 5so985724ewy.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Fri, 15 Jul 2011 07:20:44 -0700 (PDT)
+Received: by 10.14.53.4 with SMTP id f4mr1212980eec.229.1310737796396;
+	Fri, 15 Jul 2011 06:49:56 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (fxip-0047f.externet.hu [88.209.222.127])
+	by mx.google.com with ESMTPS id t43sm754358eeb.58.2011.07.15.06.49.53
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Fri, 15 Jul 2011 06:49:54 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: Anand Avati <anand.avati@gmail.com>
+References: <BANLkTikOWNuw5zRDFPiYEwUVRdrNuVQF3w@mail.gmail.com>
+	<BANLkTi=+uQoS9_A8TdN3pGAKeH=_GTX7uw@mail.gmail.com>
+	<BANLkTin0TEegMBCVZHJzGLU+HW94wpdLgA@mail.gmail.com>
+	<BANLkTinvJuuNmyAmPMD+Sk=fkEFWQi4vGQ@mail.gmail.com>
+	<BANLkTikW1BZPHkstbE+jdoFv=Bsigk=DUQ@mail.gmail.com>
+	<32023853.post@talk.nabble.com>
+	<CAFboF2y1P8-mYoP571K6cKiVc11UqfWrr+nb=S-idt3fU3EaiQ@mail.gmail.com>
+	<87pqlf4ega.fsf@tucsk.pomaz.szeredi.hu>
+	<CAFboF2wot2u_XDO0MKmJ13_MjLwJeUnePsfwN2o_7Cb13SU85A@mail.gmail.com>
+Date: Fri, 15 Jul 2011 15:50:53 +0200
+In-Reply-To: <CAFboF2wot2u_XDO0MKmJ13_MjLwJeUnePsfwN2o_7Cb13SU85A@mail.gmail.com>
+	(Anand Avati's message of "Wed, 13 Jul 2011 21:14:59 +0530")
+Message-ID: <87bowvd54y.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: 1.6 (+)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	3.2 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QhjG6-0004A0-E3
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] Does fuse support O_DIRECT?
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+QW5hbmQgQXZhdGkgPGFuYW5kLmF2YXRpQGdtYWlsLmNvbT4gd3JpdGVzOgoKPiBPbiBUdWUsIEp1
+bCAxMiwgMjAxMSBhdCAxMDozNSBQTSwgTWlrbG9zIFN6ZXJlZGkgPG1pa2xvc0BzemVyZWRpLmh1
+PiB3cm90ZToKPgo+Cj4gICAgIFllYWgsIG1ha2VzIHNlbnNlLiDCoFRoYXQgbWVhbnMgaW1wbGVt
+ZW50aW5nIGZfb3AtPmNoZWNrX2ZsYWdzKCkgYW5kCj4gICAgIHJldHVybmluZyAtRUlOVkFMIGlm
+IE9fRElSRUNUIGlzIGJlaW5nIGNoYW5nZWQuCj4KPgo+IFRoZXJlIGFyZSB0d28gY2hlY2tzIHRv
+IGJlIGhhbmRsZWQsIGFzIHdlIG5lZWQgdG8gY2hlY2sgdGhlICJjaGFuZ2UiIG9mCj4gT19ESVJF
+Q1QuCj4KPiBhKSBzZXR0aW5nIE9fRElSRUNUIG9uIGFuIGZpbGUgbm90IGFscmVhZHkgc2V0IC0g
+VkZTIGFscmVhZHkgcmV0dXJucyBFSU5WQUwgYXMKPiB3ZSBkb24ndCBwb3B1bGF0ZSBhX29wcy0+
+ZGlyZWN0X0lPLiBOb3RoaW5nIHRvIGJlIGRvbmUgaGVyZS4KPgo+IGIpIHVuc2V0dGluZyBPX0RJ
+UkVDVCBvbiBhIGZpbGUgYWxyZWFkeSBvcGVuIHdpdGggT19ESVJFQ1QuIGNoZWNrX2ZsYWdzKCkg
+ZG9lcwo+IG5vdCBoZWxwIGJlY2F1c2UgdGhlIG9ubHkgcGFyYW1ldGVyIHBhc3NlZCBpcyB0aGUg
+ZmxhZ3MgYXJndW1lbnQgb2YgZmNudGwuCj4gVW5sZXNzIHdlIGdldCBob2xkIG9mIHRoZSBmaWxl
+IHBvaW50ZXIgKHdoaWNoIGlzIG5vdCBwYXNzZWQgYWxvbmcgdG8KPiBjaGVja19mbGFncykgd2Ug
+Y2Fubm90IGRvIGEgbWVhbmluZ2Z1bCBjaGVjayBvZiBhICJtaXNzaW5nIiBPX0RJUkVDVCBiaXQu
+IFNvLAo+IG5vdGhpbmcgY2FuIGJlIGRvbmUgaGVyZS4KCkhtbSwgeWVhaCwgSSByZW1lbWJlciBs
+b29raW5nIGF0IGNoZWNrX2ZsYWdzIGFuZCB3b25kZXJpbmcgd2h5IHRoZSBoZWNrCmlzbid0IHRo
+ZSBmaWxlIHBhc3NlZCBpbnRvIHRoYXQgZnVuY3Rpb24/CgpmX29wLmNoZWNrX2ZsYWdzIGlzIHNl
+dCBpbiBleGFjdGx5IHR3byBwbGFjZXMgaW4gdGhlIHdob2xlIGtlcm5lbDoKZnMvYmFkX2lub2Rl
+LmMgYW5kIGZzL25mcy9maWxlLmMuICAgSXQgd291bGQgbm90IGJlIHRvbyBoYXJkIHRvIGFkZCBh
+CmZpbGUgYXJndW1lbnQgdG8gaXQuCgoKPiBEbyB5b3UgYWdyZWUgb24gYm90aCB0aGUgcG9pbnRz
+Pwo+Cj4gwqAKPgo+ICAgICBBbHNvIHRoaXMgc2hvdWxkbid0IGJlIGRvbmUgd2l0aG91dCB0aGUg
+Y29uc2VudCBvZiB0aGUgdXNlcnNwYWNlCj4gICAgIGZpbGVzeXN0ZW0uIMKgU28gYSBGT1BFTl9B
+TExPV19PX0RJUkVDVCBmbGFnIHNob3VsZCBiZSBhZGRlZCB0byB0aGUKPiAgICAgcHJvdG9jb2wu
+Cj4KPgo+IEhvdyBhYm91dCB0aGlzIGluc3RlYWQgLSBhbGwgd2hhdCB3ZSBjYW4gZG8gaXMgcGFz
+cyBmaWxlLT5mX2ZsYWdzIHRvIGluYXJnIGFzCj4gaXMgd2l0aG91dCB1bnNldHRpbmcgdGhlIE9f
+RElSRUNUIGJpdCwgYW5kIHVzZSBmdXNlX2RpcmVjdF9pb19vcGVyYXRpb25zIG9ubHkKPiBpZiBh
+cHBsaWNhdGlvbiBzZXRzIEZPUEVOX0RJUkVDVF9JTyBpbiBvdXRhcmcuIFRoaXMgd2F5LCBieSBl
+eHBlY3RpbmcgdGhlCj4gdXNlcnNwYWNlIHRvIGV4cGxpY2l0bHkgc2V0IHRoZSBiaXQgaW4gdGhl
+IG91dGFyZywgdGhlIGNvbnNlbnQgaXMgaW1wbGllZC4gSWYKPiB0aGUgdXNlcnNwYWNlIGRvZXMg
+bm90IGFja25vd2xlZGdlIHRoZSBPX0RJUkVDVCBiaXQgd2l0aCB0aGUgRk9QRU5fRElSRUNUX0lP
+Cj4gYml0IGluIG91dGFyZywgd2UgY2FuIGZhbGxiYWNrIHRvIHRoZSBleGlzdGluZyBiZWhhdmlv
+ciBvZiBmYWlsaW5nIG9wZW4gd2l0aAo+IEVJTlZBTC4gU28gaW5zdGVhZCBvZiAnYWNrbm93bGVk
+Z2luZycgd2l0aCBGT1BFTl9BTExPV19PX0RJUkVDVCwgdGhleQo+IGFja25vd2xlZGdlIGJ5IGNo
+ZWNraW5nIE9fRElSRUNUIGluIGluYXJnIGFuZCBzZXR0aW5nIEZPUEVOX0RJUkVDVF9JTyBpbgo+
+IG91dGFyZy4KPgo+IERvIHlvdSB0aGluayB0aGUgYWJvdmUgcHJvcG9zYWwgaXMgZGlzcnVwdGl2
+ZSBlbm91Z2ggdG8gYmUgY29uc2lkZXJlZCBhCj4gcHJvdG9jb2wgdmlvbGF0aW9uPyBJIGtub3cg
+aXQncyBvbiB0aGUgYm9yZGVybGluZSBsZWFuaW5nIHRvd2FyZHMgYSB2aW9sYXRpb24sCj4gYnV0
+IHdhbnQgdG8gaGVhciB5b3VyIHZpZXcuCgpXZWxsLCBJIGRvbid0IHRoaW5rIGFueWJvZHkgKnJl
+bGllcyogb24gZnVzZSBmaWxlc3lzdGVtcyByZXR1cm5pbmcKRUlOVkFMIG9uIE9fRElSRUNULCBz
+byBJIHRoaW5rIHRoZSBhYm92ZSBwcm9wb3NhbCBpcyBPSyBhbmQgaXQncwpzaW1wbGVyIHRoYW4g
+YWRkaW5nIGEgbmV3IGZsYWcuCgo+ICAgICBXb3VsZCB5b3UgbGlrZSB0byBzdWJtaXQgYW4gdXBk
+YXRlZCBwYXRjaD8KPgo+Cj4KPiBTdXJlLCBhZnRlciB3ZSBhZ3JlZSBvbiBhbnN3ZXJzIHRvIHRo
+ZSBhYm92ZS4KClNvLCBJIHRoaW5rIGl0IHNob3VsZCBiZSB0d28gcGF0Y2hlcywgb25lIGZpeGlu
+ZyB0aGUgLT5jaGVja19mbGFncygpCmludGVyZmFjZSBhbmQgdGhlIG90aGVyIGFkZGluZyBPX0RJ
+UkVDVCBzdXBwb3J0IHRvIGZ1c2UuCgpUaGFua3MsCk1pa2xvcwoKLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tCkFwcFN1bW8gUHJlc2VudHMgYSBGUkVFIFZpZGVvIGZvciB0aGUgU291cmNlRm9yZ2UgQ29t
+bXVuaXR5IGJ5IEVyaWMgClJpZXMsIHRoZSBjcmVhdG9yIG9mIHRoZSBMZWFuIFN0YXJ0dXAgTWV0
+aG9kb2xvZ3kgb24gIkxlYW4gU3RhcnR1cCAKU2VjcmV0cyBSZXZlYWxlZC4iIFRoaXMgdmlkZW8g
+c2hvd3MgeW91IGhvdyB0byB2YWxpZGF0ZSB5b3VyIGlkZWFzLCAKb3B0aW1pemUgeW91ciBpZGVh
+cyBhbmQgaWRlbnRpZnkgeW91ciBidXNpbmVzcyBzdHJhdGVneS4KaHR0cDovL3Auc2YubmV0L3Nm
+dS9hcHBzdW1vc2ZkZXYyZGV2Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmZ1c2UtZGV2ZWwgbWFpbGluZyBsaXN0CmZ1c2UtZGV2ZWxAbGlzdHMuc291cmNl
+Zm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZvL2Z1
+c2UtZGV2ZWwK
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310737853</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Does fuse support O_DIRECT?</string>
+	<key>to</key>
+	<string>Anand Avati &lt;anand.avati@gmail.com&gt;</string>
+</dict>
+</plist>

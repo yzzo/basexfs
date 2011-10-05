@@ -1,0 +1,126 @@
+6486
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 12 Jul 2011 16:05:56 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id CD31012441
+	for <alexander.holupirek@uni-konstanz.de>; Tue, 12 Jul 2011 16:05:56 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 12 Jul 2011 14:05:57 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id B21154D9D2; Tue, 12 Jul 2011 16:05:56 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id A1E394D9BF
+	for <holupire@inf.uni-konstanz.de>; Tue, 12 Jul 2011 16:05:56 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ar0AAOdTHE7YIrVYkWdsb2JhbABThEaTb44JcRQBAQEBCQsLBxQFIIh6sTqQe4ErhACBDwSQUZJy
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 12 Jul 2011 14:05:56 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QgdZI-0008M6-FS; Tue, 12 Jul 2011 14:04:08 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <Nikolaus@rath.org>) id 1QgdZH-0008Lw-2D
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 14:04:07 +0000
+X-ACL-Warn: 
+Received: from inspiron.ap.columbia.edu ([128.59.145.39])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QgdZF-0005N8-Vs
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 14:04:07 +0000
+Received: by inspiron.ap.columbia.edu (Postfix, from userid 1000)
+	id 26FAB2179F; Tue, 12 Jul 2011 09:46:24 -0400 (EDT)
+From: Nikolaus Rath <Nikolaus@rath.org>
+To: fuse-devel@lists.sourceforge.net
+References: <1310457895.17535.YahooMailClassic@web39409.mail.mud.yahoo.com>
+Mail-Copies-To: never
+Date: Tue, 12 Jul 2011 09:46:23 -0400
+In-Reply-To: <1310457895.17535.YahooMailClassic@web39409.mail.mud.yahoo.com>
+	(Wesley PA4WDH's message of "Tue, 12 Jul 2011 01:04:55 -0700 (PDT)")
+Message-ID: <87mxgjboi8.fsf@inspiron.ap.columbia.edu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.3 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QgdZF-0005N8-Vs
+Subject: Re: [fuse-devel] Understanding debug output
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+V2VzbGV5IFBBNFdESCA8cGE0d2RoLS9FMTU5N2FTOUxRQXZ4dGl1TXd4M3dAcHVibGljLmdtYW5l
+Lm9yZz4gd3JpdGVzOgo+IEhpIEFsbCwKPgo+IEkgZ290IG15IEZTIHRvIHJ1biBpbiBkZWJ1ZyBt
+b2RlLCBidXQgbm93IGkgZG9uJ3QgcmVhbGx5IHVuZGVyc3RhbmQgdGhlIGRlYnVnIG91dHB1dCA6
+LSkKPgo+IFRoZSBvdXRwdXQgKGp1c3QgYmVmb3JlIGEgaXQgZXhpc3QgdW5leHBlY3RlZGx5KSBp
+czoKPiBGVVNFIGxpYnJhcnkgdmVyc2lvbjogMi44LjUKPiBudWxscGF0aF9vazogMAo+IHVuaXF1
+ZTogMSwgb3Bjb2RlOiBJTklUICgyNiksIG5vZGVpZDogMCwgaW5zaXplOiA1Ngo+IHNpbXJlYWQ6
+IG1hbGxvYy5jOjMwOTc6IHNZU01BTExPYzogQXNzZXJ0aW9uIGAob2xkX3RvcCA9PSAoKChtYmlu
+cHRyKSAoKChjaGFyICopICYoKGF2KS0+Ymluc1soKDEpIC0gMSkgKiAyXSkpIC0gX19idWlsdGlu
+X29mZnNldG9mIChzdHJ1Y3QgbWFsbG9jX2NodW5rLCBmZCkpKSkgJiYgb2xkX3NpemUgPT0gMCkg
+fHwgKCh1bnNpZ25lZCBsb25nKSAob2xkX3NpemUpID49ICh1bnNpZ25lZCBsb25nKSgoKChfX2J1
+aWx0aW5fb2Zmc2V0b2YgKHN0cnVjdCBtYWxsb2NfY2h1bmssIGZkX25leHRzaXplKSkrKCgyICog
+KHNpemVvZihzaXplX3QpKSkgLSAxKSkgJiB+KCgyICogKHNpemVvZihzaXplX3QpKSkgLSAxKSkp
+ICYmICgob2xkX3RvcCktPnNpemUgJiAweDEpICYmICgodW5zaWduZWQgbG9uZylvbGRfZW5kICYg
+cGFnZW1hc2spID09IDApJyBmYWlsZWQuCj4gQWJvcnRlZAo+Cj4gRG9lcyAib3Bjb2RlOiBJTklU
+IiBtZWFuIGl0J3MgcnVubmluZyBteSBpbml0IGZ1bmN0aW9uID8KCk5vLCBpdCBtZWFucyB0aGF0
+IHRoZSBmdXNlIGxpYnJhcnkgaGFzIHJlY2VpdmVkIGEgcmVxdWVzdCB0byBydW4gaW5pdApmcm9t
+IHRoZSBmdXNlIGtlcm5lbCBtb2R1bGUuIFlvdXIgaW5pdCBmdW5jdGlvbiBtYXkgbm90IGhhdmUg
+YmVlbiBjYWxsZWQKeWV0IChtYWtlIHlvdXIgaW5pdCBmdW5jdGlvbiBwcmludCBzb21ldGhpbmcg
+cmF0aGVyIHRoYW4gZG9pbmcgbm90aGluZwp0byBmaWd1cmUgdGhpcyBvdXQpLgoKPiBXaGF0IGkg
+ZG9uJ3QgcmVhbGx5IHVuZGVyc3RhbmQgaXMgdGhlIG1hbGxvYyBlcnJvciwgYmVjYXVzZSBteSBp
+bml0Cj4gZnVuY3Rpb24gZG9lcyBub3QgdXNlIG1hbGxvYzoKClRoZSBlcnJvciBkb2VzIG5vdCBj
+b21lIGZyb20geW91ciBpbml0IGZ1bmN0aW9uLiBNeSBndWVzcyBpcyB0aGF0IHRoZQpmdXNlIGxp
+YnJhcnkgaXMgY2FsbGluZyBtYWxsb2MsIGFuZCBzb21ldGhpbmcgZ29lcyB3cm9uZyBpbiB0aGUg
+bGliYwptYWxsb2MgaW1wbGVtZW50YXRpb24uIFRyeSBydW5uaW5nIHlvdXIgcHJvZ3JhbSB1bmRl
+ciBnZGIgYW5kIHVzZSB0aGUKImJhY2t0cmFjZSIgY29tbWFuZCB0byBnZXQgYSBkZXRhaWxlZCBj
+YWxsIHN0YWNrLgoKCkJlc3QKCiAgIC1OaWtvbGF1cwoKLS0gCiDCu1RpbWUgZmxpZXMgbGlrZSBh
+biBhcnJvdywgZnJ1aXQgZmxpZXMgbGlrZSBhIEJhbmFuYS7CqwoKICBQR1AgZmluZ2VycHJpbnQ6
+IDVCOTMgNjFGOCA0RUEyIEUyNzkgQUJGNiAgMDJDRiBBOUFEIEI3RjggQUU0RSA0MjVDCgotLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0KQWxsIG9mIHRoZSBkYXRhIGdlbmVyYXRlZCBpbiB5b3VyIElUIGlu
+ZnJhc3RydWN0dXJlIGlzIHNlcmlvdXNseSB2YWx1YWJsZS4KV2h5PyBJdCBjb250YWlucyBhIGRl
+ZmluaXRpdmUgcmVjb3JkIG9mIGFwcGxpY2F0aW9uIHBlcmZvcm1hbmNlLCBzZWN1cml0eSAKdGhy
+ZWF0cywgZnJhdWR1bGVudCBhY3Rpdml0eSwgYW5kIG1vcmUuIFNwbHVuayB0YWtlcyB0aGlzIGRh
+dGEgYW5kIG1ha2VzIApzZW5zZSBvZiBpdC4gSVQgc2Vuc2UuIEFuZCBjb21tb24gc2Vuc2UuCmh0
+dHA6Ly9wLnNmLm5ldC9zZnUvc3BsdW5rLWQyZC1jMgpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpmdXNlLWRldmVsIG1haWxpbmcgbGlzdApmdXNlLWRldmVs
+QGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0
+cy9saXN0aW5mby9mdXNlLWRldmVsCg==
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310478383</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Nikolaus Rath &lt;Nikolaus@rath.org&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Understanding debug output</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

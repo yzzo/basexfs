@@ -1,0 +1,234 @@
+8990
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Mon, 04 Jul 2011 20:04:42 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id BDE685F6F
+	for <alexander.holupirek@uni-konstanz.de>; Mon,  4 Jul 2011 20:04:42 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 04 Jul 2011 18:04:43 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 9FC444D9AF; Mon,  4 Jul 2011 20:04:42 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 87BF24D942
+	for <holupire@inf.uni-konstanz.de>; Mon,  4 Jul 2011 20:04:42 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap0AAOL/EU7YIrVYkWdsb2JhbABTp3QIFAEBAQEJCwsHFAUgiHoCpHOcKoM0gwIEkC+CB4gWhA08g1k
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 04 Jul 2011 18:04:42 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QdnUE-0006v8-OB; Mon, 04 Jul 2011 18:03:10 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1QdnUC-0006v1-SL
+	for fuse-devel@lists.sourceforge.net; Mon, 04 Jul 2011 18:03:08 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.161.47 as permitted sender)
+	client-ip=209.85.161.47; envelope-from=miklos@szeredi.hu;
+	helo=mail-fx0-f47.google.com; 
+Received: from mail-fx0-f47.google.com ([209.85.161.47])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QdnUB-0007nM-60
+	for fuse-devel@lists.sourceforge.net; Mon, 04 Jul 2011 18:03:08 +0000
+Received: by fxg11 with SMTP id 11so6013521fxg.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Mon, 04 Jul 2011 11:03:00 -0700 (PDT)
+Received: by 10.223.55.8 with SMTP id s8mr9887612fag.141.1309802580439;
+	Mon, 04 Jul 2011 11:03:00 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (catv-80-98-43-182.catv.broadband.hu
+	[80.98.43.182])
+	by mx.google.com with ESMTPS id 21sm4581669fay.21.2011.07.04.11.02.57
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Mon, 04 Jul 2011 11:02:59 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: Sebastian Pipping <webmaster@hartwork.org>
+References: <4E0EC48A.8010506@hartwork.org>
+Date: Mon, 04 Jul 2011 20:03:49 +0200
+In-Reply-To: <4E0EC48A.8010506@hartwork.org> (Sebastian Pipping's message of
+	"Sat, 02 Jul 2011 09:11:06 +0200")
+Message-ID: <8762nhzzwa.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: -1.6 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+X-Headers-End: 1QdnUB-0007nM-60
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Sebastian Pipping <webmaster@hartwork.org> writes:
+
+> Hello!
+>
+>
+> In FUSE's ./example/fusexmp_fh.c I find this locking code:
+>
+> =================================================================
+> static int xmp_lock(const char *path, struct fuse_file_info *fi,
+>     int cmd, struct flock *lock)
+> {
+>   (void) path;
+>
+>   return ulockmgr_op(fi->fh, cmd, lock, &fi->lock_owner,
+>     sizeof(fi->lock_owner));
+> }
+> =================================================================
+>
+> It seems to be involved with errors and freezes that I experience:
+>
+> When running "autoreconf -i -f" somewhere on a mount of fusexmp_fh (on a
+> clone of
+> <http://git.overlays.gentoo.org/gitweb/?p=proj/catalyst.git;a=summary>
+> for example) some call to flock(2) of autoreconf seems to make it freeze
+> on that file system (but not others):
+>
+> This is where "strace -f autoreconf -i -f" hangs:
+>
+> =================================================================
+> [..]
+> [pid  2397] open("autom4te.cache/requests", O_RDWR|O_CREAT, 0666) = 3
+> [pid  2397] ioctl(3, SNDCTL_TMR_TIMEBASE or
+> SNDRV_TIMER_IOCTL_NEXT_DEVICE or TCGETS, 0x7fff04d34e40) = -1 ENOSYS
+> (Function not implemented)
+> [pid  2397] lseek(3, 0, SEEK_CUR)       = 0
+> [pid  2397] fstat(3, {st_mode=S_IFREG|0644, st_size=7370, ...}) = 0
+> [pid  2397] fcntl(3, F_SETFD, FD_CLOEXEC) = 0
+> [pid  2397] flock(3, LOCK_EX
+> =================================================================
+>
+> To unfreeze it I need to run "killall -9 ulockmgr_server" on another
+> terminal.
+>
+> Any ideas?
+
+It's because of a not well thought out patch (commit a9ff4f87 "fuse:
+support BSD locking semantics")
+
+There are several problems with this patch:
+
+  - it's not backward compatible, passing flock(2) calls to userspace
+    unconditionally (if userspace sets FUSE_POSIX_LOCKS)
+
+  - it doesn't cater for the fact that flock locks are automatically
+    unlocked on file release
+
+  - it doesn't take into account the fact that flock exclusive locks
+    (write locks) don't need an fd opened for write.
+
+The last one invalidates the original premise of the patch that flock
+locks can be emulated with POSIX locks.
+
+Will fix these issues.
+
+> I also hope on answers to these closely-related questions:
+>
+>  - Why does plain
+>
+>      return fcntl(fi->fh, cmd, lock);
+>
+>    not suffice?
+
+POSIX locks are owned by the calling process.  If the filesystem process
+just calls fcntl() then it will become the owner of all locks.  That
+means F_SETLK will never block, just overwrite the previous state of the
+lock.
+
+>
+>  - What is the purpose of uluckmgr_server?
+
+ulockmgr_server basically starts a separate process for each lock owner
+and calls fcntl from that child process.
+
+>
+>  - What is that big number in lock_owner used for?
+>    How would an implementation not using ulockmgr_op
+>    have to deal with it in general?
+
+In most cases there's a 1:1 relationship between lock_owner and l_pid.
+The reason they don't correspond exactly is because Linux has clone() a
+very flexible fork()-like system call.  With clone(2) you can specify
+what the new task wants to share with the old.  CLONE_FILES flag will
+cause the new task to share file descriptor table with the old, which in
+turn determines lock ownership.  CLONE_THREAD flag will cause sharing of
+the PID value.  They can be specified independently though standard
+calls such as fork() and pthread_create() specify/omit them together.
+>
+>  - I have seen several processes of ulockmgr_server running
+>    in parallel.  Is ulockmgr_server meant to run multiple times?
+
+Yes, see above.
+
+
+>  - Is there a way to run fcntl(2) under the process ID of
+>    the process querying the file system?
+
+No, not without some additional kernel support to allow passing l_pid
+and lock_owner to F_SETLK.
+
+>   Currently either
+>    the FUSE file system or ulockmgr_server seem to become
+>    owner of the lock, instead.
+
+Yep, ulockmgr_server should be the owner.
+
+Thanks,
+Miklos
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309802629</real>
+	<key>flags</key>
+	<integer>261249</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example</string>
+	<key>to</key>
+	<string>Sebastian Pipping &lt;webmaster@hartwork.org&gt;</string>
+</dict>
+</plist>

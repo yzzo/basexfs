@@ -1,0 +1,178 @@
+6791
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 05 Jul 2011 13:11:00 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 656A212CBE
+	for <alexander.holupirek@uni-konstanz.de>; Tue,  5 Jul 2011 13:11:00 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 05 Jul 2011 11:11:00 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 480934D54D; Tue,  5 Jul 2011 13:11:00 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 37EE3426F5
+	for <holupire@inf.uni-konstanz.de>; Tue,  5 Jul 2011 13:11:00 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AocAAB/wEk7YIrVYkWdsb2JhbABTp38UAQEBAQkLCwcUBSCIfMJPhjYEkC+SPw
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 05 Jul 2011 11:10:59 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qe3Vc-0007AJ-DF; Tue, 05 Jul 2011 11:09:40 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <mailinglists@openelec.tv>) id 1Qe3Vb-0007AE-8y
+	for fuse-devel@lists.sourceforge.net; Tue, 05 Jul 2011 11:09:39 +0000
+X-ACL-Warn: 
+Received: from mail05.solnet.ch ([212.101.4.139])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1Qe3VZ-00059x-Jn
+	for fuse-devel@lists.sourceforge.net; Tue, 05 Jul 2011 11:09:39 +0000
+Received: from mail05.solnet.ch (localhost.solnet.ch [127.0.0.1])
+	by mail05.solnet.ch (Postfix) with ESMTP id B4E163B76F;
+	Tue,  5 Jul 2011 11:09:31 +0000 (UTC)
+X-Virus-Scanned: by SolNet-Check at mail05.solnet.ch
+Received: from mail05.solnet.ch ([127.0.0.1])
+	by mail05.solnet.ch (mail05.solnet.ch [127.0.0.1]) (SolNet-Check,
+	port 10024)
+	with LMTP id CTsEm4+gvTOs; Tue,  5 Jul 2011 11:09:31 +0000 (UTC)
+Received: from x200.openelec.tv (178-191-156-91.adsl.highway.telekom.at
+	[178.191.156.91])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+	by mail05.solnet.ch (Postfix) with ESMTPSA id B68853B74E;
+	Tue,  5 Jul 2011 11:09:30 +0000 (UTC)
+Message-ID: <4E12F0E9.8000402@openelec.tv>
+Date: Tue, 05 Jul 2011 13:09:29 +0200
+From: Stephan Raue <mailinglists@openelec.tv>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US;
+	rv:1.9.2.17) Gecko/20110428 Fedora/3.1.10-1.fc15 Thunderbird/3.1.10
+MIME-Version: 1.0
+To: =?ISO-8859-1?Q?Jean-Pierre_Andr=E9?= <jean-pierre.andre@wanadoo.fr>
+References: <4E118808.5090205@openelec.tv> <4E11AF3A.5050303@wanadoo.fr>
+	<4E12EB12.60309@openelec.tv>
+In-Reply-To: <4E12EB12.60309@openelec.tv>
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [212.101.4.139 listed in list.dnswl.org]
+	-0.0 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1Qe3VZ-00059x-Jn
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] problem mounting ntfs partitions via fuse with
+ kernel 3.0
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Am 05.07.2011 12:44, schrieb Stephan Raue:
+> Am 04.07.2011 14:16, schrieb Jean-Pierre Andr=E9:
+>> Hi,
+>>
+>> Stephan Raue wrote:
+>>> Hi,
+>>>
+>>> i dont know where the problem is exactly. i am using a self compiled
+>>> embedded distro which uses:
+>>>
+>>> linux-3.0-rc5
+>>> fuse-2.8.5
+>>> ntfs-3g_ntfsprogs-2011.4.12
+>>>
+>>> if i mount a ntfs partition:
+>> [...]
+>>
+>>> root ~ # mount.ntfs /dev/sdb1 /media/
+>>> fuse: unknown option `=02'
+>> When mounting with the above command, you should
+>> see in the syslog the actual options passed to ntfs-3g
+>> and fuse : grep the syslog for "Cmdline options" and
+>> "Mount options"
+>>
+>> Regards
+>>
+>> Jean-Pierre
+>>
+> i have compiled now ntfs-3g_ntfsprogs-2011.4.12 with
+> "--with-fuse=3Dinternal" instead "--with-fuse=3Dexternal" like before, so=
+ it
+> uses the shipped fuse. now it works, so i think the problem is really
+> fuse related. thats the output of "mount":
+>
+> /dev/sdb2 on /var/media/NTFS type fuseblk
+> (rw,nosuid,nodev,relatime,user_id=3D0,group_id=3D0,default_permissions,al=
+low_other,blksize=3D4096)
+>
+also in /var/log/messages i can *now* see:
+
+Jul  5 10:55:56 openelec user.notice kernel: [   19.409488] sd 4:0:0:0: =
+
+[sdb] Attached SCSI removable disk
+Jul  5 10:55:57 openelec daemon.notice ntfs-3g[1131]: Version 2011.4.12 =
+
+integrated FUSE 28
+Jul  5 10:55:57 openelec daemon.notice ntfs-3g[1131]: Mounted /dev/sdb2 =
+
+(Read-Write, label "NTFS", NTFS 3.1)
+Jul  5 10:55:57 openelec daemon.notice ntfs-3g[1131]: Cmdline options: =
+
+rw,nosuid,nodev,uhelper=3Dudisks,uid=3D0,gid=3D0,dmask=3D0077,fmask=3D0177
+Jul  5 10:55:57 openelec daemon.notice ntfs-3g[1131]: Mount options: =
+
+rw,nosuid,nodev,uhelper=3Dudisks,allow_other,nonempty,atime,fsname=3D/dev/s=
+db2,blkdev,blksize=3D4096,default_permissions
+Jul  5 10:55:57 openelec daemon.notice ntfs-3g[1131]: Global ownership =
+
+and permissions enforced, configuration type 7
+
+
+---------------------------------------------------------------------------=
+---
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security =
+
+threats, fraudulent activity, and more. Splunk takes this data and makes =
+
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309864169</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Stephan Raue &lt;mailinglists@openelec.tv&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] problem mounting ntfs partitions via fuse with kernel 3.0</string>
+	<key>to</key>
+	<string>Jean-Pierre André &lt;jean-pierre.andre@wanadoo.fr&gt;</string>
+</dict>
+</plist>

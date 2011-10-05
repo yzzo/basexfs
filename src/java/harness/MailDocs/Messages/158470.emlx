@@ -1,0 +1,171 @@
+7262
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Wed, 13 Jul 2011 17:46:47 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 0EDDD1263D
+	for <alexander.holupirek@uni-konstanz.de>; Wed, 13 Jul 2011 17:46:46 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 13 Jul 2011 15:46:46 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id E7ADE4D9D8; Wed, 13 Jul 2011 17:46:45 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id D6C874D6B5
+	for <holupire@inf.uni-konstanz.de>; Wed, 13 Jul 2011 17:46:45 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ArkAAPW8HU7YIrVYkWdsb2JhbABFDqcxCBQBAQEBCQsLBxQFIIh6pwSMLocwO4htgyKDGASHT4kHgguIJYQRPINi
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 13 Jul 2011 15:46:45 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qh1ca-0003pw-OY; Wed, 13 Jul 2011 15:45:08 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <anand.avati@gmail.com>) id 1Qh1cZ-0003pp-4T
+	for fuse-devel@lists.sourceforge.net; Wed, 13 Jul 2011 15:45:07 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.215.175 as permitted sender)
+	client-ip=209.85.215.175; envelope-from=anand.avati@gmail.com;
+	helo=mail-ey0-f175.google.com; 
+Received: from mail-ey0-f175.google.com ([209.85.215.175])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1Qh1cY-0003xD-2n
+	for fuse-devel@lists.sourceforge.net; Wed, 13 Jul 2011 15:45:07 +0000
+Received: by eye27 with SMTP id 27so413330eye.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Wed, 13 Jul 2011 08:44:59 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.168.65 with SMTP id t1mr555016bky.404.1310571899550; Wed,
+	13 Jul 2011 08:44:59 -0700 (PDT)
+Received: by 10.205.81.200 with HTTP; Wed, 13 Jul 2011 08:44:59 -0700 (PDT)
+In-Reply-To: <87pqlf4ega.fsf@tucsk.pomaz.szeredi.hu>
+References: <BANLkTikOWNuw5zRDFPiYEwUVRdrNuVQF3w@mail.gmail.com>
+	<BANLkTi=+uQoS9_A8TdN3pGAKeH=_GTX7uw@mail.gmail.com>
+	<BANLkTin0TEegMBCVZHJzGLU+HW94wpdLgA@mail.gmail.com>
+	<BANLkTinvJuuNmyAmPMD+Sk=fkEFWQi4vGQ@mail.gmail.com>
+	<BANLkTikW1BZPHkstbE+jdoFv=Bsigk=DUQ@mail.gmail.com>
+	<32023853.post@talk.nabble.com>
+	<CAFboF2y1P8-mYoP571K6cKiVc11UqfWrr+nb=S-idt3fU3EaiQ@mail.gmail.com>
+	<87pqlf4ega.fsf@tucsk.pomaz.szeredi.hu>
+Date: Wed, 13 Jul 2011 21:14:59 +0530
+Message-ID: <CAFboF2wot2u_XDO0MKmJ13_MjLwJeUnePsfwN2o_7Cb13SU85A@mail.gmail.com>
+From: Anand Avati <anand.avati@gmail.com>
+To: Miklos Szeredi <miklos@szeredi.hu>
+X-Spam-Score: -0.4 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(anand.avati[at]gmail.com)
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	1.0 HTML_MESSAGE           BODY: HTML included in message
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	0.2 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1Qh1cY-0003xD-2n
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] Does fuse support O_DIRECT?
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+On Tue, Jul 12, 2011 at 10:35 PM, Miklos Szeredi <miklos@szeredi.hu> wrote:
+
+>
+> Yeah, makes sense.  That means implementing f_op->check_flags() and
+> returning -EINVAL if O_DIRECT is being changed.
+>
+
+There are two checks to be handled, as we need to check the "change" of
+O_DIRECT.
+
+a) setting O_DIRECT on an file not already set - VFS already returns EINVAL
+as we don't populate a_ops->direct_IO. Nothing to be done here.
+
+b) unsetting O_DIRECT on a file already open with O_DIRECT. check_flags()
+does not help because the only parameter passed is the flags argument of
+fcntl. Unless we get hold of the file pointer (which is not passed along to
+check_flags) we cannot do a meaningful check of a "missing" O_DIRECT bit.
+So, nothing can be done here.
+
+Do you agree on both the points?
+
+
+
+> Also this shouldn't be done without the consent of the userspace
+> filesystem.  So a FOPEN_ALLOW_O_DIRECT flag should be added to the
+> protocol.
+>
+
+How about this instead - all what we can do is pass file->f_flags to inarg
+as is without unsetting the O_DIRECT bit, and use fuse_direct_io_operations
+only if application sets FOPEN_DIRECT_IO in outarg. This way, by expecting
+the userspace to explicitly set the bit in the outarg, the consent is
+implied. If the userspace does not acknowledge the O_DIRECT bit with the
+FOPEN_DIRECT_IO bit in outarg, we can fallback to the existing behavior of
+failing open with EINVAL. So instead of 'acknowledging' with
+FOPEN_ALLOW_O_DIRECT, they acknowledge by checking O_DIRECT in inarg and
+setting FOPEN_DIRECT_IO in outarg.
+
+Do you think the above proposal is disruptive enough to be considered a
+protocol violation? I know it's on the borderline leaning towards a
+violation, but want to hear your view.
+
+
+> Would you like to submit an updated patch?
+>
+>
+Sure, after we agree on answers to the above.
+
+Avati
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310571899</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Anand Avati &lt;anand.avati@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Does fuse support O_DIRECT?</string>
+	<key>to</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+</dict>
+</plist>

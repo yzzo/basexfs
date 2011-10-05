@@ -1,0 +1,134 @@
+5320
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Thu, 07 Jul 2011 19:04:51 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 2C4D11257A
+	for <alexander.holupirek@uni-konstanz.de>; Thu,  7 Jul 2011 19:04:51 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 07 Jul 2011 17:04:51 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 0C28A4D981; Thu,  7 Jul 2011 19:04:51 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 018FF35469
+	for <holupire@inf.uni-konstanz.de>; Thu,  7 Jul 2011 19:04:50 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap0AAFnmFU7YIrVYkWdsb2JhbABTpzQUAQEBAQkLCwcUBSCIewK6Iog9hjgEkD6HBYMgiCY
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 07 Jul 2011 17:04:51 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QerzB-0001U3-JL; Thu, 07 Jul 2011 17:03:33 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <webmaster@hartwork.org>) id 1QerzA-0001Tp-5e
+	for fuse-devel@lists.sourceforge.net; Thu, 07 Jul 2011 17:03:32 +0000
+X-ACL-Warn: 
+Received: from smtprelay02.ispgateway.de ([80.67.29.24])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1Qerz8-0005va-R0
+	for fuse-devel@lists.sourceforge.net; Thu, 07 Jul 2011 17:03:32 +0000
+Received: from [85.179.19.133] (helo=[192.168.1.2])
+	by smtprelay02.ispgateway.de with esmtpsa (TLSv1:AES256-SHA:256)
+	(Exim 4.68) (envelope-from <webmaster@hartwork.org>)
+	id 1Qerz2-0004Ah-MM; Thu, 07 Jul 2011 19:03:24 +0200
+Message-ID: <4E15E6D5.10602@hartwork.org>
+Date: Thu, 07 Jul 2011 19:03:17 +0200
+From: Sebastian Pipping <webmaster@hartwork.org>
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US;
+	rv:1.9.2.18) Gecko/20110628 Thunderbird/3.1.11
+MIME-Version: 1.0
+To: Miklos Szeredi <miklos@szeredi.hu>
+References: <4E0EC48A.8010506@hartwork.org>	<8762nhzzwa.fsf@tucsk.pomaz.szeredi.hu>	<4E12174A.8080108@hartwork.org>
+	<87ei233cds.fsf@tucsk.pomaz.szeredi.hu>
+In-Reply-To: <87ei233cds.fsf@tucsk.pomaz.szeredi.hu>
+X-Df-Sender: hartwork@binera.de
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [80.67.29.24 listed in list.dnswl.org]
+	-0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+X-Headers-End: 1Qerz8-0005va-R0
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+On 07/06/2011 12:57 PM, Miklos Szeredi wrote:
+> I'll have two patches for this, one kernel and one userspace.  I'll post
+> them shortly.
+
+Seen the patches, great!  They look like you put love into them, thanks!
+
+
+> Lets take an example:
+> 
+> File F on fusexmp_fh filesystem corresponds to file X on underlying
+> filesystem.
+> 
+> If Process P locks F then GETLK on F will return l_pid=P, GETLK on X will
+> return l_pid=U, where U is the ulockmgr_server process corresponding to
+> the lock.
+> 
+> If process P locks X then GETLK on both F and X will return l_pid=P.
+> 
+> If another fusexmp_fh is mounted and there G also corresponds to X on
+> the underlying filesystem and P locks F the GETLK on G and X will return
+> l_pid=U, while GETLK on F will return P.
+
+Maybe that's not too bad after all.  Thanks for the detailed example.
+
+Best,
+
+
+
+Sebastian
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310058197</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Sebastian Pipping &lt;webmaster@hartwork.org&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example</string>
+	<key>to</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+</dict>
+</plist>

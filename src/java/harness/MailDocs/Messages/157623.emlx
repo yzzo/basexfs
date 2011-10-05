@@ -1,0 +1,160 @@
+6400
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 08 Jul 2011 22:52:03 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 5B39D12807
+	for <alexander.holupirek@uni-konstanz.de>; Fri,  8 Jul 2011 22:52:03 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 08 Jul 2011 20:52:03 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 3DE674D6C4; Fri,  8 Jul 2011 22:52:03 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 3285E42677
+	for <holupire@inf.uni-konstanz.de>; Fri,  8 Jul 2011 22:52:03 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AlABANtsF07YIrVYkWdsb2JhbABUmFyOchQBAQEBCQsLBxQFIMlXhjgEh0uIdoIKkGQ
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 08 Jul 2011 20:52:03 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QfI0F-00045S-0f; Fri, 08 Jul 2011 20:50:23 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <bounces@nabble.com>) id 1QfI0E-00045M-1m
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 20:50:22 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of nabble.com
+	designates 216.139.236.26 as permitted sender)
+	client-ip=216.139.236.26; envelope-from=bounces@nabble.com;
+	helo=sam.nabble.com; 
+Received: from sam.nabble.com ([216.139.236.26])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtps (TLSv1:AES256-SHA:256)
+	(Exim 4.76) id 1QfI09-0007OD-SI
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 20:50:22 +0000
+Received: from isper.nabble.com ([192.168.236.156])
+	by sam.nabble.com with esmtp (Exim 4.72)
+	(envelope-from <bounces@nabble.com>) id 1QfI04-0001S1-CC
+	for fuse-devel@lists.sourceforge.net; Fri, 08 Jul 2011 13:50:12 -0700
+Message-ID: <32024540.post@talk.nabble.com>
+Date: Fri, 8 Jul 2011 13:50:12 -0700 (PDT)
+From: dbanerjee <dbanerjee@avid.com>
+To: fuse-devel@lists.sourceforge.net
+In-Reply-To: <4E176861.5050207@wanadoo.fr>
+MIME-Version: 1.0
+X-Nabble-From: dbanerjee@avid.com
+References: <4D67CC19.5010203@wanadoo.fr> <32023490.post@talk.nabble.com>
+	<32024185.post@talk.nabble.com> <4E176861.5050207@wanadoo.fr>
+X-Spam-Score: -1.3 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(bounces[at]nabble.com)
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+	0.2 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QfI09-0007OD-SI
+Subject: Re: [fuse-devel] File system with case insensitive names
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+
+
+Jean-Pierre wrote:
+> 
+> Hi,
+> 
+> dbanerjee wrote:
+>>
+>> Regular files working case insensitive because multiple dentries are
+>> allows
+>> is not the right thing to do. My conclusion is that case insensitive is
+>> not
+>> suported by FUSE as-is and just works coincidentally most of the time. I
+>> believe something like what is done in cifs/dir.c will have to be
+>> implemented, fuse's own dentry_operations table with case insensitive
+>> dcache
+>> functions that are used with an explicit case insensitive flag set by the
+>> FUSE filesystem.
+>>    
+> 
+> Hope this is not true for plain files. Case insensitive names
+> are much similar to hard links, and I have been using
+> case insensitive file names and hard links with no problem
+> (at the low level interface only).
+> 
+> If some case insensitive processing had to be added to fuse,
+> it would have to callback the file system. At least NTFS has
+> to rely on on-disk uppercase tables, obviously unknown to
+> fuse. I would much prefer the inode number to be used for
+> deciding whether two names point to the same directory
+> (or a file, should this be needed).
+> 
+> Jean-Pierre
+> 
+> 
+
+It "works" but it's not the "right thing" to do. Worst case you end up with
+2^n (n=strlen) dentry's for a single inode, where you should have had 1
+dentry.
+
+syscall's come in with a path name not an inode, which is the whole purpose
+of the dcache and dentry's in the kernel. So this has to be done in the
+kernel/fuse kmod.
+
+
+-- 
+View this message in context: http://old.nabble.com/File-system-with-case-insensitive-names-tp31013978p32024540.html
+Sent from the Fuse - Dev mailing list archive at Nabble.com.
+
+
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310158212</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>dbanerjee &lt;dbanerjee@avid.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] File system with case insensitive names</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

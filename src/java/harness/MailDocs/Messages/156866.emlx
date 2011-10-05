@@ -1,0 +1,132 @@
+6427
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Wed, 06 Jul 2011 13:59:28 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 3423F128A2
+	for <alexander.holupirek@uni-konstanz.de>; Wed,  6 Jul 2011 13:59:28 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 06 Jul 2011 11:59:28 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 13BB14D5EE; Wed,  6 Jul 2011 13:59:28 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 09B6342240
+	for <holupire@inf.uni-konstanz.de>; Wed,  6 Jul 2011 13:59:28 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqUAADFNFE7YIrVYkWdsb2JhbABThEKiV2IIFAEBAQEJCwsHFAUgiHoCpm2La5EWgSuDf4EMBJA5ggiIGYE0glo8g1s
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 06 Jul 2011 11:59:27 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QeQjw-0005OF-Jq; Wed, 06 Jul 2011 11:58:00 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1QeQju-0005O4-Nc
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 11:57:58 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.214.47 as permitted sender)
+	client-ip=209.85.214.47; envelope-from=miklos@szeredi.hu;
+	helo=mail-bw0-f47.google.com; 
+Received: from mail-bw0-f47.google.com ([209.85.214.47])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1QeQjt-0004Si-TW
+	for fuse-devel@lists.sourceforge.net; Wed, 06 Jul 2011 11:57:58 +0000
+Received: by bwf20 with SMTP id 20so5178bwf.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Wed, 06 Jul 2011 04:57:51 -0700 (PDT)
+Received: by 10.204.9.203 with SMTP id m11mr7563378bkm.56.1309953459267;
+	Wed, 06 Jul 2011 04:57:39 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (catv-80-98-43-182.catv.broadband.hu
+	[80.98.43.182])
+	by mx.google.com with ESMTPS id t9sm7472249bkn.8.2011.07.06.04.57.33
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Wed, 06 Jul 2011 04:57:38 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: Stef Bon <stefbon@gmail.com>
+References: <4E0EC48A.8010506@hartwork.org>
+	<8762nhzzwa.fsf@tucsk.pomaz.szeredi.hu>
+	<CANXojcxQUfx7c_mgQTWxz3bF+pyKE7OQKuL-WG0yu-wcnYU3HQ@mail.gmail.com>
+Date: Wed, 06 Jul 2011 13:58:23 +0200
+In-Reply-To: <CANXojcxQUfx7c_mgQTWxz3bF+pyKE7OQKuL-WG0yu-wcnYU3HQ@mail.gmail.com>
+	(Stef Bon's message of "Wed, 6 Jul 2011 13:20:29 +0200")
+Message-ID: <87vcvf1uzk.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: -0.4 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	1.2 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QeQjt-0004Si-TW
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+U3RlZiBCb24gPHN0ZWZib25AZ21haWwuY29tPiB3cml0ZXM6Cgo+IDIwMTEvNy80IE1pa2xvcyBT
+emVyZWRpIDxtaWtsb3NAc3plcmVkaS5odT46Cj4+IFBPU0lYIGxvY2tzIGFyZSBvd25lZCBieSB0
+aGUgY2FsbGluZyBwcm9jZXNzLiDCoElmIHRoZSBmaWxlc3lzdGVtIHByb2Nlc3MKPj4ganVzdCBj
+YWxscyBmY250bCgpIHRoZW4gaXQgd2lsbCBiZWNvbWUgdGhlIG93bmVyIG9mIGFsbCBsb2Nrcy4g
+wqBUaGF0Cj4+IG1lYW5zIEZfU0VUTEsgd2lsbCBuZXZlciBibG9jaywganVzdCBvdmVyd3JpdGUg
+dGhlIHByZXZpb3VzIHN0YXRlIG9mIHRoZQo+PiBsb2NrLgo+Cj4gSSBkbyBub3QgdW5kZXJzdGFu
+ZCB0aGlzLiBZb3Ugc2F5IGhlcmUgdGhhdCB3aGVuIHRoZSBmaWxlc3lzdGVtIHNlbGYKPiBkb2Vz
+IHRoZSBsb2NraW5nLAo+IHRoZXkgYXJlIG92ZXJ3cml0dGVuLiBJcyBpdCBiZWNhdXNlIHlvdSBk
+b24ndCBXQU5UIHlvdXIgZnMgdG8gYmxvY2s/Cj4gV2h5IHRoZSAidGh1cyIgdGhlICAianVzdCBv
+dmVyd3JpdGUgdGhlIHByZXZpb3VzIHN0YXRlIi4KPgo+IENhbiB5b3UgcGxlYXNlIGV4cGxhaW4g
+dGhlIGxvZ2ljIGhlcmU/CgpJbnN0ZWFkIG9mIHRyeWluZyB0byBleHBsYWluIGZ1cnRoZXIsIEkg
+c3VnZ2VzdCB5b3UgdHJ5IGl0LiAgUmVwbGFjZSB0aGUKdWxvY2ttZ3Jfb3AoKSBjYWxsIHdpdGgg
+YW4gZmNudGwoZmktPmZoLCBjbWQsIGxvY2spIGFuZCBzZWUgd2hhdApoYXBwZW5zLgoKVGhhbmtz
+LApNaWtsb3MKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpBbGwgb2YgdGhlIGRhdGEgZ2VuZXJhdGVk
+IGluIHlvdXIgSVQgaW5mcmFzdHJ1Y3R1cmUgaXMgc2VyaW91c2x5IHZhbHVhYmxlLgpXaHk/IEl0
+IGNvbnRhaW5zIGEgZGVmaW5pdGl2ZSByZWNvcmQgb2YgYXBwbGljYXRpb24gcGVyZm9ybWFuY2Us
+IHNlY3VyaXR5IAp0aHJlYXRzLCBmcmF1ZHVsZW50IGFjdGl2aXR5LCBhbmQgbW9yZS4gU3BsdW5r
+IHRha2VzIHRoaXMgZGF0YSBhbmQgbWFrZXMgCnNlbnNlIG9mIGl0LiBJVCBzZW5zZS4gQW5kIGNv
+bW1vbiBzZW5zZS4KaHR0cDovL3Auc2YubmV0L3NmdS9zcGx1bmstZDJkLWMyCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmZ1c2UtZGV2ZWwgbWFpbGluZyBs
+aXN0CmZ1c2UtZGV2ZWxAbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNl
+Zm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZvL2Z1c2UtZGV2ZWwK
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309953503</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] [2.8.x] ulockmgr_server issue / fusexmp_fh example</string>
+	<key>to</key>
+	<string>Stef Bon &lt;stefbon@gmail.com&gt;</string>
+</dict>
+</plist>

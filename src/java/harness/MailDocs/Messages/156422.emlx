@@ -1,0 +1,142 @@
+6784
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Mon, 04 Jul 2011 19:17:07 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 64AB55FDF
+	for <alexander.holupirek@uni-konstanz.de>; Mon,  4 Jul 2011 19:17:07 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 04 Jul 2011 17:17:07 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 46C524D9AF; Mon,  4 Jul 2011 19:17:07 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 3A71F4D942
+	for <holupire@inf.uni-konstanz.de>; Mon,  4 Jul 2011 19:17:07 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AuwAAA70EU7YIrVYkWdsb2JhbAAoK5kJjnMUAQEBAQkLCwcUBSCIfCOwXoZaiSaGNgSQL4cIizc
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 04 Jul 2011 17:17:06 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qdmjy-000825-8I; Mon, 04 Jul 2011 17:15:22 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <sune_ahlgren@hotmail.com>) id 1QdLwW-0001qy-UW
+	for fuse-devel@lists.sourceforge.net; Sun, 03 Jul 2011 12:38:32 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of hotmail.com
+	designates 65.55.90.216 as permitted sender)
+	client-ip=65.55.90.216; envelope-from=sune_ahlgren@hotmail.com;
+	helo=snt0-omc4-s13.snt0.hotmail.com; 
+Received: from snt0-omc4-s13.snt0.hotmail.com ([65.55.90.216])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QdLwV-00032z-VQ
+	for fuse-devel@lists.sourceforge.net; Sun, 03 Jul 2011 12:38:32 +0000
+Received: from SNT120-W37 ([65.55.90.199]) by snt0-omc4-s13.snt0.hotmail.com
+	with Microsoft SMTPSVC(6.0.3790.4675); 
+	Sun, 3 Jul 2011 05:38:26 -0700
+Message-ID: <SNT120-W3768C2A46C8D87C15C43ADE65D0@phx.gbl>
+X-Originating-IP: [85.230.100.119]
+From: Sune Ahlgren <sune_ahlgren@hotmail.com>
+To: <fuse-devel@lists.sourceforge.net>
+Date: Sun, 3 Jul 2011 14:38:26 +0200
+Importance: Normal
+MIME-Version: 1.0
+X-OriginalArrivalTime: 03 Jul 2011 12:38:26.0960 (UTC)
+	FILETIME=[1B100900:01CC397E]
+X-Spam-Score: -0.5 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [65.55.90.216 listed in list.dnswl.org]
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(sune_ahlgren[at]hotmail.com)
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	1.0 HTML_MESSAGE           BODY: HTML included in message
+X-Headers-End: 1QdLwV-00032z-VQ
+X-Mailman-Approved-At: Mon, 04 Jul 2011 17:15:20 +0000
+X-Content-Filtered-By: Mailman/MimeDel 2.1.9
+Subject: [fuse-devel] Oracle is trying to patent away database- FUSE
+	connections
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+
+Hi!
+I've sent this to the callbackFS guys and thought you might be interested as well.
+Have you guys seen the continuation of Oracle's patent 7418435? Patent 7418435 can be found here: 
+http://www.google.com/patents?id=vw2tAAAAEBAJ&pg=PA23&dq=filesystem+access+multi-model&hl=en&ei=kFoQTs2yEcnNswac-_n3Dg&sa=X&oi=book_result&ct=result&resnum=1&ved=0CCwQ6AEwAA#v=onepage&q&f=false 
+
+The continuation, which is still just in the application state,can be found here: 
+http://www.google.com/patents?id=RHOtAAAAEBAJ&pg=PA20&dq=filesystem+access+multi-model&hl=en&ei=X1sQTvTaC8zrsgaAhIzaDg&sa=X&oi=book_result&ct=result&resnum=1&ved=0CCwQ6AEwAA#v=onepage&q&f=false
+
+What differs is the most important part, the claims: 
+First revision (already issued patent): 
+Claim #1 only refers to OS file systems which means (according to my layman interpretation) that people who use CallbackFS, FUSE for seamless database integration etc do not infringe on it since they implement their own file system FUSE style, ie in user space. 
+
+The continuation, ie the patent application re-phrases this in claims #1 and #2 to 'a file system API' more or less, which means that customers of yours, may later be held liable for intrusion they have already made; in the case their patent is let through. 
+
+The only reason for making this re-phrase, if you ask me, is that they realized there was a giant loop hole in their patent given the user space file systems you and FUSE and a lot more had begun implementing. 
+
+So to the interesting part. The date the continuation was filed is: 
+Application number: 12/122,517 
+Publication number: US 2008/0215528 A1 
+Filing date: May 16, 2008 
+
+Whereas a discussion on this very forum way back in 2007 already discusses user space file systems seamlessly connected to databases. Here: 
+http://www.eldos.com/forum/read.php?FID=13&TID=499 
+
+What's your take on this bogus continuation? I say make a lot of noice... 
+
+BRs 
+/Sune 		 	   		  
+------------------------------------------------------------------------------
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security 
+threats, fraudulent activity, and more. Splunk takes this data and makes 
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309696706</real>
+	<key>flags</key>
+	<integer>261249</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Sune Ahlgren &lt;sune_ahlgren@hotmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] Oracle is trying to patent away database- FUSE connections</string>
+	<key>to</key>
+	<string>&lt;fuse-devel@lists.sourceforge.net&gt;</string>
+</dict>
+</plist>

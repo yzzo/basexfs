@@ -1,0 +1,168 @@
+6696
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Thu, 14 Jul 2011 14:07:49 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 1C3E312105
+	for <alexander.holupirek@uni-konstanz.de>; Thu, 14 Jul 2011 14:07:49 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 14 Jul 2011 12:07:49 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id ED6EC4D9E6; Thu, 14 Jul 2011 14:07:48 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id E02FF4D528
+	for <holupire@inf.uni-konstanz.de>; Thu, 14 Jul 2011 14:07:48 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ArQAAMraHk7YIrVYkWdsb2JhbABFDphVjn0UAQEBAQkLCwcUBSCIfLEhhxI7iG+DIoMYBJBZgguQUQ
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 14 Jul 2011 12:07:48 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QhKfT-0006gU-2K; Thu, 14 Jul 2011 12:05:23 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <gcffd-fuse-devel@m.gmane.org>) id 1QhKfR-0006gJ-Ag
+	for fuse-devel@lists.sourceforge.net; Thu, 14 Jul 2011 12:05:21 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of m.gmane.org
+	designates 80.91.229.12 as permitted sender)
+	client-ip=80.91.229.12;
+	envelope-from=gcffd-fuse-devel@m.gmane.org; helo=lo.gmane.org; 
+Received: from lo.gmane.org ([80.91.229.12])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1QhKfP-0001pa-0U
+	for fuse-devel@lists.sourceforge.net; Thu, 14 Jul 2011 12:05:21 +0000
+Received: from list by lo.gmane.org with local (Exim 4.69)
+	(envelope-from <gcffd-fuse-devel@m.gmane.org>) id 1QhKfD-0003BP-3w
+	for fuse-devel@lists.sourceforge.net; Thu, 14 Jul 2011 14:05:07 +0200
+Received: from c-174-53-187-56.hsd1.mn.comcast.net ([174.53.187.56])
+	by main.gmane.org with esmtp (Gmexim 0.1 (Debian))
+	id 1AlnuQ-0007hv-00
+	for <fuse-devel@lists.sourceforge.net>; Thu, 14 Jul 2011 14:05:07 +0200
+Received: from viny.surya by c-174-53-187-56.hsd1.mn.comcast.net with local
+	(Gmexim 0.1 (Debian)) id 1AlnuQ-0007hv-00
+	for <fuse-devel@lists.sourceforge.net>; Thu, 14 Jul 2011 14:05:07 +0200
+X-Injected-Via-Gmane: http://gmane.org/
+To: fuse-devel@lists.sourceforge.net
+From: Vinay <viny.surya@gmail.com>
+Date: Thu, 14 Jul 2011 12:01:46 +0000 (UTC)
+Lines: 43
+Message-ID: <loom.20110714T140001-55@post.gmane.org>
+Mime-Version: 1.0
+X-Complaints-To: usenet@dough.gmane.org
+X-Gmane-NNTP-Posting-Host: sea.gmane.org
+User-Agent: Loom/3.14 (http://gmane.org/)
+X-Loom-IP: 174.53.187.56 (Mozilla/5.0 (X11; U; Linux i686; en-US;
+	rv:1.9.1.5) Gecko/20091109 Ubuntu/9.10 (karmic) Firefox/3.5.5)
+X-Spam-Score: 0.3 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(viny.surya[at]gmail.com)
+	-0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+	0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+	CUSTOM_MED
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	0.0 RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit,
+	and not from a mailing list
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+X-Headers-End: 1QhKfP-0001pa-0U
+Subject: [fuse-devel] fuse readdir() returns Input/output error
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Hi all,
+
+I am seeing a strange issue while implementing the readdir() functionality in
+fuse. Basically when I do 'ls' on any directory in fuse, I get an error such as:
+
+
+# ls
+ls: reading directory .: Input/output error
+
+file1.c file2.c
+
+But the strange thing is, readdir is doing exactly what it is supposed to do. In
+the sense that in that particular directory, I have two files named 'file1.c'
+and 'file2.c' and it is able to read it correctly. 
+
+
+While debugging the issue I noticed that fuse 'filler' function
+('fuse_fill_dir_t' passed as an argument to readdir() ) is what may be causing
+this error. 
+
+This is because if I simply print the contents of the directory using a debug
+printf without returning the contents using the filler function, I do not see
+the error.
+
+
+But as soon as I start using the filler function to return the contents, I start
+seeing this error.
+
+I have two questions related to this:
+
+1) Anybody have any idea as to why the filler function might be causing this
+problem?
+
+
+2) How do I look for the definition of the code for the fuse_fill_dir_t
+function? I have looked through most of the fuse functions with that kind of
+arguments but have had no luck until now.
+
+
+Any help is appreciated! 
+
+Cheers,
+Vinay
+
+
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310644906</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Vinay &lt;viny.surya@gmail.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] fuse readdir() returns Input/output error</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

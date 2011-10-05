@@ -1,0 +1,157 @@
+5713
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 05 Jul 2011 12:46:39 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 369EC127A0
+	for <alexander.holupirek@uni-konstanz.de>; Tue,  5 Jul 2011 12:46:39 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 05 Jul 2011 10:46:39 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 1F5C44D4F8; Tue,  5 Jul 2011 12:46:39 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 114E6426F5
+	for <holupire@inf.uni-konstanz.de>; Tue,  5 Jul 2011 12:46:39 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AocAAGLqEk7YIrVYkWdsb2JhbABTp38UAQEBAQkLCwcUBSCIfMJJhjYEkC+SPw
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 05 Jul 2011 10:46:38 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qe37W-0005pS-64; Tue, 05 Jul 2011 10:44:46 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <mailinglists@openelec.tv>) id 1Qe37U-0005pN-R1
+	for fuse-devel@lists.sourceforge.net; Tue, 05 Jul 2011 10:44:44 +0000
+X-ACL-Warn: 
+Received: from mail04.solnet.ch ([212.101.4.138])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1Qe37T-00022d-Bz
+	for fuse-devel@lists.sourceforge.net; Tue, 05 Jul 2011 10:44:44 +0000
+X-Virus-Scanned: by SolNet-Check at mail04.solnet.ch
+Received: from mail04.solnet.ch ([127.0.0.1])
+	by localhost (mail04.solnet.ch [127.0.0.1]) (SolNet-Check, port 10024)
+	with LMTP id GeHor6WZpazR; Tue,  5 Jul 2011 10:44:36 +0000 (UTC)
+Received: from x200.openelec.tv (178-191-156-91.adsl.highway.telekom.at
+	[178.191.156.91])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+	by mail04.solnet.ch (Postfix) with ESMTPSA id 47A1887ECB;
+	Tue,  5 Jul 2011 10:44:36 +0000 (UTC)
+Message-ID: <4E12EB12.60309@openelec.tv>
+Date: Tue, 05 Jul 2011 12:44:34 +0200
+From: Stephan Raue <mailinglists@openelec.tv>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US;
+	rv:1.9.2.17) Gecko/20110428 Fedora/3.1.10-1.fc15 Thunderbird/3.1.10
+MIME-Version: 1.0
+To: =?ISO-8859-1?Q?Jean-Pierre_Andr=E9?= <jean-pierre.andre@wanadoo.fr>
+References: <4E118808.5090205@openelec.tv> <4E11AF3A.5050303@wanadoo.fr>
+In-Reply-To: <4E11AF3A.5050303@wanadoo.fr>
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at http://www.dnswl.org/,
+	no trust [212.101.4.138 listed in list.dnswl.org]
+	-0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+X-Headers-End: 1Qe37T-00022d-Bz
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] problem mounting ntfs partitions via fuse with
+ kernel 3.0
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Am 04.07.2011 14:16, schrieb Jean-Pierre Andr=E9:
+> Hi,
+>
+> Stephan Raue wrote:
+>> Hi,
+>>
+>> i dont know where the problem is exactly. i am using a self compiled
+>> embedded distro which uses:
+>>
+>> linux-3.0-rc5
+>> fuse-2.8.5
+>> ntfs-3g_ntfsprogs-2011.4.12
+>>
+>> if i mount a ntfs partition:
+>
+> [...]
+>
+>> root ~ # mount.ntfs /dev/sdb1 /media/
+>> fuse: unknown option `=02'
+>
+> When mounting with the above command, you should
+> see in the syslog the actual options passed to ntfs-3g
+> and fuse : grep the syslog for "Cmdline options" and
+> "Mount options"
+>
+> Regards
+>
+> Jean-Pierre
+>
+i have compiled now ntfs-3g_ntfsprogs-2011.4.12 with =
+
+"--with-fuse=3Dinternal" instead "--with-fuse=3Dexternal" like before, so i=
+t =
+
+uses the shipped fuse. now it works, so i think the problem is really =
+
+fuse related. thats the output of "mount":
+
+/dev/sdb2 on /var/media/NTFS type fuseblk =
+
+(rw,nosuid,nodev,relatime,user_id=3D0,group_id=3D0,default_permissions,allo=
+w_other,blksize=3D4096)
+
+Stephan
+
+---------------------------------------------------------------------------=
+---
+All of the data generated in your IT infrastructure is seriously valuable.
+Why? It contains a definitive record of application performance, security =
+
+threats, fraudulent activity, and more. Splunk takes this data and makes =
+
+sense of it. IT sense. And common sense.
+http://p.sf.net/sfu/splunk-d2d-c2
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1309862674</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Stephan Raue &lt;mailinglists@openelec.tv&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] problem mounting ntfs partitions via fuse with kernel 3.0</string>
+	<key>to</key>
+	<string>Jean-Pierre André &lt;jean-pierre.andre@wanadoo.fr&gt;</string>
+</dict>
+</plist>

@@ -1,0 +1,219 @@
+8986
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Fri, 22 Jul 2011 10:36:01 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by uni-konstanz.de (Postfix) with ESMTP id 6DEE512BA3
+	for <alexander.holupirek@uni-konstanz.de>; Fri, 22 Jul 2011 10:36:01 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by viribus.rz.uni-konstanz.de with ESMTP; 22 Jul 2011 08:36:01 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 4B7A44DA0D; Fri, 22 Jul 2011 10:36:01 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 260334D9D5
+	for <holupire@inf.uni-konstanz.de>; Fri, 22 Jul 2011 10:36:01 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ArsAAM41KU7YIrVYkGdsb2JhbABTp0IUAQEBAQkJDQcUBSC3W40Mhj8Eh1WJDocbgyGITg
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 22 Jul 2011 08:36:00 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QkBBK-0006w0-Bq; Fri, 22 Jul 2011 08:34:02 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <avati@gluster.com>) id 1QkBBJ-0006vn-0H
+	for fuse-devel@lists.sourceforge.net; Fri, 22 Jul 2011 08:34:01 +0000
+Received-SPF: softfail (sog-mx-3.v43.ch3.sourceforge.com: transitioning domain
+	of gluster.com does not designate 206.225.165.116 as permitted
+	sender) client-ip=206.225.165.116;
+	envelope-from=avati@gluster.com;
+	helo=HUB024-nj-1.exch024.serverdata.net; 
+Received: from hub024-nj-1.exch024.serverdata.net ([206.225.165.116])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:AES128-SHA:128)
+	(Exim 4.76) id 1QkBBI-0001FD-4T
+	for fuse-devel@lists.sourceforge.net; Fri, 22 Jul 2011 08:34:00 +0000
+Received: from localhost.localdomain (184.107.76.11) by
+	east.exch024.serverdata.net (10.240.10.31) with Microsoft SMTP Server
+	(TLS) id 14.1.289.1; Fri, 22 Jul 2011 01:33:54 -0700
+From: Anand Avati <avati@gluster.com>
+To: <miklos@szeredi.hu>
+Date: Fri, 22 Jul 2011 01:33:25 -0700
+Message-ID: <1311323606-15040-1-git-send-email-avati@gluster.com>
+X-Mailer: git-send-email 1.7.4.1
+In-Reply-To: <y>
+References: <y>
+MIME-Version: 1.0
+X-Spam-Score: 1.0 (+)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	1.0 SPF_SOFTFAIL SPF: sender does not match SPF record (softfail)
+X-Headers-End: 1QkBBI-0001FD-4T
+Cc: fuse-devel@lists.sourceforge.net, linux-fsdevel@vger.kernel.org,
+	linux-nfs@vger.kernel.org, Anand Avati <avati@gluster.com>
+Subject: [fuse-devel] [PATCH 1/2] vfs: pass 'struct file *' as parameter to
+	->check_flags() methods
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Along with corresponding changes in -
+
+- Documentation/
+- nfs
+- bad_inodes.c
+- fcntl.c
+---
+ Documentation/filesystems/Locking |    2 +-
+ Documentation/filesystems/vfs.txt |    2 +-
+ fs/bad_inode.c                    |    2 +-
+ fs/fcntl.c                        |    2 +-
+ fs/nfs/file.c                     |    6 +++---
+ include/linux/fs.h                |    2 +-
+ 6 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/Documentation/filesystems/Locking b/Documentation/filesystems/Locking
+index 57d827d..9619841 100644
+--- a/Documentation/filesystems/Locking
++++ b/Documentation/filesystems/Locking
+@@ -426,7 +426,7 @@ prototypes:
+ 			loff_t *, int);
+ 	unsigned long (*get_unmapped_area)(struct file *, unsigned long,
+ 			unsigned long, unsigned long, unsigned long);
+-	int (*check_flags)(int);
++	int (*check_flags)(struct file *, int);
+ 	int (*flock) (struct file *, int, struct file_lock *);
+ 	ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, loff_t *,
+ 			size_t, unsigned int);
+diff --git a/Documentation/filesystems/vfs.txt b/Documentation/filesystems/vfs.txt
+index 88b9f55..442aefb 100644
+--- a/Documentation/filesystems/vfs.txt
++++ b/Documentation/filesystems/vfs.txt
+@@ -764,7 +764,7 @@ struct file_operations {
+ 	ssize_t (*sendfile) (struct file *, loff_t *, size_t, read_actor_t, void *);
+ 	ssize_t (*sendpage) (struct file *, struct page *, int, size_t, loff_t *, int);
+ 	unsigned long (*get_unmapped_area)(struct file *, unsigned long, unsigned long, unsigned long, unsigned long);
+-	int (*check_flags)(int);
++	int (*check_flags)(struct file *, int);
+ 	int (*flock) (struct file *, int, struct file_lock *);
+ 	ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, size_t, unsigned int);
+ 	ssize_t (*splice_read)(struct file *, struct pipe_inode_info *, size_t, unsigned int);
+diff --git a/fs/bad_inode.c b/fs/bad_inode.c
+index bfcb18f..c7eef18 100644
+--- a/fs/bad_inode.c
++++ b/fs/bad_inode.c
+@@ -120,7 +120,7 @@ static unsigned long bad_file_get_unmapped_area(struct file *file,
+ 	return -EIO;
+ }
+ 
+-static int bad_file_check_flags(int flags)
++static int bad_file_check_flags(struct file *filp, int flags)
+ {
+ 	return -EIO;
+ }
+diff --git a/fs/fcntl.c b/fs/fcntl.c
+index 22764c7..1a2a6d3 100644
+--- a/fs/fcntl.c
++++ b/fs/fcntl.c
+@@ -174,7 +174,7 @@ static int setfl(int fd, struct file * filp, unsigned long arg)
+ 	}
+ 
+ 	if (filp->f_op && filp->f_op->check_flags)
+-		error = filp->f_op->check_flags(arg);
++		error = filp->f_op->check_flags(filp, arg);
+ 	if (error)
+ 		return error;
+ 
+diff --git a/fs/nfs/file.c b/fs/nfs/file.c
+index 2f093ed..9f96a8b 100644
+--- a/fs/nfs/file.c
++++ b/fs/nfs/file.c
+@@ -56,7 +56,7 @@ static ssize_t nfs_file_write(struct kiocb *, const struct iovec *iov,
+ 				unsigned long nr_segs, loff_t pos);
+ static int  nfs_file_flush(struct file *, fl_owner_t id);
+ static int  nfs_file_fsync(struct file *, int datasync);
+-static int nfs_check_flags(int flags);
++static int nfs_check_flags(struct file *, int flags);
+ static int nfs_lock(struct file *filp, int cmd, struct file_lock *fl);
+ static int nfs_flock(struct file *filp, int cmd, struct file_lock *fl);
+ static int nfs_setlease(struct file *file, long arg, struct file_lock **fl);
+@@ -105,7 +105,7 @@ const struct inode_operations nfs3_file_inode_operations = {
+ # define IS_SWAPFILE(inode)	(0)
+ #endif
+ 
+-static int nfs_check_flags(int flags)
++static int nfs_check_flags(struct file *filp, int flags)
+ {
+ 	if ((flags & (O_APPEND | O_DIRECT)) == (O_APPEND | O_DIRECT))
+ 		return -EINVAL;
+@@ -126,7 +126,7 @@ nfs_file_open(struct inode *inode, struct file *filp)
+ 			filp->f_path.dentry->d_name.name);
+ 
+ 	nfs_inc_stats(inode, NFSIOS_VFSOPEN);
+-	res = nfs_check_flags(filp->f_flags);
++	res = nfs_check_flags(filp, filp->f_flags);
+ 	if (res)
+ 		return res;
+ 
+diff --git a/include/linux/fs.h b/include/linux/fs.h
+index b5b9792..98ce7c7 100644
+--- a/include/linux/fs.h
++++ b/include/linux/fs.h
+@@ -1564,7 +1564,7 @@ struct file_operations {
+ 	int (*lock) (struct file *, int, struct file_lock *);
+ 	ssize_t (*sendpage) (struct file *, struct page *, int, size_t, loff_t *, int);
+ 	unsigned long (*get_unmapped_area)(struct file *, unsigned long, unsigned long, unsigned long, unsigned long);
+-	int (*check_flags)(int);
++	int (*check_flags)(struct file *, int);
+ 	int (*flock) (struct file *, int, struct file_lock *);
+ 	ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, loff_t *, size_t, unsigned int);
+ 	ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
+-- 
+1.7.4.4
+
+
+------------------------------------------------------------------------------
+10 Tips for Better Web Security
+Learn 10 ways to better secure your business today. Topics covered include:
+Web security, SSL, hacker attacks & Denial of Service (DoS), private keys,
+security Microsoft Exchange, secure Instant Messaging, and much more.
+http://www.accelacomm.com/jaw/sfnl/114/51426210/
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1311323605</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Anand Avati &lt;avati@gluster.com&gt;</string>
+	<key>subject</key>
+	<string>[fuse-devel] [PATCH 1/2] vfs: pass 'struct file *' as parameter to -&gt;check_flags() methods</string>
+	<key>to</key>
+	<string>&lt;miklos@szeredi.hu&gt;</string>
+</dict>
+</plist>

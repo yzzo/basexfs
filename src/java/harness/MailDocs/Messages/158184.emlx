@@ -1,0 +1,157 @@
+8622
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 12 Jul 2011 21:24:48 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id C1C3712D4A
+	for <alexander.holupirek@uni-konstanz.de>; Tue, 12 Jul 2011 21:24:47 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 12 Jul 2011 19:24:48 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 64A184D9D0; Tue, 12 Jul 2011 21:24:47 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 4CFF2423CA
+	for <holupire@inf.uni-konstanz.de>; Tue, 12 Jul 2011 21:24:47 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApcAAP6eHE7YIrVYkWdsb2JhbABFDoRGoXtxFAEBAQEJCwsHFAUguh2QdYErgXeCCYEPBIdRiQCCC5Br
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 12 Jul 2011 19:24:46 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1QgiXu-0008TL-H2; Tue, 12 Jul 2011 19:23:02 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-3.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <bounces@nabble.com>) id 1QgiXs-0008TF-TY
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 19:23:00 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of nabble.com
+	designates 216.139.236.26 as permitted sender)
+	client-ip=216.139.236.26; envelope-from=bounces@nabble.com;
+	helo=sam.nabble.com; 
+Received: from sam.nabble.com ([216.139.236.26])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:AES256-SHA:256)
+	(Exim 4.76) id 1QgiXp-0007gU-2Y
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 19:23:00 +0000
+Received: from isper.nabble.com ([192.168.236.156])
+	by sam.nabble.com with esmtp (Exim 4.72)
+	(envelope-from <bounces@nabble.com>) id 1QgiXj-0001fc-KE
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 12:22:51 -0700
+Message-ID: <32048545.post@talk.nabble.com>
+Date: Tue, 12 Jul 2011 12:22:51 -0700 (PDT)
+From: Debabrata Banerjee <dbanerjee@avid.com>
+To: fuse-devel@lists.sourceforge.net
+In-Reply-To: <CAAvzgtZrUOabUCW_2j5quycbKvJiUTorAnNeZ=AjaOCdvj0gQg@mail.gmail.com>
+MIME-Version: 1.0
+X-Nabble-From: dbanerjee@avid.com
+References: <4D67CC19.5010203@wanadoo.fr> <32023490.post@talk.nabble.com>
+	<32024185.post@talk.nabble.com> <4E176861.5050207@wanadoo.fr>
+	<32024540.post@talk.nabble.com> <32041716.post@talk.nabble.com>
+	<CAAvzgtZrUOabUCW_2j5quycbKvJiUTorAnNeZ=AjaOCdvj0gQg@mail.gmail.com>
+X-Spam-Score: -1.4 (-)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+	(bounces[at]nabble.com)
+	-0.0 T_RP_MATCHES_RCVD Envelope sender domain matches handover relay
+	domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	0.0 T_TO_NO_BRKTS_FREEMAIL To: misformatted and free email service
+	0.1 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1QgiXp-0007gU-2Y
+Subject: Re: [fuse-devel] File system with case insensitive names [PATCH]
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+CgpMdWNhcyBDLiBWaWxsYSBSZWFsIHdyb3RlOgo+IAo+IE9uIE1vbiwgSnVsIDExLCAyMDExIGF0
+IDY6NTQgUE0sIERlYmFicmF0YSBCYW5lcmplZSA8ZGJhbmVyamVlQGF2aWQuY29tPgo+IHdyb3Rl
+Ogo+PiBEb2luZyBpdCB0aGUgcmlnaHQgd2F5IGlzIHZlcnkgY29tcGxpY2F0ZWQgYXMgaXQgaW52
+b2x2ZXMgcHVsbGluZyBpbgo+PiB1bmljb2RlCj4+IGNhc2UgZm9sZGluZyBhbmQgbm9ybWFsaXph
+dGlvbi4gSG93ZXZlciwgSSBiZWxpZXZlIEkgaGF2ZSBhIHNpbXBsZSBmaXgsCj4+IGFuZAo+PiBp
+dCdzIGJhc2ljYWxseSBqdXN0IGFzIGdvb2QgYXMgbm9ybWFsIGZpbGUgbG9va3VwcyBhcmUgbm93
+LiBUaGlzIGlzIGEKPj4gcGF0Y2gKPj4gZm9yIGZzL2Z1c2UvZGlyLmMuCj4+Cj4+IC0tLSBmdXNl
+LTIuNi4zMi9kaXIuYyDCoCAyMDA5LTEyLTAyIDIyOjUxOjIxLjAwMDAwMDAwMCAtMDUwMAo+PiAr
+KysgZnVzZS0yLjYuMzItNC9kaXIuYyAyMDExLTA3LTExIDE3OjI2OjI4LjEwNDQ3OTkwOSAtMDQw
+MAo+PiBAQCAtMjQ3LDcgKzI0Nyw3IEBACj4+IMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgZnVzZV9p
+bnZhbGlkYXRlX2VudHJ5KGFsaWFzKTsKPj4gwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqBkcHV0KGFs
+aWFzKTsKPj4gwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqBpZiAoIWxpc3RfZW1wdHkoJmlub2RlLT5p
+X2RlbnRyeSkpCj4+IC0gwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgcmV0dXJuIEVS
+Ul9QVFIoLUVCVVNZKTsKPj4gKyDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCByZXR1
+cm4gYWxpYXM7Cj4gCj4gQ2FuIHlvdSB0cnVzdCB0aGUgY29udGVudHMgb2YgJ2FsaWFzJyBhZnRl
+ciBpdCdzIGJlZW4gZHB1dCgpPyBOb3QKPiBoYXZpbmcgcmVhZCB0aGUgd2hvbGUgY29kZSwgdGhh
+dCBsb29rcyBsaWtlIGEgcG90ZW50aWFsIHNvdXJjZSBmb3IKPiBwcm9ibGVtcywgYXMgeW91J3Jl
+IG5vIGxvbmdlciBndWFyYW50ZWVkIHRvIGhhdmUgYSB2YWxpZCBoYW5kbGUgb24gaXQuCj4gCj4g
+LS0gCj4gTHVjYXMKPiAiSWYgeW91J3JlIGxvb2tpbmcgZm9yIGEgcmVhc29uIEkndmUgYSByZWFz
+b24gdG8gZ2l2ZTogcGxlYXN1cmUsCj4gbGl0dGxlIHRyZWFzdXJlIgo+IAo+IC0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLQo+IEFsbCBvZiB0aGUgZGF0YSBnZW5lcmF0ZWQgaW4geW91ciBJVCBpbmZyYXN0
+cnVjdHVyZSBpcyBzZXJpb3VzbHkgdmFsdWFibGUuCj4gV2h5PyBJdCBjb250YWlucyBhIGRlZmlu
+aXRpdmUgcmVjb3JkIG9mIGFwcGxpY2F0aW9uIHBlcmZvcm1hbmNlLCBzZWN1cml0eSAKPiB0aHJl
+YXRzLCBmcmF1ZHVsZW50IGFjdGl2aXR5LCBhbmQgbW9yZS4gU3BsdW5rIHRha2VzIHRoaXMgZGF0
+YSBhbmQgbWFrZXMgCj4gc2Vuc2Ugb2YgaXQuIElUIHNlbnNlLiBBbmQgY29tbW9uIHNlbnNlLgo+
+IGh0dHA6Ly9wLnNmLm5ldC9zZnUvc3BsdW5rLWQyZC1jMgo+IF9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gZnVzZS1kZXZlbCBtYWlsaW5nIGxpc3QKPiBm
+dXNlLWRldmVsQGxpc3RzLnNvdXJjZWZvcmdlLm5ldAo+IGh0dHBzOi8vbGlzdHMuc291cmNlZm9y
+Z2UubmV0L2xpc3RzL2xpc3RpbmZvL2Z1c2UtZGV2ZWwKPiAKPiAKCjZ0aCB0aW1lJ3MgdGhlIGNo
+YXJtLiBTZWUgYW55IHByb2JsZW1zIHdpdGggdGhpcz8KCi0tLSBmdXNlLTIuNi4zMi5vL2Rpci5j
+CTIwMDktMTItMDIgMjI6NTE6MjEuMDAwMDAwMDAwIC0wNTAwCisrKyBmdXNlLTIuNi4zMi9kaXIu
+YwkyMDExLTA3LTEyIDE1OjE5OjUyLjA2MTQ5MjYxOSAtMDQwMApAQCAtMjQzLDExICsyNDMsMTYg
+QEAKIHsKIAlzdHJ1Y3QgZGVudHJ5ICphbGlhcyA9IGRfZmluZF9hbGlhcyhpbm9kZSk7CiAJaWYg
+KGFsaWFzICYmICEoYWxpYXMtPmRfZmxhZ3MgJiBEQ0FDSEVfRElTQ09OTkVDVEVEKSkgeworCSAg
+CS8qIHRoZXJlIGNhbiBvbmx5IGJlIG9uZSBkZW50cnkgZm9yIGEgZGlyZWN0b3J5LCBzbyByZXR1
+cm4gdGhlIG9sZCBvbmUKaWYgaXQgaXMgZGlmZmVyZW50ICovCisJCWlmKGFsaWFzICE9IGVudHJ5
+KSB7CisJCSAJZF9pbnZhbGlkYXRlKGVudHJ5KTsKKwkJIAlpcHV0KGlub2RlKTsKKwkJIAlyZXR1
+cm4gYWxpYXM7CisJCX0KKwogCQkvKiBUaGlzIHRyaWVzIHRvIHNocmluayB0aGUgc3VidHJlZSBi
+ZWxvdyBhbGlhcyAqLwogCQlmdXNlX2ludmFsaWRhdGVfZW50cnkoYWxpYXMpOwogCQlkcHV0KGFs
+aWFzKTsKLQkJaWYgKCFsaXN0X2VtcHR5KCZpbm9kZS0+aV9kZW50cnkpKQotCQkJcmV0dXJuIEVS
+Ul9QVFIoLUVCVVNZKTsKIAl9IGVsc2UgewogCQlkcHV0KGFsaWFzKTsKIAl9CgotLSAKVmlldyB0
+aGlzIG1lc3NhZ2UgaW4gY29udGV4dDogaHR0cDovL29sZC5uYWJibGUuY29tL0ZpbGUtc3lzdGVt
+LXdpdGgtY2FzZS1pbnNlbnNpdGl2ZS1uYW1lcy10cDMxMDEzOTc4cDMyMDQ4NTQ1Lmh0bWwKU2Vu
+dCBmcm9tIHRoZSBGdXNlIC0gRGV2IG1haWxpbmcgbGlzdCBhcmNoaXZlIGF0IE5hYmJsZS5jb20u
+CgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkFwcFN1bW8gUHJlc2VudHMgYSBGUkVFIFZpZGVvIGZv
+ciB0aGUgU291cmNlRm9yZ2UgQ29tbXVuaXR5IGJ5IEVyaWMgClJpZXMsIHRoZSBjcmVhdG9yIG9m
+IHRoZSBMZWFuIFN0YXJ0dXAgTWV0aG9kb2xvZ3kgb24gIkxlYW4gU3RhcnR1cCAKU2VjcmV0cyBS
+ZXZlYWxlZC4iIFRoaXMgdmlkZW8gc2hvd3MgeW91IGhvdyB0byB2YWxpZGF0ZSB5b3VyIGlkZWFz
+LCAKb3B0aW1pemUgeW91ciBpZGVhcyBhbmQgaWRlbnRpZnkgeW91ciBidXNpbmVzcyBzdHJhdGVn
+eS4KaHR0cDovL3Auc2YubmV0L3NmdS9hcHBzdW1vc2ZkZXYyZGV2Cl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmZ1c2UtZGV2ZWwgbWFpbGluZyBsaXN0CmZ1
+c2UtZGV2ZWxAbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2Uu
+bmV0L2xpc3RzL2xpc3RpbmZvL2Z1c2UtZGV2ZWwK
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310498571</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Debabrata Banerjee &lt;dbanerjee@avid.com&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] File system with case insensitive names [PATCH]</string>
+	<key>to</key>
+	<string>fuse-devel@lists.sourceforge.net</string>
+</dict>
+</plist>

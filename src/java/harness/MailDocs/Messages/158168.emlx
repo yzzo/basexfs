@@ -1,0 +1,129 @@
+5430
+Return-Path: <fuse-devel-bounces@lists.sourceforge.net>
+Received: from uni-konstanz.de ([unix socket])
+	 by uni-konstanz.de (Cyrus v2.3.16) with LMTPA;
+	 Tue, 12 Jul 2011 18:50:41 +0200
+X-Sieve: CMU Sieve 2.3
+Received: from pyrimidin.rz.uni-konstanz.de (pyrimidin.rz.uni-konstanz.de [134.34.240.46])
+	by uni-konstanz.de (Postfix) with ESMTP id 5DE6E12FF4
+	for <alexander.holupirek@uni-konstanz.de>; Tue, 12 Jul 2011 18:50:41 +0200 (CEST)
+Received: from titan01.inf.uni-konstanz.de ([134.34.57.71])
+  by unitis.rz.uni-konstanz.de with ESMTP; 12 Jul 2011 16:50:41 +0000
+Received: by titan01.inf.uni-konstanz.de (INF MTA)
+	id 4300B4D9D0; Tue, 12 Jul 2011 18:50:41 +0200 (CEST)
+Delivered-To: holupire@inf.uni-konstanz.de
+Received: from purin.rz.uni-konstanz.de (purin.rz.uni-konstanz.de [134.34.240.45])
+	by titan01.inf.uni-konstanz.de (INF MTA) with ESMTP id 31BAD423CA
+	for <holupire@inf.uni-konstanz.de>; Tue, 12 Jul 2011 18:50:41 +0200 (CEST)
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApoAAJJ6HE7YIrVYkWdsb2JhbABFDqcpCBQBAQEBCQsLBxQFIIh6AqUxnG6DIoMYBJBRgguJWoJbPINc
+Received: from lists.sourceforge.net ([216.34.181.88])
+  by mailin.uni-konstanz.de with ESMTP; 12 Jul 2011 16:50:40 +0000
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <fuse-devel-bounces@lists.sourceforge.net>)
+	id 1Qgg9J-0002uD-7u; Tue, 12 Jul 2011 16:49:29 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miklos@szeredi.hu>) id 1Qgg9I-0002u6-4Q
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 16:49:28 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of szeredi.hu
+	designates 209.85.214.47 as permitted sender)
+	client-ip=209.85.214.47; envelope-from=miklos@szeredi.hu;
+	helo=mail-bw0-f47.google.com; 
+Received: from mail-bw0-f47.google.com ([209.85.214.47])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1Qgg9H-0003Bz-6y
+	for fuse-devel@lists.sourceforge.net; Tue, 12 Jul 2011 16:49:28 +0000
+Received: by bwf5 with SMTP id 5so1023074bwf.34
+	for <fuse-devel@lists.sourceforge.net>;
+	Tue, 12 Jul 2011 09:49:20 -0700 (PDT)
+Received: by 10.204.14.88 with SMTP id f24mr61886bka.278.1310489360519;
+	Tue, 12 Jul 2011 09:49:20 -0700 (PDT)
+Received: from tucsk.pomaz.szeredi.hu (catv-80-98-43-182.catv.broadband.hu
+	[80.98.43.182])
+	by mx.google.com with ESMTPS id p15sm1425978bke.13.2011.07.12.09.49.19
+	(version=TLSv1/SSLv3 cipher=OTHER);
+	Tue, 12 Jul 2011 09:49:19 -0700 (PDT)
+From: Miklos Szeredi <miklos@szeredi.hu>
+To: Daniel <wangjinxin.java@gmail.com>
+References: <1310367488.3437.11.camel@Daniel>
+Date: Tue, 12 Jul 2011 18:50:14 +0200
+In-Reply-To: <1310367488.3437.11.camel@Daniel> (Daniel's message of "Mon, 11
+	Jul 2011 14:58:08 +0800")
+Message-ID: <87tyar4f5l.fsf@tucsk.pomaz.szeredi.hu>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
+MIME-Version: 1.0
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+	See http://spamassassin.org/tag/ for more details.
+	-1.5 SPF_CHECK_PASS SPF reports sender host as permitted sender for
+	sender-domain
+	-0.0 SPF_PASS               SPF: sender matches SPF record
+	-0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from
+	author's domain
+	0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+	not necessarily valid
+	-0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+	1.4 AWL AWL: From: address is in the auto white-list
+X-Headers-End: 1Qgg9H-0003Bz-6y
+Cc: fuse-devel@lists.sourceforge.net
+Subject: Re: [fuse-devel] Where can I find the manual of fuse protocol
+X-BeenThere: fuse-devel@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: <fuse-devel.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=fuse-devel>
+List-Post: <mailto:fuse-devel@lists.sourceforge.net>
+List-Help: <mailto:fuse-devel-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/fuse-devel>,
+	<mailto:fuse-devel-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: fuse-devel-bounces@lists.sourceforge.net
+
+Daniel <wangjinxin.java@gmail.com> writes:
+
+> Well, I am looking for the detailed manual of fuse protocol. But what I
+> found was only kind of overview. Could you share any source about that,
+> so that I could learn more about fuse, please?
+
+There's no official manual yet.  Googling for "fuse protocol" turns up a
+few good resources.
+
+Thanks,
+Miklos
+
+------------------------------------------------------------------------------
+AppSumo Presents a FREE Video for the SourceForge Community by Eric 
+Ries, the creator of the Lean Startup Methodology on "Lean Startup 
+Secrets Revealed." This video shows you how to validate your ideas, 
+optimize your ideas and identify your business strategy.
+http://p.sf.net/sfu/appsumosfdev2dev
+_______________________________________________
+fuse-devel mailing list
+fuse-devel@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/fuse-devel
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-sent</key>
+	<real>1310489414</real>
+	<key>flags</key>
+	<integer>261248</integer>
+	<key>original-mailbox</key>
+	<string>imap://alexander.holupirek@popserver.uni-konstanz.de/INBOX</string>
+	<key>sender</key>
+	<string>Miklos Szeredi &lt;miklos@szeredi.hu&gt;</string>
+	<key>subject</key>
+	<string>Re: [fuse-devel] Where can I find the manual of fuse protocol</string>
+	<key>to</key>
+	<string>Daniel &lt;wangjinxin.java@gmail.com&gt;</string>
+</dict>
+</plist>
