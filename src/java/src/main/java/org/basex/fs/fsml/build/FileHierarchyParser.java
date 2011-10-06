@@ -14,6 +14,7 @@ import org.basex.io.IO;
 import org.basex.io.IOFile;
 import org.basex.util.Atts;
 import org.basex.util.Token;
+import org.basex.util.list.TokenList;
 
 public class FileHierarchyParser extends Parser {
 
@@ -34,6 +35,9 @@ public class FileHierarchyParser extends Parser {
 	private static final byte[] ST_MODE = token("st_mode");
 	private static final byte[] BSID = token("bsid"); // backing store id
 	private static final byte[] PDF = token("pdf");
+	private static TokenList MUSIC = new TokenList();
+	private static TokenList MAILS = new TokenList();
+	private static TokenList IMGS = new TokenList();
 	
 	private Builder builder;
 	private IOFile backingStore;
@@ -46,6 +50,7 @@ public class FileHierarchyParser extends Parser {
 
 	@Override
 	public void parse(Builder b) throws IOException {
+		FillLists();
 		builder = b;
 		
 		if (!createBackingStore())
@@ -131,6 +136,12 @@ public class FileHierarchyParser extends Parser {
 	private Parser getFileParser(byte[] suffix, IO f) {
 		if (Token.eq(suffix, PDF)) 
 			return new PDFParser(f);
+		else if (MAILS.contains(suffix))
+			return new EMailParser(f);
+		else if (IMGS.contains(suffix))
+			return new IMGParser(f);
+		else if (MUSIC.contains(suffix))
+			return new MusicParser(f);
 //		System.err.println("No parser for suffix : " + new String(suffix));
 		return null;
 	}
@@ -139,5 +150,25 @@ public class FileHierarchyParser extends Parser {
 		File target = new File(backingStore.merge(Token.string(name)).path());
 		System.out.format("Writing pdf binary into backing store: %s\n", new String(name));
 		Utils.copyFile(new File(file.path()), target);
+	}
+	
+	private void FillLists(){
+		MUSIC.add(token("mp3"));
+		MUSIC.add(token("ogg"));
+		MUSIC.add(token("wma"));
+		MUSIC.add(token("mp4"));
+		MUSIC.add(token("flac"));
+		MUSIC.add(token("m4a"));
+		MUSIC.add(token("m4p"));
+		MAILS.add(token("mbox"));
+		MAILS.add(token("mbs"));
+		MAILS.add(token("emlx"));
+		IMGS.add(token("jpg"));
+		IMGS.add(token("jpeg"));
+		IMGS.add(token("bmp"));
+		IMGS.add(token("gif"));
+		IMGS.add(token("tif"));
+		IMGS.add(token("tiff"));
+		IMGS.add(token("png"));
 	}
 }
