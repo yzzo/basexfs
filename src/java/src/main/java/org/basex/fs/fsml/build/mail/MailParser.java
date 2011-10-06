@@ -51,8 +51,11 @@ public class MailParser {
 						if (line.startsWith(type)){
 							break;
 						}
-						else if (line.startsWith("Content-Disposition: attachment;"))
-							insertAttachment(mail);
+						else if (line.startsWith("Content-Transfer-Encoding: base64")){
+								line = br.readLine();
+								if (line.startsWith("Content-Disposition: attachment;"))
+									insertAttachment(mail, line);
+						}
 						line = line + "\n";
 						content.append(line);
 					}
@@ -68,9 +71,11 @@ public class MailParser {
 		return null;
 	}
 	
-	private void insertAttachment(MailObject mail) throws IOException{
-			String line = br.readLine();
-			mail.setAttachmentPath(line.substring(line.indexOf("\"")+1, line.lastIndexOf("\"")));
+	private void insertAttachment(MailObject mail, String line) throws IOException{
+			if(!line.contains("\""))
+				line = br.readLine();
+			line = line.substring(line.indexOf("\"")+1, line.lastIndexOf("\""));
+			mail.setAttachmentPath(line);
 			br.readLine();
 			StringBuffer content = new StringBuffer();
 			while ((line = br.readLine()) != null) {
