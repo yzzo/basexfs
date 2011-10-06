@@ -5,6 +5,8 @@ import static org.basex.util.Token.token;
 import java.io.IOException;
 import java.util.Calendar;
 
+import org.apache.pdfbox.exceptions.CryptographyException;
+import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.util.PDFTextStripper;
@@ -51,7 +53,7 @@ public class PDFParser extends Parser {
 	}
 
 	@Override
-	public void parse(Builder b) throws IOException {
+	public void parse(Builder b){
 		try {
 			document = PDDocument.load(src.path());
 		} catch (IOException e) {
@@ -73,7 +75,7 @@ public class PDFParser extends Parser {
 		}
 	}
 	
-	private void insertPDFMetadata() throws IOException {
+	private void insertPDFMetadata() throws IOException{
 		atts.reset();
 		System.out.format("Extracting pdf metadata from %s.\n", src.path());
 		PDDocumentInformation info = document.getDocumentInformation();
@@ -84,14 +86,21 @@ public class PDFParser extends Parser {
 		insert(KEYWORDS, info.getKeywords());
 		insert(CREATOR, info.getCreator());
 		insert(PRODUCER, info.getProducer());
-		insert(CREATIONDATE, info.getCreationDate());
-		insert(MODIFICATIONDATE, info.getModificationDate());
+		try {
+			insert(CREATIONDATE, info.getCreationDate());
+		} catch (IOException e) {
+			System.err.println("Invalid creationdate");
+		}
+		try {
+			insert(MODIFICATIONDATE, info.getModificationDate());
+		} catch (IOException e) {
+			System.err.println("Invalid modificationdate");
+		}
 	}
 	
 	private void insertPages() throws IOException {
 		PDFTextStripper stripper = new PDFTextStripper("UTF-8");
 		int numberOfPages = document.getNumberOfPages();
-		
 		atts.add(NAME, PAGES);
 		atts.add(TYPE, CONTENT);
 		builder.startElem(FOLDER, atts);
@@ -113,16 +122,16 @@ public class PDFParser extends Parser {
 		builder.endElem();
 	}
 
-	private void insert(final byte[] tag, final Calendar date) throws IOException {
+	private void insert(final byte[] tag, final Calendar date) throws IOException{
 		DateTime datetime = new DateTime(date);
 		add(tag, toToken(datetime.toString()));
 	}
 	
-	private void insert(final byte[] tag, final int value) throws IOException {
+	private void insert(final byte[] tag, final int value) throws IOException{
 		add(tag, token(value));
 	}
 	
-	private void insert(final byte[] tag, final String value) throws IOException {
+	private void insert(final byte[] tag, final String value) throws IOException{
 		add(tag, toToken(value));
 	}
 	

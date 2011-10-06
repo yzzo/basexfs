@@ -84,6 +84,5 @@ public class MailParser {
 				content.append(line);
 			}
 			mail.setAttachmentContent(content.toString());
-			System.out.println("\n\ngot it\n\n");
 	}
 }
