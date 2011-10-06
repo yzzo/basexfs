@@ -2,14 +2,20 @@ package org.basex.fs.fsml.build;
 
 import static org.basex.util.Token.token;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 import org.basex.build.Builder;
 import org.basex.build.Parser;
 import org.basex.fs.fsml.build.mail.MailObject;
 import org.basex.fs.fsml.build.mail.MailParser;
 import org.basex.io.IO;
+import org.basex.io.IOFile;
+import org.basex.util.Base64;
 import org.basex.util.Token;
+import org.basex.util.list.TokenList;
 
 /** Extract metadata and content from Mailboxes and produce XML. */
 public class EMailParser extends Parser {
@@ -26,6 +32,10 @@ public class EMailParser extends Parser {
 	private static final byte[] TYPE = token("type");
 	private static final byte[] MAILS = token("mails");
 	private static final byte[] MAIL = token("mail");
+	private static final byte[] PDF = token("pdf");
+	private static final byte[] ATTACH = token("attachment");
+	private static TokenList MUSIC = new TokenList();
+	private static TokenList IMGS = new TokenList();
 	
 	private Builder builder;
 	private MailObject document;
@@ -78,6 +88,7 @@ public class EMailParser extends Parser {
 			insert(TO, document.getTo());
 			insert(SUBJECT, document.getSubject());
 			insert(CONTENT, document.getContent());
+			addAttachement();
 			builder.endElem();
 			atts.reset();
 		}
@@ -117,5 +128,52 @@ public class EMailParser extends Parser {
 		builder.text(text);
 		builder.endElem();
 		atts.reset();
+	}
+	
+	private void addAttachement() throws IOException{
+		if(document.hasAttachment()){
+			OutputStream out = new FileOutputStream(document.getAttachmentPath());
+			byte cont[] = document.getAttachmentContent().getBytes();
+			out.write(Base64.decode(cont));
+			out.close();
+			builder.startElem(ATTACH, atts);
+			Parser parser = getFileParser(document.getAttachmentPath());
+			if(parser != null)
+				parser.parse(builder);
+			new File(document.getAttachmentPath()).delete();
+			builder.endElem();
+
+		}
+	}
+	
+	private Parser getFileParser(String path) {
+		FillLists();
+		byte[] suffix = token(path.substring(path.lastIndexOf(".")+1));
+		IOFile f = new IOFile(path);
+		if (Token.eq(suffix, PDF)) 
+			return new PDFParser(f);
+		else if (IMGS.contains(suffix))
+			return new IMGParser(f);
+		else if (MUSIC.contains(suffix))
+			return new MusicParser(f);
+		System.err.println("No parser for suffix : " + new String(suffix));
+		return null;
+	}
+	
+	private void FillLists(){
+		MUSIC.add(token("mp3"));
+		MUSIC.add(token("ogg"));
+		MUSIC.add(token("wma"));
+		MUSIC.add(token("mp4"));
+		MUSIC.add(token("flac"));
+		MUSIC.add(token("m4a"));
+		MUSIC.add(token("m4p"));
+		IMGS.add(token("jpg"));
+		IMGS.add(token("jpeg"));
+		IMGS.add(token("bmp"));
+		IMGS.add(token("gif"));
+		IMGS.add(token("tif"));
+		IMGS.add(token("tiff"));
+		IMGS.add(token("png"));
 	}
 }

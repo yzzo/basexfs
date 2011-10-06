@@ -51,6 +51,8 @@ public class MailParser {
 						if (line.startsWith(type)){
 							break;
 						}
+						else if (line.startsWith("Content-Disposition: attachment;"))
+							insertAttachment(mail);
 						line = line + "\n";
 						content.append(line);
 					}
@@ -64,5 +66,19 @@ public class MailParser {
 		if(isNext)
 			return mail;
 		return null;
+	}
+	
+	private void insertAttachment(MailObject mail) throws IOException{
+			String line = br.readLine();
+			mail.setAttachmentPath(line.substring(line.indexOf("\"")+1, line.lastIndexOf("\"")));
+			br.readLine();
+			StringBuffer content = new StringBuffer();
+			while ((line = br.readLine()) != null) {
+				if (line.isEmpty())
+					break;
+				content.append(line);
+			}
+			mail.setAttachmentContent(content.toString());
+			System.out.println("\n\ngot it\n\n");
 	}
 }

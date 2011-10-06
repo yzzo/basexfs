@@ -142,7 +142,7 @@ public class FileHierarchyParser extends Parser {
 			return new IMGParser(f);
 		else if (MUSIC.contains(suffix))
 			return new MusicParser(f);
-//		System.err.println("No parser for suffix : " + new String(suffix));
+		System.err.println("No parser for suffix : " + new String(suffix));
 		return null;
 	}
 	
