@@ -1,5 +1,13 @@
 package org.basex.fs.fsml.build.mail;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ * Represents an e-mail
+ * @author yzzo
+ */
 public class MailObject {
 	
 	private String from;
@@ -7,7 +15,9 @@ public class MailObject {
 	private String date;
 	private String subject;
 	private String content;
-	private Attachment attachment = new Attachment();
+	private boolean base64Content;
+	private List<Attachment> attachments = new ArrayList<Attachment>();
+	private List<String> attachmentsPath = new ArrayList<String>();
 	
 	public void setFrom(String from) {
 		this.from = from;
@@ -39,39 +49,73 @@ public class MailObject {
 	public String getContent() {
 		return content;
 	}
-	public void setAttachmentPath(String path) {
-		this.attachment.path = path;
+	/**
+	 * Adds a mail-internal attachment
+	 * @param path
+	 * @param content
+	 */
+	public void addAttachment(String path, String content){
+		this.attachments.add(new Attachment(path, content));
 	}
-	public void setAttachmentContent(String content) {
-		this.attachment.content = content;
+	/**
+	 * Returns the original filename of an internal attachment
+	 * @param id
+	 * @return String filename
+	 */
+	public String getAttachmentPath(int id) {
+		return this.attachments.get(id).path;
 	}
-	public String getAttachmentPath() {
-		return attachment.path;
+	/**
+	 * Returns the content of an internal attachment
+	 * @param id
+	 * @return String content
+	 */
+	public String getAttachmentContent(int id) {
+		return this.attachments.get(id).content;
 	}
-	public String getAttachmentContent() {
-		return attachment.content;
+	/**
+	 * Returns the number of internal attachments for this mail
+	 * @return int number of attachments
+	 */
+	public int countAttachments(){
+		return this.attachments.size();
 	}
-	public boolean hasAttachment(){
-		if(attachment.getPath()!=null)
-			return true;
-		return false;
+	public void setBase64Content(boolean base64Content) {
+		this.base64Content = base64Content;
+	}
+	public boolean isBase64Content() {
+		return base64Content;
+	}
+	/**
+	 * Adds an external attachment
+	 * @param attachmentsPath
+	 */
+	public void addAttachmentsPath(String attachmentsPath) {
+		this.attachmentsPath.add(attachmentsPath);
+	}
+	/**
+	 * Returns the filepath of an external attachment
+	 * @param id
+	 * @return String filepath
+	 */
+	public String getAttachmentsPath(int id) {
+		return attachmentsPath.get(id);
+	}
+	/**
+	 * Returns the number of external attachments of this mail
+	 * @return int number of attachments
+	 */
+	public int countAttachmentsPath(){
+		return attachmentsPath.size();
 	}
 
 	class Attachment{
 		private String path;
 		private String content;
 		
-		public void setPath(String path) {
+		public Attachment(String path, String content){
 			this.path = path;
-		}
-		public String getPath() {
-			return path;
-		}
-		public void setContent(String content) {
 			this.content = content;
-		}
-		public String getContent() {
-			return content;
 		}
 	}
 }

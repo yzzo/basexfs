@@ -33,7 +33,8 @@ public class EMailParser extends Parser {
 	private static final byte[] MAILS = token("mails");
 	private static final byte[] MAIL = token("mail");
 	private static final byte[] PDF = token("pdf");
-	private static final byte[] ATTACH = token("attachment");
+	private static final byte[] ATTACHMENT = token("attachment");
+	private static final byte[] PATH = token("path");
 	private static TokenList MUSIC = new TokenList();
 	private static TokenList IMGS = new TokenList();
 	
@@ -88,9 +89,8 @@ public class EMailParser extends Parser {
 			insert(TO, document.getTo());
 			insert(SUBJECT, document.getSubject());
 			insert(CONTENT, document.getContent());
-			addAttachement();
+			addBoxAttachement();
 			builder.endElem();
-			atts.reset();
 		}
 		builder.endElem();
 	}
@@ -101,14 +101,18 @@ public class EMailParser extends Parser {
 		atts.add(TYPE, CONTENT);
 		builder.startElem(FOLDER, atts);
 		atts.reset();
-		System.out.format("Extracting mailbox metadata from %s.\n", src.path());
-		for(int count = 1; (document = mp.getNext()) != null; count++) {
+		System.out.format("Extracting mail metadata from %s.\n", src.path());
+		document = mp.getMail();
 			insert(DATE, document.getDate());
 			insert(FROM, document.getFrom());
 			insert(TO, document.getTo());
 			insert(SUBJECT, document.getSubject());
-			insert(CONTENT, document.getContent());
-		}
+//			if(document.isBase64Content()){
+//				insert(CONTENT, Base64.decode(document.getContent()));
+//			}
+//			else 
+				insert(CONTENT, document.getContent());
+			addMailAttachement();
 		builder.endElem();
 	}
 	
@@ -130,19 +134,35 @@ public class EMailParser extends Parser {
 		atts.reset();
 	}
 	
-	private void addAttachement() throws IOException{
-		if(document.hasAttachment()){
-			OutputStream out = new FileOutputStream(document.getAttachmentPath());
-			byte cont[] = document.getAttachmentContent().getBytes();
+	private void addBoxAttachement() throws IOException{
+		int count = document.countAttachments();
+		String path = "";
+		for(int i = 0; i < count; i++){
+			path = document.getAttachmentPath(i);
+			OutputStream out = new FileOutputStream(path);
+			byte cont[] = document.getAttachmentContent(i).getBytes();
 			out.write(Base64.decode(cont));
 			out.close();
-			builder.startElem(ATTACH, atts);
-			Parser parser = getFileParser(document.getAttachmentPath());
+			builder.startElem(ATTACHMENT, atts);
+			Parser parser = getFileParser(path);
 			if(parser != null)
 				parser.parse(builder);
-			new File(document.getAttachmentPath()).delete();
+			new File(path).delete();
 			builder.endElem();
-
+		}
+	}
+	
+	private void addMailAttachement() throws IOException{
+		int count = document.countAttachmentsPath();
+		String path = "";
+		for(int i = 0; i < count; i++){
+			path = document.getAttachmentsPath(i);
+			builder.startElem(ATTACHMENT, atts);
+			insert(PATH, path);
+			Parser parser = getFileParser(path);
+			if(parser != null)
+				parser.parse(builder);
+			builder.endElem();
 		}
 	}
 	

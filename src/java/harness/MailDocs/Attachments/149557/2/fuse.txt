@@ -1,0 +1,140 @@
+unique: 0, opcode: INIT (26), nodeid: 0, insize: 56
+INIT: 7.8
+flags=0x00000000
+max_readahead=0x00000000
+   INIT: 7.8
+   flags=0x00000000
+   max_readahead=0x00000000
+   max_write=0x00020000
+   unique: 0, error: 0 (Unknown error: 0), outsize: 40
+unique: 0, opcode: GETATTR (3), nodeid: 1, insize: 40
+   unique: 0, error: 0 (Unknown error: 0), outsize: 112
+unique: 0, opcode: LOOKUP (1), nodeid: 1, insize: 53
+LOOKUP /.AppleDouble
+   NODEID: 2
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 2, insize: 48
+LOOKUP /.AppleDouble/.Parent
+   NODEID: 3
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: OPEN (14), nodeid: 3, insize: 48
+   unique: 0, error: 0 (Unknown error: 0), outsize: 32
+OPEN[9] flags: 0x102 /.AppleDouble/.Parent
+unique: 0, opcode: READ (15), nodeid: 3, insize: 64
+READ[9] 741 bytes from 0
+   READ[9] 741 bytes
+   unique: 0, error: 0 (Unknown error: 0), outsize: 757
+unique: 0, opcode: RELEASE (18), nodeid: 3, insize: 64
+RELEASE+FLUSH[9] flags: 0x2
+   unique: 0, error: 0 (Unknown error: 0), outsize: 16
+unique: 0, opcode: LOOKUP (1), nodeid: 1, insize: 61
+LOOKUP /Network Trash Folder
+   NODEID: 4
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 1, insize: 61
+LOOKUP /Network Trash Folder
+   NODEID: 4
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 4, insize: 53
+LOOKUP /Network Trash Folder/.AppleDouble
+   NODEID: 5
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 5, insize: 48
+LOOKUP /Network Trash Folder/.AppleDouble/.Parent
+   NODEID: 6
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: OPEN (14), nodeid: 6, insize: 48
+   unique: 0, error: 0 (Unknown error: 0), outsize: 32
+OPEN[9] flags: 0x102 /Network Trash Folder/.AppleDouble/.Parent
+unique: 0, opcode: READ (15), nodeid: 6, insize: 64
+READ[9] 741 bytes from 0
+   READ[9] 741 bytes
+   unique: 0, error: 0 (Unknown error: 0), outsize: 757
+unique: 0, opcode: OPEN (14), nodeid: 6, insize: 48
+   unique: 0, error: 0 (Unknown error: 0), outsize: 32
+OPEN[11] flags: 0x1 /Network Trash Folder/.AppleDouble/.Parent
+unique: 0, opcode: WRITE (16), nodeid: 6, insize: 805
+WRITE[11] 741 bytes to 0
+   WRITE[11] 741 bytes
+   unique: 0, error: 0 (Unknown error: 0), outsize: 24
+unique: 0, opcode: RELEASE (18), nodeid: 6, insize: 64
+RELEASE+FLUSH[9] flags: 0x2
+   unique: 0, error: 0 (Unknown error: 0), outsize: 16
+unique: 0, opcode: RELEASE (18), nodeid: 6, insize: 64
+RELEASE[11] flags: 0x1
+   unique: 0, error: 0 (Unknown error: 0), outsize: 16
+unique: 0, opcode: LOOKUP (1), nodeid: 1, insize: 56
+LOOKUP /Temporary Items
+   NODEID: 7
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 1, insize: 56
+LOOKUP /Temporary Items
+   NODEID: 7
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 7, insize: 53
+LOOKUP /Temporary Items/.AppleDouble
+   NODEID: 8
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 8, insize: 48
+LOOKUP /Temporary Items/.AppleDouble/.Parent
+   NODEID: 9
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: OPEN (14), nodeid: 9, insize: 48
+   unique: 0, error: 0 (Unknown error: 0), outsize: 32
+OPEN[9] flags: 0x102 /Temporary Items/.AppleDouble/.Parent
+unique: 0, opcode: READ (15), nodeid: 9, insize: 64
+READ[9] 741 bytes from 0
+   READ[9] 741 bytes
+   unique: 0, error: 0 (Unknown error: 0), outsize: 757
+unique: 0, opcode: OPEN (14), nodeid: 9, insize: 48
+   unique: 0, error: 0 (Unknown error: 0), outsize: 32
+OPEN[11] flags: 0x1 /Temporary Items/.AppleDouble/.Parent
+unique: 0, opcode: WRITE (16), nodeid: 9, insize: 805
+WRITE[11] 741 bytes to 0
+   WRITE[11] 741 bytes
+   unique: 0, error: 0 (Unknown error: 0), outsize: 24
+unique: 0, opcode: RELEASE (18), nodeid: 9, insize: 64
+RELEASE+FLUSH[9] flags: 0x2
+   unique: 0, error: 0 (Unknown error: 0), outsize: 16
+unique: 0, opcode: RELEASE (18), nodeid: 9, insize: 64
+RELEASE[11] flags: 0x1
+   unique: 0, error: 0 (Unknown error: 0), outsize: 16
+unique: 0, opcode: LOOKUP (1), nodeid: 1, insize: 54
+LOOKUP /.AppleDesktop
+   NODEID: 10
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 1, insize: 54
+LOOKUP /.AppleDesktop
+   NODEID: 10
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 10, insize: 49
+LOOKUP /.AppleDesktop/.volinfo
+   NODEID: 11
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: OPEN (14), nodeid: 11, insize: 48
+   unique: 0, error: 0 (Unknown error: 0), outsize: 32
+OPEN[9] flags: 0x2 /.AppleDesktop/.volinfo
+unique: 0, opcode: LOOKUP (1), nodeid: 1, insize: 53
+LOOKUP /.AppleDouble
+   NODEID: 2
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: LOOKUP (1), nodeid: 2, insize: 48
+LOOKUP /.AppleDouble/.Parent
+   NODEID: 3
+   unique: 0, error: 0 (Unknown error: 0), outsize: 136
+unique: 0, opcode: OPEN (14), nodeid: 3, insize: 48
+   unique: 0, error: 0 (Unknown error: 0), outsize: 32
+OPEN[11] flags: 0x102 /.AppleDouble/.Parent
+unique: 0, opcode: READ (15), nodeid: 3, insize: 64
+READ[11] 741 bytes from 0
+   READ[11] 741 bytes
+   unique: 0, error: 0 (Unknown error: 0), outsize: 757
+unique: 0, opcode: STATFS (17), nodeid: 1, insize: 40
+   unique: 0, error: 0 (Unknown error: 0), outsize: 96
+unique: 0, opcode: RELEASE (18), nodeid: 11, insize: 64
+RELEASE+FLUSH[9] flags: 0x2
+   unique: 0, error: 0 (Unknown error: 0), outsize: 16
+unique: 0, opcode: RELEASE (18), nodeid: 3, insize: 64
+RELEASE+FLUSH[11] flags: 0x2
+   unique: 0, error: 0 (Unknown error: 0), outsize: 16
+

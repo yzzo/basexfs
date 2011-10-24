@@ -2,7 +2,6 @@ package org.basex.fs.fsml.build;
 
 import static org.basex.util.Token.token;
 
-import java.awt.geom.Rectangle2D;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
@@ -10,13 +9,11 @@ import java.util.List;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.interactive.action.type.PDAction;
 import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionURI;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.util.PDFTextStripper;
-import org.apache.pdfbox.util.PDFTextStripperByArea;
 import org.basex.build.Builder;
 import org.basex.build.Parser;
 import org.basex.io.IO;

@@ -148,7 +148,7 @@ public class FileHierarchyParser extends Parser {
 	
 	private void copyIntoBackingStore(final IO file, final byte[] name) {
 		File target = new File(backingStore.merge(Token.string(name)).path());
-		System.out.format("Writing pdf binary into backing store: %s\n", new String(name));
+		System.out.format("Writing data into backing store: %s\n", new String(name));
 		Utils.copyFile(new File(file.path()), target);
 	}
 	
